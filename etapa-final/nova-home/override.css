@@ -1,0 +1,20 @@
+<style>
+/* ajustes: a Stays usa html{font-size:10px} (Bootstrap 3) e a classe .row do Bootstrap */
+#h4l .cap,#h4l .btn,#h4l .lnk{font-size:11.2px}
+#h4l .h2{font-size:clamp(32px,3.6vw,50px)}
+#h4l .hero h1{font-size:clamp(37px,5vw,70px)}
+#h4l .dots div,#h4l .search label{font-size:10.6px}
+#h4l .search select,#h4l .search input{font-size:16.3px}
+#h4l .track{font-size:clamp(24px,2.6vw,35px)}
+#h4l .row-head h2{font-size:clamp(26px,2.6vw,35px)}
+#h4l .tile b{font-size:11.8px}
+#h4l .tile .meta>div>span{font-size:14.7px}
+#h4l .how .n{font-size:54px}
+#h4l .how h3{font-size:21.6px}
+#h4l .journal h3{font-size:22.4px}
+#h4l .journal dt{font-size:10.2px}
+#h4l .journal dd{font-size:15.4px}
+#h4l .fine{font-size:11.5px}
+#h4l .row{margin-left:0;margin-right:0}
+#h4l .row::before,#h4l .row::after{display:none}
+</style>

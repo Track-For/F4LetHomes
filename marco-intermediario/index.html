@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4Let Homes | Protótipo de homologação</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#faf7ed;color:#173a31;font:1rem/1.55 system-ui,sans-serif}a{color:inherit}header,main,footer{width:min(1120px,calc(100% - 40px));margin:auto}header,nav,footer{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}header,footer{padding:24px 0}header strong{font-size:1.35rem}nav a{text-underline-offset:4px}.hero{padding:clamp(28px,7vw,76px);background:#173a31;color:#fff9e9;border-radius:24px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.05;margin:.2em 0 .45em}h1{font-size:clamp(2.6rem,7vw,5.2rem);max-width:13ch}h2{font-size:clamp(2rem,4vw,3rem)}.hero p{max-width:43ch}.search{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;margin-top:32px;align-items:end}label{display:grid;gap:5px;font-size:.85rem}input,button,.button{font:inherit;min-height:46px;border:1px solid transparent;border-radius:8px;padding:9px 13px}input{width:100%;color:#173a31;background:#fff}button,.button{display:inline-block;background:#e9bd73;color:#173a31;font-weight:700;text-decoration:none;cursor:pointer}section.catalog{padding:48px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.cards a{display:grid;gap:8px;background:#eee9d7;border-radius:14px;padding:22px;text-underline-offset:4px}.cards strong{font-size:1.2rem}.note{font-size:.85rem}footer{border-top:1px solid #c8c6b6}@media(max-width:720px){.search,.cards{grid-template-columns:1fr}.hero{border-radius:16px}}
+</style>
+</head>
+<body>
+<header><strong>4Let Homes</strong><nav aria-label="Navegação principal"><a href="https://f4let.com/pt/search">Acomodações</a><a href="https://f4let.com/pt/contact">Contato</a></nav></header>
+<main>
+<section class="hero">
+<p class="note">Protótipo de homologação</p>
+<h1>Encontre sua próxima estadia</h1>
+<p>Escolha as datas e o número de hóspedes para consultar a disponibilidade no motor oficial da 4Let Homes.</p>
+<form class="search" action="https://f4let.com/pt/search" method="get">
+<label>Check-in<input type="date" name="from" required></label>
+<label>Checkout<input type="date" name="to" required></label>
+<label>Hóspedes<input type="number" name="persons" min="1" value="2" required></label>
+<button type="submit">Buscar disponibilidade</button>
+</form>
+</section>
+<section class="catalog">
+<h2>Explore as acomodações</h2>
+<div class="cards">
+<a href="https://f4let.com/pt/building/VA02I/4let-bh-del-rey"><span>Belo Horizonte</span><strong>4Let BH Del Rey</strong></a>
+<a href="https://f4let.com/pt/building/VA04I/4let-verano-ponta-negra"><span>Ponta Negra</span><strong>4Let Verano Ponta Negra</strong></a>
+<a href="https://f4let.com/pt/building/ZI01I/4let-chales-sonho-de-verao"><span>São Miguel do Gostoso</span><strong>4Let Chalés Sonho de Verão</strong></a>
+</div>
+</section>
+</main>
+<footer><span>4Let Homes</span><a href="https://f4let.com/pt/search">Ver todas as acomodações</a></footer>
+<script>
+const checkIn = document.querySelector('[name="from"]');
+const checkOut = document.querySelector('[name="to"]');
+
+function formatDate(date) {
+  return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
+    .map((part) => String(part).padStart(2, '0')).join('-');
+}
+
+function updateCheckout() {
+  if (!checkIn.value) return;
+  const nextDay = new Date(checkIn.value + 'T12:00:00');
+  nextDay.setDate(nextDay.getDate() + 1);
+  checkOut.min = formatDate(nextDay);
+  if (checkOut.value && checkOut.value < checkOut.min) checkOut.value = '';
+}
+
+checkIn.min = formatDate(new Date());
+checkOut.min = checkIn.min;
+checkIn.addEventListener('change', updateCheckout);
+checkIn.form.addEventListener('submit', (event) => {
+  updateCheckout();
+  if (!checkOut.reportValidity()) event.preventDefault();
+});
+</script>
+</body>
+</html>

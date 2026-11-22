@@ -1,0 +1,149 @@
+/* páginas de anúncio e de empreendimento (reserva) no visual da home */
+html.id4l .appDetails{min-height:0!important}
+/* galeria */
+html.id4l .appDetails #carouselSec{background:var(--paper)!important}
+html.id4l .appDetails .swiper-full .swiper-slide{background:var(--surface)}
+html.id4l .appDetails .swiper-full .swiper-slide img{height:clamp(300px,58vh,580px)!important;width:auto!important;max-width:none!important;object-fit:cover}
+html.id4l .appDetails #appGallerySlider:has(.swiper-slide:only-child){max-width:1360px;margin:0 auto;padding:32px 40px 0}
+html.id4l .appDetails .swiper-full .swiper-slide:only-child{width:100%!important}
+html.id4l .appDetails .swiper-full .swiper-slide:only-child img{width:100%!important}
+html.id4l .appDetails .swiper-button-next,html.id4l .appDetails .swiper-button-prev{width:48px!important;height:48px!important;margin-top:-24px!important;border-radius:50%;background-color:rgba(252,250,246,.92)!important;box-shadow:0 6px 20px rgba(43,35,29,.18)}
+@media (min-width:768px){html.id4l .appDetails #appGallerySlider .swiper-pagination{display:none}}
+html.id4l .appDetails .apt-social .btn{background:rgba(252,250,246,.94)!important;border:0!important;color:var(--ink)!important;font-size:10.5px;padding:10px 16px;box-shadow:0 4px 16px rgba(43,35,29,.15)}
+html.id4l .appDetails .apt-social .btn:hover{background:var(--ink)!important;color:var(--paper)!important}
+/* colunas */
+@media (min-width:992px){
+html.id4l .appDetails>.container{width:100%!important;max-width:1360px;padding:0 40px!important}
+html.id4l .appDetails>.container>.row:first-child{display:grid!important;grid-template-columns:minmax(0,1fr) 400px;column-gap:80px;align-items:start;margin:0!important}
+html.id4l .appDetails>.container>.row:first-child::before,html.id4l .appDetails>.container>.row:first-child::after{display:none!important}
+html.id4l .appDetails #details_full{grid-column:1;grid-row:1;width:auto!important;max-width:none!important;flex:none!important;padding:0!important;margin:0!important}
+html.id4l .appDetails #panelBook{grid-column:2;grid-row:1;width:auto!important;max-width:none!important;flex:none!important;padding:0!important;margin:48px 0!important;position:sticky;top:24px}
+html.id4l .appDetails .sticky-panel{position:static!important;top:auto!important}
+/* empreendimento: unidades logo abaixo do título, reserva fixa à direita */
+html.id4l body.__page_building #details_full,html.id4l body.__page_building #panelBook{display:contents!important}
+html.id4l body.__page_building #details_full>.row:first-child{grid-column:1;grid-row:1}
+html.id4l body.__page_building #appApts{grid-column:1;grid-row:2}
+html.id4l body.__page_building #details_full>.buildingDescription{grid-column:1;grid-row:3}
+html.id4l body.__page_building #details_full>#appMap{grid-column:1;grid-row:4;margin-bottom:64px}
+html.id4l body.__page_building .booking-apt-panel{grid-column:2;grid-row:1/span 4;align-self:start;position:sticky;top:24px;margin-top:48px!important}
+}
+html.id4l .appDetails #details_full>.row,html.id4l body.__page_building #appApts{margin-left:0!important;margin-right:0!important}
+html.id4l .appDetails #details_full>.row>[class*=col],html.id4l body.__page_building #appApts>[class*=col]{padding-left:0!important;padding-right:0!important}
+/* título */
+html.id4l .appDetails #buildingDesc h1{font-size:clamp(30px,3.2vw,44px)!important;font-weight:300!important;line-height:1.1;letter-spacing:-.015em;margin:48px 0 12px!important}
+html.id4l .appDetails #buildingDesc h4{margin:0 0 20px}
+html.id4l .appDetails #buildingDesc h4 li{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html.id4l .appDetails #buildingDesc .fa-map-marker{margin-right:6px}
+html.id4l .appDetails #details_full>.row.h4{margin-top:0;margin-bottom:28px!important}
+html.id4l .appDetails #details_full>.row.h4 .label{display:inline-block;background:transparent!important;border:1px solid var(--line);color:var(--ink)!important;font-size:13px;font-weight:400;letter-spacing:.02em;padding:9px 14px;margin:0 6px 8px 0}
+html.id4l .appDetails #details_full>.row.h4 .label .fa{color:var(--muted);margin-right:4px}
+/* texto */
+html.id4l .appDetails .aboutApp,html.id4l .appDetails .aboutBuilding{font-size:16px;line-height:1.75;color:#4a3f36;max-width:70ch}
+html.id4l .appDetails .aboutApp p,html.id4l .appDetails .aboutBuilding p{margin:0 0 14px}
+html.id4l .appDetails .aboutBuilding{margin-top:16px;padding-top:20px;border-top:1px solid var(--line)}
+html.id4l .appDetails .aboutApp p:empty,html.id4l .appDetails .aboutBuilding p:empty{display:none}
+/* títulos de seção */
+html.id4l .appDetails #details_full [class$=Title]{margin-top:44px}
+html.id4l .appDetails #details_full [class$=Title] h3{font-size:24px!important;font-weight:300!important;margin:0}
+html.id4l .appDetails #details_full [class$=Title] .fa{font-size:11px!important;color:var(--muted);margin-left:6px;vertical-align:middle}
+html.id4l .appDetails #details_full hr{border-color:var(--line);margin:16px 0 20px}
+/* camas */
+html.id4l .appDetails .bed-item{background:#fff!important;border:1px solid var(--line)!important;border-radius:0!important;padding:20px!important;height:100%}
+html.id4l .appDetails .bed-item .bed-icon{color:var(--muted)}
+html.id4l .appDetails .bed-item .bed-room b{font-weight:500}
+html.id4l .appDetails .bed-item .bed-type{color:var(--muted)}
+/* regras e comodidades */
+html.id4l .appDetails #houseRulesCol>ul,html.id4l .appDetails #amenities ul{padding:0!important;margin:0!important;list-style:none}
+html.id4l .appDetails #houseRulesCol>ul>li>p{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+html.id4l .appDetails #houseRulesCol>ul>li>p br{display:none}
+html.id4l .appDetails #houseRules .label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px}
+html.id4l .appDetails #houseRules .label-success{background:#e7eee2!important;color:#3d5a33!important}
+html.id4l .appDetails #houseRules .label-danger{background:#f5e6e1!important;color:#8b3a2a!important}
+html.id4l .appDetails #houseRules .label-default{background:var(--surface)!important;color:var(--ink)!important}
+html.id4l .appDetails #houseRulesCol>a{display:inline-block;margin-top:16px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:3px}
+html.id4l .appDetails #houseRulesCol>a .fa{display:none}
+html.id4l .appDetails #houseRulesMore p{margin-top:14px;color:var(--muted)}
+html.id4l .appDetails #amenities li p{margin:0;padding:9px 0;font-size:15px;color:#4a3f36}
+html.id4l .appDetails #amenities li p::before{content:"";display:inline-block;width:5px;height:5px;margin:0 12px 2px 0;background:var(--muted);transform:rotate(45deg)}
+/* painel de reserva */
+html.id4l .appDetails .booking-apt-panel{background:#fff!important;border:1px solid var(--line)!important;box-shadow:0 24px 60px -30px rgba(43,35,29,.35)!important;margin-bottom:16px}
+html.id4l .appDetails .booking-apt-header{background:#fff!important;border:0!important;padding:28px 28px 4px!important}
+html.id4l .appDetails .booking-apt-header .price-night{font-size:34px!important;font-weight:300;line-height:1.1;color:var(--ink)}
+html.id4l .appDetails .booking-apt-header .price-night small{font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html.id4l .appDetails .booking-apt-panel .search-box{background:#fff!important;border:0!important;padding:12px 28px 4px!important}
+html.id4l .appDetails .booking-apt-panel .search-box form{padding:0!important}
+html.id4l .appDetails .booking-apt-panel .search-box .row{margin:0!important}
+html.id4l .appDetails .booking-apt-panel .search-box [class*=col]{padding:0!important}
+html.id4l .appDetails .booking-apt-panel .search-box .form-group{margin-bottom:10px}
+html.id4l .appDetails .booking-apt-panel .search-box .input-group-addon{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;padding-left:0!important;width:36px}
+html.id4l .appDetails .booking-apt-panel .search-box .form-control,html.id4l .appDetails .booking-apt-panel .search-box .bootstrap-select>.dropdown-toggle{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;height:52px!important;font-size:15px!important;color:var(--ink)!important;padding-left:2px!important}
+html.id4l .appDetails .booking-apt-panel .search-box .btn{min-height:52px;margin-top:10px;background:var(--ink)!important;border-color:var(--ink)!important;color:var(--paper)!important}
+html.id4l .appDetails .booking-apt-panel .search-box .btn:hover{background:transparent!important;color:var(--ink)!important}
+html.id4l .appDetails .booking-apt{padding:16px 28px 28px!important}
+html.id4l .appDetails .bookbutton,html.id4l .appDetails .btn-create-user{min-height:56px;font-size:13px!important;display:flex;align-items:center;justify-content:center;gap:8px}
+html.id4l .appDetails #subtotal_area{margin-top:20px!important;font-size:14.5px;color:#4a3f36}
+html.id4l .appDetails #subtotal_area .row{margin-left:0;margin-right:0}
+html.id4l .appDetails #subtotal_area .h4{font-size:20px;font-weight:400}
+html.id4l .appDetails #subtotal_area hr{border-color:var(--line)}
+html.id4l .appDetails .btn-contact-me,html.id4l .appDetails .cta-chat{min-height:44px;display:flex!important;align-items:center;justify-content:center;gap:8px;border-color:var(--line)!important;font-size:11px!important;margin-bottom:8px!important}
+html.id4l .appDetails .booking-apt .btn-block.text-center{font-size:13px;color:var(--muted);margin-top:4px}
+html.id4l .appDetails .ota-comparison{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;margin:0!important}
+html.id4l .appDetails .ota-comparison .panel-body{padding:12px 4px!important}
+html.id4l .appDetails .ota-comparison .h5{font-size:14px;color:var(--muted)}
+html.id4l .appDetails .ota-comparison .icon-sm{filter:grayscale(1);opacity:.7}
+/* empreendimento: título do painel */
+html.id4l body.__page_building .booking-apt-panel::before{content:"Consulte datas e preços";display:block;padding:28px 28px 0;font-size:22px;font-weight:300;color:var(--ink)}
+html[lang=en].id4l body.__page_building .booking-apt-panel::before{content:"Check dates and prices"}
+html[lang=es].id4l body.__page_building .booking-apt-panel::before{content:"Consulta fechas y precios"}
+html.id4l body.__page_building .booking-apt-panel .search-box{padding-bottom:28px!important}
+/* empreendimento: lista de unidades */
+html.id4l body.__page_building #appApts>[class*=col]::before{content:"Escolha a unidade";display:block;font-size:24px;font-weight:300;color:var(--ink);padding:36px 0 16px;border-bottom:1px solid var(--line)}
+html[lang=en].id4l body.__page_building #appApts>[class*=col]::before{content:"Choose your unit"}
+html[lang=es].id4l body.__page_building #appApts>[class*=col]::before{content:"Elige la unidad"}
+html.id4l body.__page_building #appApts .panel{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;margin:0!important;padding:24px 0}
+html.id4l body.__page_building #appApts .panel>.row{margin:0;align-items:stretch}
+html.id4l body.__page_building #appApts .panel>.row>[class*=col]{padding:0!important}
+html.id4l body.__page_building #appApts .img-cover{display:block;min-height:190px;height:100%;background-size:cover!important;background-position:center!important}
+@media (min-width:768px){html.id4l body.__page_building #appApts .panel>.row>.col-sm-3{flex:0 0 36%;max-width:36%;width:36%}html.id4l body.__page_building #appApts .panel>.row>.col{flex:1 1 0}}
+html.id4l body.__page_building #appApts .panel-body{padding:0 0 0 28px!important}
+html.id4l body.__page_building #appApts .panel-body>.row{margin:0}
+html.id4l body.__page_building #appApts .panel-body>.row>[class*=col]{flex:0 0 100%;max-width:100%;width:100%;padding:0}
+html.id4l body.__page_building #appApts h4.media-heading{font-size:22px!important;font-weight:300!important;line-height:1.2;margin:0 0 10px}
+html.id4l body.__page_building #appApts .label{background:transparent!important;color:var(--ink)!important;border:1px solid var(--line);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px}
+html.id4l body.__page_building #appApts .list-inline{margin:4px 0 0}
+html.id4l body.__page_building #appApts .list-inline li{font-size:14px;color:var(--muted);padding-right:12px}
+html.id4l body.__page_building #appApts .list-inline .fa{color:var(--line);margin-right:4px}
+html.id4l body.__page_building #appApts .text-right{display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left!important;margin:14px 0 0!important}
+html.id4l body.__page_building #appApts .text-right>[class*=col]{flex:0 0 auto;max-width:none;width:auto;padding:0;margin:0!important}
+html.id4l body.__page_building #appApts hr.visible-xs{display:none!important}
+html.id4l body.__page_building #appApts .price-night{font-size:28px;font-weight:300;line-height:1.1;color:var(--ink)}
+html.id4l body.__page_building #appApts .price-night b{font-weight:300}
+html.id4l body.__page_building #appApts .price-night small{font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html.id4l body.__page_building #appApts .btn-primary{display:inline-flex!important;align-items:center;min-height:48px;padding:0 28px!important;margin:0!important;width:auto!important}
+html.id4l body.__page_building #appApts .btn-primary .fa{display:none}
+html.id4l body.__page_building #appApts .btn-primary::after{content:"Ver detalhes"}
+html[lang=en].id4l body.__page_building #appApts .btn-primary::after{content:"View stay"}
+html[lang=es].id4l body.__page_building #appApts .btn-primary::after{content:"Ver alojamiento"}
+html.id4l .appDetails .booking-apt-panel .search-box .input-group{display:flex!important;width:100%!important}
+html.id4l .appDetails .booking-apt-panel .search-box .input-group>.form-control,html.id4l .appDetails .booking-apt-panel .search-box .input-group>.bootstrap-select{flex:1 1 auto;width:auto!important}
+html.id4l .appDetails .booking-apt-panel .search-box .input-group-addon{display:flex;align-items:center}
+html.id4l .appDetails #subtotal_area [class*=col]{padding-left:0!important;padding-right:0!important}
+/* celular */
+@media (max-width:991px){
+html.id4l .appDetails>.container{padding:0 20px!important}
+html.id4l .appDetails #buildingDesc h1{margin-top:28px!important}
+html.id4l .appDetails .booking-apt-panel{margin-top:24px}
+}
+@media (max-width:767px){
+html.id4l .appDetails .swiper-full .swiper-slide img{height:300px!important}
+html.id4l .appDetails #appGallerySlider:has(.swiper-slide:only-child){padding:0}
+html.id4l body.__page_building #appApts .panel-body{padding:18px 0 0!important}
+html.id4l body.__page_building #appApts .img-cover{min-height:210px}
+html.id4l .appDetails .booking-apt-header,html.id4l .appDetails .booking-apt-panel .search-box,html.id4l .appDetails .booking-apt{padding-left:20px!important;padding-right:20px!important}
+}
+
+/* ajustes finos */
+html.id4l .appDetails .booking-apt-panel .search-box .input-group-addon{height:52px!important}
+html.id4l .appDetails .booking-apt-panel .search-box .bootstrap-select>.dropdown-toggle{display:flex!important;align-items:center}
+html.id4l .appDetails #houseRulesCol>ul>li{padding-left:0!important;padding-right:24px!important}
+html.id4l .appDetails #houseRulesCol>ul>li:nth-child(even){padding-right:0!important;padding-left:24px!important}

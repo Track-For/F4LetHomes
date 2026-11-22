@@ -1,0 +1,27 @@
+<style>
+/* home: animação de entrada e parallax (só com movimento permitido) */
+html.h4l-fx #h4l .fx{opacity:0;translate:0 32px;transition:opacity 1s cubic-bezier(.2,.7,.2,1),translate 1s cubic-bezier(.2,.7,.2,1)}
+html.h4l-fx #h4l .fx.in{opacity:1;translate:0 0}
+html.h4l-fx #h4l .fx-img{position:relative;overflow:hidden}
+html.h4l-fx #h4l .fx-img::after{content:"";position:absolute;inset:0;z-index:3;background:var(--paper);transform-origin:50% 0;transition:transform 1.3s cubic-bezier(.7,0,.2,1);pointer-events:none}
+html.h4l-fx #h4l .feature .fx-img::after{background:var(--surface)}
+html.h4l-fx #h4l .fx-img.in::after{transform:scaleY(0)}
+html.h4l-fx #h4l .edit .ph,html.h4l-fx #h4l .feature .ph,html.h4l-fx #h4l .tile .ph{scale:1.16;will-change:translate}
+html.h4l-fx #h4l .hero .slide{will-change:translate}
+html.h4l-fx #h4l .hero .hd{will-change:opacity,translate}
+</style>
+<script>
+/* home: animação de entrada e parallax */
+document.addEventListener("DOMContentLoaded",function(){var r=document.getElementById("h4l");if(!r||!document.body.classList.contains("__page_index"))return;if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;var d=document.documentElement;d.classList.add("h4l-fx");
+function q(s){return Array.prototype.slice.call(r.querySelectorAll(s))}
+var groups=[".hero .hd>*",".search",".edit .txt>*",".row-head",".row .tile",".how li",".feature .txt>*",".center>*",".journal article",".owner .center>*"];
+groups.forEach(function(s){q(s).forEach(function(el,i){el.classList.add("fx");el.style.transitionDelay=Math.min(i,5)*110+"ms"})});
+q(".edit figure,.feature .img").forEach(function(el){el.classList.add("fx-img")});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.12});
+q(".fx,.fx-img").forEach(function(el){io.observe(el)});
+var hero=r.querySelector(".hero"),slides=q(".hero .slide"),hd=r.querySelector(".hero .hd"),par=q(".edit .ph,.feature .ph,.tile .ph"),tick=false;
+function upd(){tick=false;var y=window.scrollY,vh=window.innerHeight;if(hero){var h=hero.offsetHeight;if(y<h+50){slides.forEach(function(s){s.style.translate="0 "+(y*.35).toFixed(1)+"px"});if(hd){hd.style.translate="0 "+(y*.18).toFixed(1)+"px";hd.style.opacity=Math.max(0,1-y/(h*.7)).toFixed(3)}}}
+par.forEach(function(p){var b=p.parentNode.getBoundingClientRect();if(b.bottom<-50||b.top>vh+50)return;var c=(b.top+b.height/2-vh/2)/vh;p.style.translate="0 "+(c*-b.height*.12).toFixed(1)+"px"})}
+window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});window.addEventListener("resize",upd);upd()});
+</script>
+<style>/* corrige colisão da classe .in (efeitos) com .hero .in da home */html.h4l-fx #h4l .hero .hd>.fx.in{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;z-index:auto!important;padding-bottom:0!important}</style>

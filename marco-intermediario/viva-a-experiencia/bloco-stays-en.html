@@ -1,0 +1,81 @@
+<style>
+#viva4let{padding:56px 16px;background:#f6f8fb;font-family:inherit}
+#viva4let .v-wrap{max-width:1180px;margin:0 auto}
+#viva4let .v-head{text-align:center;max-width:680px;margin:0 auto 32px}
+#viva4let .v-head h2{margin:0 0 10px;color:#4a6786;font-weight:700;font-size:34px;line-height:1.15}
+#viva4let .v-head p{margin:0;color:#4b5563;font-size:16px;line-height:1.55}
+#viva4let .v-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+#viva4let .v-card{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 22px rgba(20,40,70,.08);text-decoration:none;color:inherit;transition:transform .25s ease,box-shadow .25s ease}
+#viva4let .v-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(20,40,70,.14);text-decoration:none}
+#viva4let .v-img{aspect-ratio:4/3;background:#dde4ec center/cover no-repeat}
+#viva4let .v-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+#viva4let .v-tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#4a6786;background:#e6edf5;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+#viva4let .v-body h3{margin:0 0 8px;font-size:19px;line-height:1.25;color:#111827;font-weight:700}
+#viva4let .v-body p{margin:0 0 16px;font-size:14.5px;line-height:1.55;color:#4b5563;flex:1}
+#viva4let .v-cta{font-size:14px;font-weight:700;color:#4a6786}
+#viva4let .v-card:hover .v-cta{text-decoration:underline}
+#viva4let .v-transfer{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;background:#4a6786;color:#fff;border-radius:14px;padding:20px 24px}
+#viva4let .v-transfer strong{display:block;font-size:18px;margin-bottom:4px}
+#viva4let .v-transfer span{font-size:14.5px;opacity:.92}
+#viva4let .v-transfer a{background:#fff;color:#4a6786;font-weight:700;border-radius:999px;padding:11px 20px;text-decoration:none;white-space:nowrap}
+@media (max-width:991px){#viva4let .v-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:575px){
+  #viva4let{padding:40px 16px}
+  #viva4let .v-head h2{font-size:27px}
+  #viva4let .v-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:8px;margin:0 -16px;padding-left:16px;padding-right:16px}
+  #viva4let .v-card{flex:0 0 82%;scroll-snap-align:start}
+  #viva4let .v-transfer{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){#viva4let .v-card{transition:none}#viva4let .v-card:hover{transform:none}}
+</style>
+
+<section id="viva4let" lang="en" aria-labelledby="viva4let-title">
+  <div class="v-wrap">
+    <div class="v-head">
+      <h2 id="viva4let-title">Live the Experience</h2>
+      <p>More than a place to sleep: itineraries to make the most of every destination. Pick the experience and find the stay right next to it.</p>
+    </div>
+
+    <div class="v-grid">
+      <a class="v-card" href="/en/search?groups%5B%5D=6a6a52bc6fa9c250b57c233a">
+        <div class="v-img" role="img" aria-label="Morro do Careca and Ponta Negra beach in Natal" style="background-image:url('/media/6afee029a04caa99cbe7c3d2/md')"></div>
+        <div class="v-body">
+          <span class="v-tag">Natal · RN</span>
+          <h3>Ponta Negra, dunes and lagoons</h3>
+          <p>Sunset at Ponta Negra with Morro do Careca in the background and, the next day, a buggy ride across the Genipabu dunes with a swim in the freshwater lagoons.</p>
+          <span class="v-cta">See stays in Natal →</span>
+        </div>
+      </a>
+
+      <a class="v-card" href="/en/search?groups%5B%5D=6a6a525dcdd0300a0c79db5a">
+        <div class="v-img" role="img" aria-label="Tourinhos beach in São Miguel do Gostoso" style="background-image:url('/media/6afee029a04caa99cbe7c3d0/md')"></div>
+        <div class="v-body">
+          <span class="v-tag">São Miguel do Gostoso · RN</span>
+          <h3>Wind, kitesurfing and natural pools</h3>
+          <p>Days of steady wind for kitesurfing, low tide at the Tourinhos cliffs and dinner on foot in the village centre.</p>
+          <span class="v-cta">See stays in Gostoso →</span>
+        </div>
+      </a>
+
+      <a class="v-card" href="/en/search?groups%5B%5D=6a6a4f956fa9c250b57c04fb">
+        <div class="v-img" role="img" aria-label="Pampulha church in Belo Horizonte" style="background-image:url('/media/6afee029411145a006c33fb4/md')"></div>
+        <div class="v-body">
+          <span class="v-tag">Belo Horizonte · MG</span>
+          <h3>Pampulha, Niemeyer and Mercado Central</h3>
+          <p>A bike ride around Lagoa da Pampulha, the São Francisco chapel and, for lunch, cheese and cachaça at Mercado Central.</p>
+          <span class="v-cta">See stays in BH →</span>
+        </div>
+      </a>
+
+      <a class="v-card" href="/en/search?groups%5B%5D=6abd09350be9b8d9a48a84e0">
+        <div class="v-img" role="img" aria-label="Colina Flamboyant in Cerro Corá" style="background-image:url('/media/6a76c1dbff5eb71c3b74660c/md')"></div>
+        <div class="v-body">
+          <span class="v-tag">Cerro Corá · RN</span>
+          <h3>Mountains, mild weather and starry skies</h3>
+          <p>The highland side of Rio Grande do Norte: cool nights, late-afternoon viewpoints and trails through the Serra de Santana.</p>
+          <span class="v-cta">See stays in Cerro Corá →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

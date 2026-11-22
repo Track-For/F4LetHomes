@@ -1,0 +1,80 @@
+<style>
+/* checkout no visual da home */
+html.id4l .bootstrap-select>.dropdown-toggle{text-transform:none!important;letter-spacing:0!important;font-weight:300!important}
+html.id4l body.__page_booking #booking-checkout-v1{width:100%!important;max-width:1280px;padding:0 40px!important;margin:0 auto 96px}
+html.id4l body.__page_booking #booking-checkout-v1::before{content:"Finalize sua reserva";display:block;font-size:clamp(32px,3.6vw,50px);font-weight:300;letter-spacing:-.015em;line-height:1.1;color:var(--ink);margin:56px 0 36px}
+html[lang=en].id4l body.__page_booking #booking-checkout-v1::before{content:"Complete your booking"}
+html[lang=es].id4l body.__page_booking #booking-checkout-v1::before{content:"Finalice su reserva"}
+@media (min-width:768px){
+html.id4l body.__page_booking .checkout-row{display:grid!important;grid-template-columns:minmax(0,1fr) 400px;column-gap:64px;align-items:start;margin:0!important}
+html.id4l body.__page_booking .checkout-row::before,html.id4l body.__page_booking .checkout-row::after{display:none!important}
+html.id4l body.__page_booking .checkout-row>.col-md-6{grid-column:1;grid-row:1;width:auto!important;max-width:none!important;flex:none!important;padding:0!important}
+html.id4l body.__page_booking .checkout-row>.col-md-5{grid-column:2;grid-row:1;width:auto!important;max-width:none!important;flex:none!important;padding:0!important;margin:0!important;position:sticky;top:24px}
+}
+@media (min-width:768px) and (max-width:1099px){html.id4l body.__page_booking .checkout-row{grid-template-columns:minmax(0,1fr) 320px;column-gap:32px}}
+html.id4l body.__page_booking #guest-form{padding:0!important;counter-reset:ck}
+html.id4l body.__page_booking #booking-guest-address-information-form>.row{margin:0!important}
+html.id4l body.__page_booking .panel-checkout{max-width:none!important;background:#fff!important;border:1px solid var(--line)!important;box-shadow:none!important;margin-bottom:20px!important}
+html.id4l body.__page_booking .panel-checkout>.panel-heading{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;padding:28px 32px 20px!important}
+html.id4l body.__page_booking .panel-checkout .media-heading{font-size:24px!important;font-weight:300!important;color:var(--ink)!important;margin:0!important;display:flex;align-items:baseline;gap:14px}
+html.id4l body.__page_booking .panel-checkout h4.media-heading::before{counter-increment:ck;content:counter(ck,decimal-leading-zero);font-size:12px;font-weight:500;letter-spacing:.18em;color:var(--muted)}
+html.id4l body.__page_booking .panel-checkout .media-sub-heading{font-size:14px!important;font-weight:300!important;color:var(--muted)!important;margin:8px 0 0 36px!important;line-height:1.5}
+html.id4l body.__page_booking .panel-checkout>.panel-body{padding:24px 32px 12px!important}
+html.id4l body.__page_booking .panel-checkout .form-group{margin-bottom:20px}
+html.id4l body.__page_booking .panel-checkout label.control-label,html.id4l body.__page_booking .panel-checkout .form-group>label{font-size:10.5px!important;font-weight:500!important;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)!important;margin-bottom:8px}
+html.id4l body.__page_booking .panel-checkout sup{color:var(--muted);font-size:10px;top:-.2em}
+html.id4l body.__page_booking .panel-checkout .radio label{font-size:15px!important;letter-spacing:0;text-transform:none;font-weight:300!important;color:var(--ink)!important}
+html.id4l body.__page_booking .panel-checkout input[type=radio],html.id4l body.__page_booking .panel-checkout input[type=checkbox]{accent-color:var(--ink)}
+html.id4l body.__page_booking .panel-checkout .form-control,html.id4l body.__page_booking .panel-checkout .bootstrap-select>.dropdown-toggle{height:48px!important;background:#fff!important;border:1px solid var(--line)!important;font-size:15px!important;color:var(--ink)!important;padding:0 14px!important}
+html.id4l body.__page_booking .panel-checkout .bootstrap-select>.dropdown-toggle{display:flex!important;align-items:center}
+html.id4l body.__page_booking .panel-checkout textarea.form-control{height:auto!important;min-height:120px;padding:12px 14px!important}
+html.id4l body.__page_booking .panel-checkout .form-control:focus{border-color:var(--ink)!important}
+html.id4l body.__page_booking .panel-checkout .form-control[readonly],html.id4l body.__page_booking .panel-checkout .form-control[disabled]{background:var(--surface)!important;color:var(--muted)!important}
+html.id4l body.__page_booking .panel-checkout .iti{width:100%}
+html.id4l body.__page_booking .panel-checkout .iti input.form-control{padding-left:56px!important}
+html.id4l body.__page_booking .panel-checkout .has-error label,html.id4l body.__page_booking .panel-checkout .has-error .control-label{color:var(--ink)!important}
+html.id4l body.__page_booking .panel-checkout .help-block,html.id4l body.__page_booking .panel-checkout .with-errors{color:#8b3a2a!important;font-size:12px!important;margin-top:6px}
+html.id4l body.__page_booking .panel-checkout .has-error .form-control,html.id4l body.__page_booking .panel-checkout .has-error .dropdown-toggle{border-color:#e2c3b8!important}
+html.id4l body.__page_booking .bottom-bar{display:flex;justify-content:flex-end;align-items:center;gap:12px;flex-wrap:wrap}
+html.id4l body.__page_booking .bottom-bar .btn{min-height:56px;padding:0 44px!important;font-size:12.5px!important;display:inline-flex!important;align-items:center;justify-content:center}
+html.id4l body.__page_booking .bottom-bar .btn.hidden{display:none!important}
+html.id4l body.__page_booking .panel-checkout:has(.bottom-bar){background:transparent!important;border:0!important}
+html.id4l body.__page_booking .panel-checkout:has(.bottom-bar)>.panel-body{padding:4px 0!important}
+html.id4l body.__page_booking .booking-details.panel{background:#fff!important;border:1px solid var(--line)!important;box-shadow:0 24px 60px -30px rgba(43,35,29,.3)!important;overflow:hidden}
+html.id4l body.__page_booking .booking-details .img-cover{height:220px!important;background-size:cover!important;background-position:center!important}
+html.id4l body.__page_booking .booking-details .btn-card{background:rgba(252,250,246,.94)!important;border:0!important;color:var(--ink)!important;font-size:10.5px!important;padding:8px 14px!important}
+html.id4l body.__page_booking .reserve-info{padding:24px 28px 28px!important;background:#fff!important}
+html.id4l body.__page_booking .reserve-info .card-title .h4{font-size:22px!important;font-weight:300!important;line-height:1.25;color:var(--ink)!important;margin:0 0 6px}
+html.id4l body.__page_booking .reserve-info .card-details li{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+html.id4l body.__page_booking .reserve-info hr{border-color:var(--line)!important;margin:20px 0 16px!important}
+html.id4l body.__page_booking .reserve-info .title-edit{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+html.id4l body.__page_booking .reserve-info .details .h4{font-size:10.5px!important;font-weight:500!important;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)!important;margin:0 0 10px!important}
+html.id4l body.__page_booking .reserve-info .btn-reservation-edit{border:0!important;background:transparent!important;color:var(--ink)!important;font-size:11px;text-decoration:underline;text-underline-offset:4px;padding:0!important}
+html.id4l body.__page_booking .reserve-info .content .row{margin:0!important;padding:5px 0}
+html.id4l body.__page_booking .reserve-info .content [class*=area-]{padding:0!important}
+html.id4l body.__page_booking .reserve-info .content p{margin:0;font-size:14.5px!important;font-weight:300!important;color:#4a3f36!important}
+html.id4l body.__page_booking .reserve-info .area-2 p{text-align:right;color:var(--ink)!important}
+html.id4l body.__page_booking .reserve-details-total hr{border-color:var(--ink)!important}
+html.id4l body.__page_booking .reserve-details-total .content .row{align-items:baseline}
+html.id4l body.__page_booking #payment-title,html.id4l body.__page_booking #payment-title span{font-size:11px!important;font-weight:500!important;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)!important}
+html.id4l body.__page_booking #payment-amount{font-size:32px!important;font-weight:300!important;line-height:1.1;color:var(--ink)!important}
+html.id4l body.__page_booking .cancellation-policy p{font-size:13px;color:var(--muted);margin:14px 0 0}
+html.id4l body.__page_booking #guest-form{width:100%!important;max-width:none!important;flex:1 1 100%!important}
+html.id4l body.__page_booking .panel-checkout .bootstrap-select.form-control{border:0!important;padding:0!important;height:auto!important;background:transparent!important;width:100%!important}
+html.id4l body.__page_booking .panel-checkout .bootstrap-select>.dropdown-toggle{width:100%!important}
+html.id4l body.__page_booking .panel-checkout:has(.bottom-bar) .panel-body{background:transparent!important}
+html.id4l body.__page_booking .cancellation-policy:has(p:empty){display:none}
+html.id4l body.__page_booking .reserve-info .content .row:not(.hidden){display:flex!important;justify-content:space-between;gap:16px}
+html.id4l body.__page_booking .reserve-info .content [class*=area-]{width:auto!important;max-width:none!important;flex:0 1 auto!important}
+html.id4l body.__page_booking .panel-checkout .bootstrap-select .filter-option{position:static!important;padding:0!important;display:flex;align-items:center;height:100%;flex:1}
+html.id4l body.__page_booking .bottom-bar,html.id4l body.__page_booking .panel-checkout:has(.bottom-bar),html.id4l body.__page_booking .panel-checkout:has(.bottom-bar)>.panel-body{background:transparent!important;box-shadow:none!important}
+@media (max-width:767px){
+html.id4l body.__page_booking #booking-checkout-v1{padding:0 16px!important}
+html.id4l body.__page_booking #booking-checkout-v1::before{margin:32px 0 20px}
+html.id4l body.__page_booking .checkout-row>[class*=col]{padding:0!important;margin:0 0 20px!important}
+html.id4l body.__page_booking .panel-checkout>.panel-heading{padding:22px 20px 16px!important}
+html.id4l body.__page_booking .panel-checkout>.panel-body{padding:20px 20px 8px!important}
+html.id4l body.__page_booking .panel-checkout .media-sub-heading{margin-left:0!important}
+html.id4l body.__page_booking .bottom-bar .btn{width:100%}
+}
+</style>

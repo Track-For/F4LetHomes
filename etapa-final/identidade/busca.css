@@ -1,0 +1,39 @@
+<style>
+/* página de busca no visual da home */
+html.id4l body.__page_search #maincontent>div>.container{width:100%!important;max-width:1360px;padding:0 40px!important;margin-top:48px!important}
+html.id4l body.__page_search #advancedSearch .panel{background:var(--surface)!important;border:0!important;padding:8px 6px 14px}
+html.id4l body.__page_search #advancedSearch .panel-heading{background:transparent!important;border:0!important}
+html.id4l body.__page_search #advancedSearch .input-group-addon{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important}
+html.id4l body.__page_search #advancedSearch .form-control,html.id4l body.__page_search #advancedSearch .bootstrap-select>.dropdown-toggle{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;height:46px;font-size:15px}
+html.id4l body.__page_search #advancedSearch .btn-filter{background:transparent!important;border:0!important;text-decoration:underline;text-underline-offset:5px}
+html.id4l body.__page_search #advancedSearch .label{background:var(--paper)!important;color:var(--muted)!important;font-weight:400;letter-spacing:.04em}
+@media (min-width:992px){html.id4l body.__page_search #advancedSearch{position:sticky;top:104px}}
+html.id4l body.__page_search .result-count h2{font-size:clamp(28px,3vw,42px)!important;font-weight:300!important;letter-spacing:-.015em;line-height:1.1;margin-bottom:28px!important}
+html.id4l body.__page_search .result-count h2 small{display:block;margin-top:8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html.id4l body.__page_search #fsort+.dropdown-toggle,html.id4l body.__page_search .result-count .bootstrap-select>.dropdown-toggle{background:transparent!important;border:0!important;border-bottom:1px solid var(--ink)!important}
+html.id4l body.__page_search #resultlist .appThumb+.appThumb .list-rent-item-content{border-top:1px solid var(--line)!important}
+html.id4l body.__page_search .list-rent-item-content{background:transparent!important;border:0!important;margin:0!important;padding:36px 0!important}
+html.id4l body.__page_search .list-rent-item-content>.row{align-items:stretch}
+html.id4l body.__page_search .list-rent-item-content .img-cover{display:block;min-height:280px;height:100%;background-size:cover!important;background-position:center!important;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+html.id4l body.__page_search .list-rent-item-content .col-sm-3{overflow:hidden}
+html.id4l body.__page_search .list-rent-item-content:hover .img-cover{transform:scale(1.04)}
+@media (min-width:768px){html.id4l body.__page_search .list-rent-item-content .col-sm-3{flex:0 0 40%;max-width:40%;width:40%}html.id4l body.__page_search .list-rent-item-content .col-sm-9{flex:0 0 60%;max-width:60%;width:60%}}
+html.id4l body.__page_search .list-rent-item-content .panel-body{padding:4px 0 0 32px!important}
+html.id4l body.__page_search .list-rent-item-content h4.media-heading{font-size:26px!important;font-weight:300!important;letter-spacing:-.01em;line-height:1.15;margin-bottom:10px}
+html.id4l body.__page_search .list-rent-item-content h4.media-heading small{display:block;margin-top:8px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)!important}
+html.id4l body.__page_search .list-rent-item-content .label{background:transparent!important;color:var(--ink)!important;border:1px solid var(--line);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px}
+html.id4l body.__page_search .list-rent-item-content p,html.id4l body.__page_search .list-rent-item-content .amenitiesList li,html.id4l body.__page_search .list-rent-item-content .amenitiesListMore li{color:var(--muted);font-size:14.5px}
+html.id4l body.__page_search .list-rent-item-content .fa-map-marker{color:var(--muted)!important}
+html.id4l body.__page_search .list-rent-item-content label:not(.label){display:block;margin:18px 0 8px;font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+html.id4l body.__page_search .list-rent-item-content .fa-check-circle{color:var(--line)!important;margin-right:4px}
+html.id4l body.__page_search .list-rent-item-content a[data-toggle=collapse]{display:inline-block;margin-top:10px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)!important;border-bottom:1px solid var(--ink);padding-bottom:3px}
+html.id4l body.__page_search .list-rent-item-content a[data-toggle=collapse] .fa{display:none}
+html.id4l body.__page_search .list-rent-item-content .price-night{font-size:30px;font-weight:300;line-height:1.1;color:var(--ink)}
+html.id4l body.__page_search .list-rent-item-content .price-night small{font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+html.id4l body.__page_search .btn-building{min-height:48px;display:flex!important;align-items:center;justify-content:center}
+html.id4l body.__page_search .btn-building .fa{display:none}
+html.id4l body.__page_search .btn-building::after{content:"Ver detalhes"}
+html[lang=en].id4l body.__page_search .btn-building::after{content:"View stay"}
+html[lang=es].id4l body.__page_search .btn-building::after{content:"Ver alojamiento"}
+@media (max-width:767px){html.id4l body.__page_search #maincontent>div>.container{padding:0 16px!important}html.id4l body.__page_search .list-rent-item-content .panel-body{padding:20px 0 0!important}html.id4l body.__page_search .list-rent-item-content .img-cover{min-height:220px}}
+</style>

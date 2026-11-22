@@ -1,0 +1,92 @@
+<style>
+/* sobre nós (conteúdo .s4l) */
+html.id4l body.__page_page .col-md-9:has(.s4l){width:100%!important;max-width:1280px;flex:none!important;padding:0 40px!important;min-height:0!important}
+html.id4l body.__page_page .col-md-9:has(.s4l)>h1:empty{display:none}
+html.id4l body.__page_page .container:has(.s4l){width:100%!important;max-width:none!important;margin-top:24px!important}
+html.id4l .s4l{color:#4a3f36;font-size:16px;line-height:1.75}
+html.id4l .s4l h1,html.id4l .s4l h2,html.id4l .s4l h3{color:var(--ink)!important;font-weight:300!important;letter-spacing:-.015em}
+html.id4l .s4l img{display:block;width:100%;height:100%;object-fit:cover}
+html.id4l .s4l-kicker{font-size:11px!important;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)!important;margin:0 0 14px!important}
+html.id4l .s4l-intro,html.id4l .s4l-journey{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:72px;align-items:center}
+html.id4l .s4l-intro h1{font-size:clamp(36px,4.4vw,60px)!important;line-height:1.05;margin:0 0 28px!important}
+html.id4l .s4l-intro p{margin:0 0 16px}
+html.id4l .s4l-lead{font-size:19px;line-height:1.65;color:var(--ink)}
+html.id4l .s4l-lead strong{font-weight:500}
+html.id4l .s4l-intro .s4l-photo{aspect-ratio:4/5;overflow:hidden}
+html.id4l .s4l-stats{display:grid;grid-template-columns:repeat(3,1fr);margin:88px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+html.id4l .s4l-stat{padding:32px 28px}
+html.id4l .s4l-stat+.s4l-stat{border-left:1px solid var(--line)}
+html.id4l .s4l-stat strong{display:block;font-size:clamp(24px,2.4vw,34px);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:8px}
+html.id4l .s4l-stat span{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html.id4l .s4l-journey{background:var(--surface);gap:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+html.id4l .s4l-journey .s4l-photo{aspect-ratio:1/1;min-height:100%}
+html.id4l .s4l-journey .s4l-text{padding:56px 64px}
+html.id4l .s4l-journey h2{font-size:clamp(28px,3vw,42px)!important;line-height:1.12;margin:0 0 20px!important}
+html.id4l .s4l-journey p{margin:0}
+html.id4l .s4l-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:72px 0 0}
+html.id4l .s4l-step{padding:8px 28px 8px 0}
+html.id4l .s4l-step+.s4l-step{padding-left:28px;border-left:1px solid var(--line)}
+html.id4l .s4l-step em{display:block;font-style:normal;font-size:12px;font-weight:500;letter-spacing:.18em;color:var(--muted);margin-bottom:18px}
+html.id4l .s4l-step h3{font-size:22px!important;margin:0 0 10px!important}
+html.id4l .s4l-step p{margin:0;font-size:15px;color:var(--muted)}
+html.id4l .s4l-close{margin:96px auto 24px;max-width:860px;text-align:center}
+html.id4l .s4l-close p{font-size:clamp(20px,2vw,26px);font-weight:300;line-height:1.5;color:var(--ink);margin:0 0 36px}
+html.id4l .s4l-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+html.id4l .s4l-btn{display:inline-flex;align-items:center;min-height:52px;padding:0 32px;background:var(--ink);border:1px solid var(--ink);color:var(--paper)!important;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none!important;transition:background .25s,color .25s}
+html.id4l .s4l-btn:hover{background:transparent;color:var(--ink)!important}
+html.id4l .s4l-btn-line{background:transparent;color:var(--ink)!important}
+html.id4l .s4l-btn-line:hover{background:var(--ink);color:var(--paper)!important}
+@media (max-width:991px){
+html.id4l body.__page_page .col-md-9:has(.s4l){padding:0 20px!important}
+html.id4l .s4l-intro,html.id4l .s4l-journey{grid-template-columns:1fr;gap:36px}
+html.id4l .s4l-intro .s4l-photo{aspect-ratio:4/3}
+html.id4l .s4l-journey{gap:0}
+html.id4l .s4l-journey .s4l-photo{aspect-ratio:16/10}
+html.id4l .s4l-journey .s4l-text{padding:36px 28px}
+html.id4l .s4l-stats{grid-template-columns:1fr;margin:56px 0}
+html.id4l .s4l-stat+.s4l-stat{border-left:0;border-top:1px solid var(--line)}
+html.id4l .s4l-stat{padding:22px 0}
+html.id4l .s4l-steps{grid-template-columns:1fr 1fr;row-gap:32px}
+html.id4l .s4l-step:nth-child(3){padding-left:0;border-left:0}
+}
+@media (max-width:560px){html.id4l .s4l-steps{grid-template-columns:1fr}html.id4l .s4l-step+.s4l-step{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:24px}}
+/* contato */
+html.id4l body.__page_contact #maincontent>div>.container{width:100%!important;max-width:1200px;padding:0 40px!important;margin:56px auto 80px}
+html.id4l body.__page_contact h1.form-signin-heading{font-size:0!important;margin:0 0 10px!important}
+html.id4l body.__page_contact h1.form-signin-heading::before{content:"Fale com a 4let";font-size:clamp(34px,4vw,54px);font-weight:300;letter-spacing:-.015em;line-height:1.1;color:var(--ink)}
+html[lang=en].id4l body.__page_contact h1.form-signin-heading::before{content:"Get in touch"}
+html[lang=es].id4l body.__page_contact h1.form-signin-heading::before{content:"Hable con nosotros"}
+html.id4l body.__page_contact p.lead{margin:0!important}
+html.id4l body.__page_contact p.lead::before{content:"Envie sua mensagem e responderemos pelo canal que você preferir.";font-size:17px;color:var(--muted);font-weight:300}
+html[lang=en].id4l body.__page_contact p.lead::before{content:"Send us a message and we will reply through the channel you prefer."}
+html[lang=es].id4l body.__page_contact p.lead::before{content:"Envíenos su mensaje y le responderemos por el canal que prefiera."}
+html.id4l body.__page_contact #maincontent hr{border-color:var(--line);margin:32px 0 40px}
+html.id4l body.__page_contact #contact_form>.row{display:grid!important;grid-template-columns:340px minmax(0,1fr);gap:56px;margin:0!important;align-items:start}
+html.id4l body.__page_contact #contact_form>.row::before,html.id4l body.__page_contact #contact_form>.row::after{display:none!important}
+html.id4l body.__page_contact #contact_form>.row>[class*=col]{width:auto!important;max-width:none!important;flex:none!important;float:none!important;padding:0!important}
+html.id4l body.__page_contact #contact_form>.row>.col-md-4{background:var(--surface);padding:32px 28px!important;position:sticky;top:24px}
+html.id4l body.__page_contact #contact_form .col-md-4::before{content:"Atendimento";display:block;font-size:24px;font-weight:300;color:var(--ink);margin-bottom:24px}
+html.id4l body.__page_contact #contact_form .col-md-4 .btn-block.text-center{display:block;text-align:left!important;margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-size:0}
+html.id4l body.__page_contact #contact_form .col-md-4 .btn-block.text-center div{display:none}
+html.id4l body.__page_contact #contact_form .col-md-4 .btn-block.text-center::before{content:"Prefere falar agora?";display:block;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+html.id4l body.__page_contact #contact_form .col-md-4 .btn-block.text-center::after{content:"WhatsApp (31) 99680-2468\A reservas.br@f4let.com";white-space:pre-line;display:block;font-size:15px;line-height:1.9;color:#4a3f36}
+html[lang=en].id4l body.__page_contact #contact_form .col-md-4::before{content:"Guest service"}
+html[lang=en].id4l body.__page_contact #contact_form .col-md-4 .btn-block.text-center::before{content:"Prefer to talk now?"}
+html[lang=es].id4l body.__page_contact #contact_form .col-md-4::before{content:"Atención"}
+html[lang=es].id4l body.__page_contact #contact_form .col-md-4 .btn-block.text-center::before{content:"¿Prefiere hablar ahora?"}
+html.id4l body.__page_contact #contact_form label{font-size:10.5px!important;font-weight:500!important;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin:0 0 4px}
+html.id4l body.__page_contact #contact_form .form-group{margin-bottom:22px}
+html.id4l body.__page_contact #contact_form .form-control,html.id4l body.__page_contact #contact_form .bootstrap-select>.dropdown-toggle,html.id4l body.__page_contact #contact_form .iti input{background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;height:48px;font-size:16px!important;padding-left:0!important;color:var(--ink)!important}
+html.id4l body.__page_contact #contact_form .form-control:focus{border-bottom-color:var(--ink)!important}
+html.id4l body.__page_contact #contact_form .iti{width:100%}
+html.id4l body.__page_contact #contact_form .iti input{padding-left:52px!important}
+html.id4l body.__page_contact #contact_form textarea.form-control{height:auto!important;min-height:180px;border:1px solid var(--line)!important;padding:14px 16px!important;background:#fff!important;resize:vertical}
+html.id4l body.__page_contact #contact_form .input-group .btn{height:48px;border:0!important;border-bottom:1px solid var(--line)!important;background:transparent!important;color:var(--muted)!important}
+html.id4l body.__page_contact #contact_form img[id^=cC]{border:1px solid var(--line);background:#fff;padding:6px 10px;max-height:56px}
+html.id4l body.__page_contact #send{float:none!important;width:100%;min-height:56px;font-size:13px!important}
+@media (max-width:991px){
+html.id4l body.__page_contact #maincontent>div>.container{padding:0 20px!important;margin-top:32px}
+html.id4l body.__page_contact #contact_form>.row{grid-template-columns:1fr;gap:32px}
+html.id4l body.__page_contact #contact_form>.row>.col-md-4{position:static}
+}
+</style>

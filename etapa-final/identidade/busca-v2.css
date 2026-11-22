@@ -1,0 +1,32 @@
+<style>
+/* busca v2: cartões com preço em coluna própria */
+html.id4l body.__page_search .amenitiesList,html.id4l body.__page_search .amenitiesListMore{display:grid!important;grid-template-columns:1fr 1fr;column-gap:24px;row-gap:6px;padding:0!important}
+html.id4l body.__page_search .amenitiesListMore{margin-top:6px!important}
+html.id4l body.__page_search .amenitiesListMore.collapse:not(.in){display:none!important}
+html.id4l body.__page_search .amenitiesList li,html.id4l body.__page_search .amenitiesListMore li{width:auto!important;max-width:none!important;float:none!important;padding:0!important;display:flex;gap:9px;align-items:baseline;font-size:14px!important;line-height:1.45}
+html.id4l body.__page_search .amenitiesList::before,html.id4l body.__page_search .amenitiesList::after,html.id4l body.__page_search .amenitiesListMore::before,html.id4l body.__page_search .amenitiesListMore::after{display:none!important}
+html.id4l body.__page_search .list-rent-item-content .fa-map-marker+*,html.id4l body.__page_search .list-rent-item-content .panel-body p:has(.fa-map-marker){font-size:13.5px!important;line-height:1.5}
+html.id4l body.__page_search .list-rent-item-content h4.media-heading{margin-bottom:12px!important}
+@media (min-width:768px){
+html.id4l body.__page_search .list-rent-item-content>.row{display:grid!important;grid-template-columns:minmax(240px,36%) minmax(0,1fr);margin:0!important}
+html.id4l body.__page_search .list-rent-item-content>.row::before,html.id4l body.__page_search .list-rent-item-content>.row::after{display:none!important}
+html.id4l body.__page_search .list-rent-item-content>.row>[class*=col]{width:auto!important;max-width:none!important;flex:none!important;padding:0!important}
+html.id4l body.__page_search .list-rent-item-content .img-cover{min-height:290px!important;height:100%!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body{padding:2px 0 2px 36px!important;height:100%}
+}
+@media (min-width:1200px){
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row{display:grid!important;grid-template-columns:minmax(0,1fr) 200px;column-gap:32px;height:100%;margin:0!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row::before,html.id4l body.__page_search .list-rent-item-content .panel-body>.row::after{display:none!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>[class*=col]{width:auto!important;max-width:none!important;flex:none!important;padding:0!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col{border-left:1px solid var(--line);padding-left:28px!important;display:flex;flex-direction:column;justify-content:flex-end}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col>.row{display:block!important;margin:0!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col>.row>[class*=col]{width:100%!important;max-width:100%!important;flex:none!important;padding:0!important;margin:0!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col h4{margin:0 0 16px!important}
+html.id4l body.__page_search .list-rent-item-content .btn-building{display:flex!important;width:100%!important;padding:0 12px!important}
+}
+@media (min-width:768px) and (max-width:1199px){
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col>.row{display:flex!important;align-items:center;gap:24px;margin:18px 0 0!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col>.row>[class*=col]{width:auto!important;max-width:none!important;flex:0 0 auto!important;padding:0!important;margin:0!important}
+html.id4l body.__page_search .list-rent-item-content .panel-body>.row>.col h4{margin:0!important}
+}
+</style>

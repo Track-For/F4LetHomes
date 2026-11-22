@@ -1,0 +1,21 @@
+<style>
+/* proprietários: largura total, títulos e blocos */
+html.id4l body.__page_hotsite{overflow-x:hidden}
+html.id4l body.__page_hotsite #p4l{width:100vw;margin-left:calc(50% - 50vw);position:relative}
+html.id4l body.__page_hotsite #maincontent .container:has(#p4l){padding-top:0!important}
+html.id4l #p4l .wrap{padding:0 40px}
+html.id4l #p4l .hero{min-height:clamp(520px,78vh,820px)}
+html.id4l #p4l .hero .in{padding:0 40px 80px;max-width:1360px}
+html.id4l #p4l .hero h1{font-weight:300!important;font-size:clamp(40px,5.6vw,80px)!important}
+html.id4l #p4l .hero p{font-size:19px}
+html.id4l #p4l h2,html.id4l #p4l h3{font-weight:300!important}
+html.id4l #p4l .cta h2,html.id4l #p4l .cta .h2{color:var(--paper)!important}
+html.id4l #p4l .split{max-width:1280px;margin:0 auto}
+html.id4l #p4l .split .img{min-height:440px}
+html.id4l #p4l .split .txt{padding:56px 64px;gap:18px}
+html.id4l #p4l .split .h2{font-size:clamp(28px,3vw,42px)}
+html.id4l #p4l .sec{padding-top:96px}
+html.id4l #p4l .cta{margin-top:96px;padding:88px 0}
+@media (max-width:860px){html.id4l #p4l .split .txt{padding:36px 24px}html.id4l #p4l .split .img{min-height:300px}}
+@media (max-width:767px){html.id4l #p4l .wrap,html.id4l #p4l .hero .in{padding-left:20px;padding-right:20px}html.id4l #p4l .hero .in{padding-bottom:48px}html.id4l #p4l .sec{padding-top:72px}}
+</style>

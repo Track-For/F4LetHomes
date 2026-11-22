@@ -1,0 +1,49 @@
+<style>
+/* rodapé v2: 3 colunas alinhadas */
+html.id4l #mainfooter .footer-all>.container>.row{display:grid!important;grid-template-columns:1fr 1.2fr 1.2fr;column-gap:64px;row-gap:40px;margin:0!important}
+html.id4l #mainfooter .footer-all>.container>.row::before,html.id4l #mainfooter .footer-all>.container>.row::after{display:none!important}
+html.id4l #mainfooter .footer-all>.container>.row>[class*=col]{width:auto!important;max-width:none!important;flex:none!important;float:none!important;padding:0!important;text-align:left!important}
+html.id4l #mainfooter .footer-all>.container>.row>[class*=col]:nth-child(2){display:none!important}
+html.id4l #mainfooter .footer-all>.container>.row>[class*=col]:nth-child(1){order:1}
+html.id4l #mainfooter .footer-all>.container>.row>[class*=col]:nth-child(4){order:2}
+html.id4l #mainfooter .footer-all>.container>.row>[class*=col]:nth-child(3){order:3}
+html.id4l #mainfooter ul.menu li{padding:0 0 12px!important}
+html.id4l #mainfooter ul.menu a,html.id4l #mainfooter .footer-all span{font-size:15px!important}
+html.id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3{display:block!important;min-height:0}
+html.id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3:first-of-type::before{content:"Redes sociais"}
+html.id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3:last-of-type::before{content:"Pagamento"}
+html[lang=en].id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3:first-of-type::before{content:"Follow us"}
+html[lang=en].id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3:last-of-type::before{content:"Payment"}
+html[lang=es].id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3:first-of-type::before{content:"Redes sociales"}
+html[lang=es].id4l #mainfooter .footer-all .col-md-3:nth-child(3) h3:last-of-type::before{content:"Pago"}
+html.id4l #mainfooter ul.social{display:flex;margin:0 0 32px!important;padding:0!important}
+html.id4l #mainfooter ul.social li{padding:0!important}
+html.id4l #mainfooter ul.social a{display:inline-flex!important;align-items:center;gap:12px;font-size:15px}
+html.id4l #mainfooter ul.social a::after{content:"@4lethomes";color:var(--muted)}
+html.id4l #mainfooter ul.social a i{display:inline-flex!important;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);font-size:18px!important;transition:background .25s,color .25s,border-color .25s}
+html.id4l #mainfooter ul.social a:hover i{background:var(--ink);border-color:var(--ink);color:var(--paper)!important}
+html.id4l #mainfooter ul.social a:hover::after{color:var(--ink)}
+html.id4l #mainfooter ul.cc-icons{display:flex!important;flex-wrap:wrap;align-items:center;gap:10px;margin:0!important;padding:0!important}
+html.id4l #mainfooter ul.cc-icons li{padding:0!important;margin:0!important;display:inline-flex}
+html.id4l #mainfooter ul.cc-icons abbr{display:inline-flex;align-items:center;justify-content:center;height:34px;min-width:48px;padding:0 8px;border:1px solid var(--line);background:#fff;text-decoration:none;cursor:default}
+html.id4l #mainfooter ul.cc-icons i{font-size:20px!important;color:var(--muted)!important}
+html.id4l #mainfooter ul.cc-icons svg{height:16px!important;width:auto!important;max-width:56px;margin:0!important}
+html.id4l #mainfooter ul.cc-icons svg *,html.id4l #mainfooter .st0,html.id4l #mainfooter .st1{fill:var(--muted)!important}
+html.id4l #mainfooter .footer-all .col-md-3:nth-child(4)>.row{display:flex!important;align-items:center;flex-wrap:nowrap;margin:0 0 14px!important;justify-content:flex-start!important}
+html.id4l #mainfooter .footer-all .col-md-3:nth-child(4)>.row>a{display:inline-flex;align-items:center}
+html.id4l #mainfooter .footer-all .col-md-3:nth-child(4) i{width:20px;margin-right:14px!important;font-size:16px!important;text-align:center}
+html.id4l #mainfooter .com-btns{bottom:24px!important;right:24px!important}
+html.id4l #mainfooter .btn-wapp{width:52px!important;height:52px!important;box-shadow:0 8px 24px rgba(43,35,29,.22)!important}
+html.id4l #mainfooter .btn-wapp a .fa{line-height:52px!important;font-size:28px!important}
+html.id4l #mainfooter .copyright .row{display:flex!important;align-items:center;justify-content:space-between;margin:0!important;padding-right:72px}
+html.id4l #mainfooter .copyright .row>[class*=col]{width:auto!important;flex:0 0 auto!important;padding:0!important}
+@media (max-width:767px){
+html.id4l #mainfooter .footer-all>.container{padding:48px 20px 0!important}
+html.id4l #mainfooter .footer-all>.container>.row{grid-template-columns:1fr;row-gap:36px}
+html.id4l #mainfooter .copyright .row{flex-direction:column;align-items:flex-start;gap:12px;padding-right:64px}
+html.id4l #mainfooter .copyright #copy{justify-content:flex-start!important;margin:0!important}
+}
+@media (min-width:768px) and (max-width:991px){
+html.id4l #mainfooter .footer-all>.container>.row{column-gap:36px}
+}
+</style>
