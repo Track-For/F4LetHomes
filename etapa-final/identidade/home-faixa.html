@@ -1,0 +1,13 @@
+<style>/* home: faixa de aviso no topo (A) */
+#a4l{position:fixed;top:0;left:0;right:0;z-index:60;height:36px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 16px;background:#2b231d;color:#efe7da;font:400 13px/1 "Jost",ui-sans-serif,system-ui,sans-serif;white-space:nowrap;overflow:hidden}
+#a4l a{color:#fff!important;text-decoration:underline;text-underline-offset:3px;margin-left:6px}
+#a4l i{font-style:normal;opacity:.45}
+html.id4l body.__page_index.has-a4l #header{top:36px!important}
+@media (max-width:700px){#a4l .x{display:none}}
+</style>
+<script>
+/* home: faixa de aviso no topo (A) */
+document.addEventListener("DOMContentLoaded",function(){var b=document.body;if(!b.classList.contains("__page_index")||!document.getElementById("h4l"))return;
+var l=(document.documentElement.lang||"pt").slice(0,2);var T={pt:["Reserva direta com a 4let","confirmação na hora","atendimento pelo WhatsApp","Buscar datas"],en:["Book direct with 4let","instant confirmation","support on WhatsApp","Search dates"],es:["Reserva directa con 4let","confirmación al instante","atención por WhatsApp","Buscar fechas"]};if(!T[l])l="pt";var t=T[l];
+var a=document.createElement("div");a.id="a4l";a.innerHTML="<span>"+t[0]+'</span><i class="x">·</i><span class="x">'+t[1]+'</span><i class="x">·</i><span class="x">'+t[2]+'</span><a href="#h4l-busca">'+t[3]+"</a>";b.insertBefore(a,b.firstChild);b.classList.add("has-a4l")});
+</script>

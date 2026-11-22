@@ -1,0 +1,361 @@
+<style>
+/* nova home: esconde os blocos antigos da Homepage (continuam salvos; apagar este bloco traz a home antiga de volta) */
+[data-block-id="60c0c60335fcd9dd8ec3ed4b"],[data-block-id="6a6b5fb8ecb11a814edf6c34"],[data-block-id="6abd0adbbb38684b1de43bda"],[data-block-id="6a6a4bcb263114ecf3dd59e7"],[data-block-id="6a7f3a6b006d286b15526ba1"],[data-block-id="6afee07cbb0154d2ce127e37"]{display:none!important}
+</style>
+<!-- 4let Homes · Nova home (protótipo aprovado em 21/11/2026) · bloco único PT/EN/ES · Track For -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
+#h4l{--paper:#fcfaf6;--surface:#f4efe7;--ink:#2b231d;--muted:#7a6d61;--line:#e4dccf;--max:1360px;background:var(--paper);color:var(--ink);font:300 16px/1.65 "Jost",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+#h4l *{box-sizing:border-box}
+#h4l a{color:inherit;text-decoration:none}
+#h4l a:hover,#h4l a:focus{text-decoration:none;color:inherit}
+#h4l h1,#h4l h2,#h4l h3{font-family:inherit;font-weight:300;line-height:1.1;letter-spacing:-.015em;margin:0;color:inherit;text-transform:none}
+#h4l p{margin:0}
+#h4l figure{margin:0}
+#h4l .en,#h4l .es{display:none}
+html[lang=en] #h4l .pt,html[lang=es] #h4l .pt{display:none}
+html[lang=en] #h4l span.en,html[lang=es] #h4l span.es{display:inline}
+html[lang=en] #h4l div.en,html[lang=es] #h4l div.es,html[lang=en] #h4l form.en,html[lang=es] #h4l form.es{display:block}
+#h4l .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+#h4l .cap{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+#h4l .muted{color:var(--muted)}
+#h4l .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:500 .7rem "Jost",sans-serif;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s;border-radius:0}
+#h4l .btn:hover{background:transparent;color:var(--ink)}
+#h4l .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.85)}
+#h4l .btn.ghost:hover{background:#fff;color:var(--ink)}
+#h4l .lnk{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:4px;transition:background-size .3s}
+#h4l .lnk:hover{background-size:0 1px;background-position:100% 100%}
+#h4l .h2{font-size:clamp(2rem,3.6vw,3.1rem)}
+#h4l .sec{padding-top:110px}
+#h4l .center{text-align:center;display:grid;justify-items:center;gap:18px;max-width:58ch;margin:0 auto}
+#h4l .center p{color:var(--muted)}
+#h4l .ph{position:absolute;inset:0;background:var(--surface) center/cover no-repeat;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+/* abertura */
+#h4l .hero{position:relative;height:clamp(540px,82vh,860px);overflow:hidden;color:#fff;background:#33424a}
+#h4l .slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;animation:h4lfade 28s infinite}
+#h4l .slide:nth-child(2){animation-delay:7s}#h4l .slide:nth-child(3){animation-delay:14s}#h4l .slide:nth-child(4){animation-delay:21s}
+@keyframes h4lfade{0%{opacity:0;transform:scale(1.06)}5%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1)}100%{opacity:0}}
+#h4l .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 38% at 50% 64%,rgba(20,15,10,.38),rgba(20,15,10,0) 100%),linear-gradient(180deg,rgba(20,15,10,.3) 0%,rgba(20,15,10,0) 22%,rgba(20,15,10,0) 50%,rgba(20,15,10,.45) 100%)}
+#h4l .hero .in{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:36px}
+#h4l .hero .hd{display:grid;justify-items:center;text-align:center}
+#h4l .hero h1{font-size:clamp(2.3rem,5vw,4.4rem);font-weight:400;letter-spacing:-.025em;max-width:18ch;margin:16px auto 28px;text-shadow:0 2px 28px rgba(0,0,0,.4);color:#fff}
+#h4l .hero .cap{font-weight:600;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+#h4l .dots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px;border-top:1px solid rgba(255,255,255,.28)}
+#h4l .dots div{position:relative;padding-top:14px;font:500 .66rem "Jost",sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.6;animation:h4ldot 28s infinite}
+#h4l .dots div i{position:absolute;left:0;top:-1px;height:1px;width:0;background:#fff;animation:h4lbar 28s linear infinite}
+#h4l .dots div:nth-child(2),#h4l .dots div:nth-child(2) i{animation-delay:7s}
+#h4l .dots div:nth-child(3),#h4l .dots div:nth-child(3) i{animation-delay:14s}
+#h4l .dots div:nth-child(4),#h4l .dots div:nth-child(4) i{animation-delay:21s}
+@keyframes h4ldot{0%,25%{opacity:1}26%,100%{opacity:.6}}
+@keyframes h4lbar{0%{width:0}25%{width:100%}25.1%,100%{width:0}}
+@media (max-width:700px){#h4l .dots{gap:8px}#h4l .dots small{display:none}}
+/* busca */
+#h4l .search{border-bottom:1px solid var(--line);background:var(--paper)}
+#h4l .search .fr{display:grid;grid-template-columns:1.5fr 1fr 1fr .75fr auto;align-items:stretch}
+#h4l .search .f{display:grid;gap:2px;padding:20px 22px;border-left:1px solid var(--line);min-width:0;align-content:center}
+#h4l .search .f:first-child{border-left:0;padding-left:0}
+#h4l .search label{font-size:.66rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0}
+#h4l .search select,#h4l .search input{font:400 1.02rem "Jost",sans-serif;color:var(--ink);background:transparent;border:0;padding:4px 0;width:100%;min-height:34px;cursor:pointer;box-shadow:none;outline-offset:2px;-webkit-appearance:auto;appearance:auto;height:auto}
+#h4l .search .go{display:grid;align-content:center;padding:14px 0 14px 22px;border-left:1px solid var(--line)}
+@media (max-width:960px){#h4l .search .fr{grid-template-columns:1fr 1fr}#h4l .search .f{border-left:0;border-top:1px solid var(--line);padding-left:0}#h4l .search .f:first-child{grid-column:1/-1;border-top:0}#h4l .search .f:nth-child(3){border-left:1px solid var(--line);padding-left:18px}#h4l .search .go{grid-column:1/-1;border-left:0;padding-left:0}}
+/* faixa de cidades */
+#h4l .ticker{overflow:hidden;border-bottom:1px solid var(--line);padding:20px 0;white-space:nowrap}
+#h4l .track{display:inline-flex;gap:48px;animation:h4ltick 48s linear infinite;font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:300}
+#h4l .track span::after{content:"·";margin-left:48px;color:var(--muted)}
+@keyframes h4ltick{to{transform:translateX(-50%)}}
+/* edição */
+#h4l .edit{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+#h4l .edit .big{grid-column:1/8;aspect-ratio:4/5;overflow:hidden;position:relative}
+#h4l .edit .side{grid-column:8/13;display:grid;gap:36px;padding-top:min(10vw,140px)}
+#h4l .edit .small{aspect-ratio:4/3;overflow:hidden;position:relative;width:86%;justify-self:end}
+#h4l .edit figure:hover .ph,#h4l .tile:hover .ph{transform:scale(1.04)}
+#h4l .edit figcaption{position:absolute;left:18px;bottom:16px;color:#fff;z-index:1;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+#h4l .edit .txt{display:grid;gap:18px;max-width:40ch}
+#h4l .edit .txt p{color:var(--muted)}
+@media (max-width:860px){#h4l .edit{grid-template-columns:1fr}#h4l .edit .big,#h4l .edit .side{grid-column:auto}#h4l .edit .big{aspect-ratio:4/3}#h4l .edit .side{padding-top:0}#h4l .edit .small{width:100%}}
+/* destinos */
+#h4l .row-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:100px 0 24px;flex-wrap:wrap}
+#h4l .row-head h2{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+#h4l .row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+#h4l .tile{display:grid;gap:14px;min-width:0}
+#h4l .tile .frame{position:relative;aspect-ratio:3/4;overflow:hidden}
+#h4l .tile .tag{position:absolute;top:12px;left:12px;z-index:1;background:var(--paper);color:var(--ink);padding:4px 9px}
+#h4l .tile .meta{display:flex;justify-content:space-between;gap:10px;align-items:start}
+#h4l .tile .meta>div{display:grid;gap:3px;min-width:0}
+#h4l .tile b{font-weight:500;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase}
+#h4l .tile .meta>div>span{font-size:.92rem;color:var(--muted)}
+#h4l .tile .arr{transform:translateX(-6px);opacity:0;transition:.35s}
+#h4l .tile:hover .arr{transform:none;opacity:1}
+@media (max-width:1000px){#h4l .row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:40%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}#h4l .tile{scroll-snap-align:start}#h4l .tile .arr{opacity:1;transform:none}}
+@media (max-width:560px){#h4l .row{grid-auto-columns:74%}}
+/* como funciona */
+#h4l .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:56px 0 0;padding:0}
+#h4l .how li{list-style:none;padding:36px 32px 40px 0;display:grid;gap:12px;align-content:start}
+#h4l .how li+li{padding-left:32px;border-left:1px solid var(--line)}
+#h4l .how .n{font-size:3.4rem;font-weight:300;line-height:1;color:var(--muted)}
+#h4l .how h3{font-size:1.35rem;font-weight:400}
+#h4l .how p{color:var(--muted);max-width:34ch}
+@media (max-width:800px){#h4l .how{grid-template-columns:1fr}#h4l .how li,#h4l .how li+li{padding:28px 0;border-left:0}#h4l .how li+li{border-top:1px solid var(--line)}}
+/* destaque da serra */
+#h4l .feature{display:grid;grid-template-columns:1.3fr 1fr;background:var(--surface)}
+#h4l .feature .img{position:relative;min-height:600px;overflow:hidden}
+#h4l .feature .txt{display:grid;align-content:center;gap:20px;padding:clamp(36px,6vw,96px)}
+#h4l .feature p{color:var(--muted);max-width:42ch}
+@media (max-width:860px){#h4l .feature{grid-template-columns:1fr}#h4l .feature .img{min-height:340px}}
+/* diário */
+#h4l .journal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:56px}
+#h4l .journal article{padding:30px 26px 8px 0;display:grid;gap:14px;align-content:start;min-width:0}
+#h4l .journal article+article{padding-left:26px;border-left:1px solid var(--line)}
+#h4l .journal h3{font-size:1.4rem;font-weight:400}
+#h4l .journal dl{margin:0;display:grid;gap:6px}
+#h4l .journal dt{font-size:.64rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+#h4l .journal dd{margin:0;font-size:.96rem}
+@media (max-width:1000px){#h4l .journal{grid-template-columns:1fr 1fr}#h4l .journal article:nth-child(3){border-left:0;padding-left:0}#h4l .journal article:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:600px){#h4l .journal{grid-template-columns:1fr}#h4l .journal article,#h4l .journal article+article{padding-left:0;border-left:0}#h4l .journal article+article{border-top:1px solid var(--line)}}
+/* proprietários */
+#h4l .owner{margin-top:110px;background:var(--surface);padding:100px 0}
+#h4l .fine{font-size:.72rem;color:var(--muted);padding:18px 0 28px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){#h4l *{animation:none!important;transition:none!important}#h4l .slide:first-child{opacity:1}}
+</style>
+<div id="h4l">
+<section class="hero" aria-label="4let Homes">
+<div class="slide" style="background-image:url('/media/6b02446ba8df7a23c7a2da95')"></div>
+<div class="slide" style="background-image:url('/media/6b02446c7bd7fe01b0bac808')"></div>
+<div class="slide" style="background-image:url('/media/6b02446ba8df7a23c7a2da96')"></div>
+<div class="slide" style="background-image:url('/media/6b02446c1eab8c5e5993fdf8')"></div>
+<div class="in"><div class="wrap">
+<div class="hd">
+<span class="proof"><span><span class="pt">5 destinos</span><span class="en">5 destinations</span><span class="es">5 destinos</span></span><span><span class="pt">Reserva direta</span><span class="en">Direct booking</span><span class="es">Reserva directa</span></span><span><span class="pt">Desde 2018</span><span class="en">Since 2018</span><span class="es">Desde 2018</span></span></span>
+<h1><span class="pt">Casas para viver o destino, em qualquer estação</span><span class="en">Homes to live the destination, in any season</span><span class="es">Casas para vivir el destino, en cualquier estación</span></h1>
+<a class="btn ghost" href="#h4l-busca"><span class="pt">Encontrar hospedagem</span><span class="en">Find a stay</span><span class="es">Buscar alojamiento</span></a>
+</div>
+<div class="dots" aria-hidden="true">
+<div><i></i>Ponta Negra<small> · Natal</small></div>
+<div><i></i>Gostoso<small> · RN</small></div>
+<div><i></i>Reis Magos<small> · Natal</small></div>
+<div><i></i>Itaipu<small> · Praia Grande</small></div>
+</div>
+</div></div>
+</section>
+<div class="search" id="h4l-busca"><div class="wrap">
+<form class="h4l-f" action="/pt/search" method="get" role="search">
+<div class="fr">
+<div class="f"><label for="h4l-dest"><span class="pt">Destino</span><span class="en">Destination</span><span class="es">Destino</span></label>
+<select id="h4l-dest" name="groups[]">
+<option value="">Todos os destinos · All · Todos</option>
+<option value="6a6a52bc6fa9c250b57c233a">Natal, RN</option>
+<option value="6a6a525dcdd0300a0c79db5a">São Miguel do Gostoso, RN</option>
+<option value="6abd09350be9b8d9a48a84e0">Cerro Corá, RN</option>
+<option value="6a6a4f956fa9c250b57c04fb">Belo Horizonte, MG</option>
+<option value="6afeddbaa04caa99cbe77cc1">Praia Grande, SP</option>
+</select></div>
+<div class="f"><label for="h4l-from"><span class="pt">Check-in</span><span class="en">Check-in</span><span class="es">Entrada</span></label><input type="date" id="h4l-from" name="from"></div>
+<div class="f"><label for="h4l-to"><span class="pt">Checkout</span><span class="en">Checkout</span><span class="es">Salida</span></label><input type="date" id="h4l-to" name="to"></div>
+<div class="f"><label for="h4l-persons"><span class="pt">Hóspedes</span><span class="en">Guests</span><span class="es">Huéspedes</span></label>
+<select id="h4l-persons" name="persons"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+<div class="go"><button class="btn" type="submit"><span class="pt">Buscar</span><span class="en">Search</span><span class="es">Buscar</span></button></div>
+</div>
+</form>
+</div></div>
+<div class="chips"><span class="lbl"><span class="pt">Ir direto para</span><span class="en">Go straight to</span><span class="es">Ir directo a</span></span><a href="/pt/search?groups%5B%5D=6a6a52bc6fa9c250b57c233a" data-p="search?groups%5B%5D=6a6a52bc6fa9c250b57c233a">Natal <i><span class="pt">praia</span><span class="en">beach</span><span class="es">playa</span></i></a><a href="/pt/search?groups%5B%5D=6a6a525dcdd0300a0c79db5a" data-p="search?groups%5B%5D=6a6a525dcdd0300a0c79db5a">São Miguel do Gostoso <i><span class="pt">praia</span><span class="en">beach</span><span class="es">playa</span></i></a><a href="/pt/search?groups%5B%5D=6afeddbaa04caa99cbe77cc1" data-p="search?groups%5B%5D=6afeddbaa04caa99cbe77cc1">Praia Grande <i><span class="pt">praia</span><span class="en">beach</span><span class="es">playa</span></i></a><a href="/pt/search?groups%5B%5D=6abd09350be9b8d9a48a84e0" data-p="search?groups%5B%5D=6abd09350be9b8d9a48a84e0">Cerro Corá <i><span class="pt">serra</span><span class="en">hills</span><span class="es">sierra</span></i></a><a href="/pt/search?groups%5B%5D=6a6a4f956fa9c250b57c04fb" data-p="search?groups%5B%5D=6a6a4f956fa9c250b57c04fb">Belo Horizonte <i><span class="pt">cidade</span><span class="en">city</span><span class="es">ciudad</span></i></a></div>
+<section class="sec"><div class="wrap">
+<div class="edit">
+<figure class="big"><a class="figlk" href="/pt/search?groups%5B%5D=6a6a525dcdd0300a0c79db5a" data-p="search?groups%5B%5D=6a6a525dcdd0300a0c79db5a" aria-label="Ver acomodações em São Miguel do Gostoso"></a><div class="ph" style="background-image:url('/media/6b02446c7bd7fe01b0bac808')" role="img" aria-label="São Miguel do Gostoso"></div><figcaption class="cap">São Miguel do Gostoso · RN</figcaption></figure>
+<div class="side">
+<div class="txt">
+<span class="cap muted"><span class="pt">Temporada 2026/27</span><span class="en">Season 2026/27</span><span class="es">Temporada 2026/27</span></span>
+<h2 class="h2"><span class="pt">A edição de verão</span><span class="en">The summer edit</span><span class="es">La edición de verano</span></h2>
+<p><span class="pt">Vento constante em Gostoso, piscinas naturais na maré baixa, o pôr do sol em Ponta Negra. Os dias mais longos do ano pedem uma casa perto do mar.</span><span class="en">Steady wind in Gostoso, natural pools at low tide, sunset at Ponta Negra. The longest days of the year call for a home by the sea.</span><span class="es">Viento constante en Gostoso, piscinas naturales con la marea baja, el atardecer en Ponta Negra. Los días más largos del año piden una casa cerca del mar.</span></p>
+<div><a class="lnk" href="/pt/search" data-p="search"><span class="pt">Ver todas as acomodações</span><span class="en">See all stays</span><span class="es">Ver todos los alojamientos</span></a></div>
+</div>
+<figure class="small"><a class="figlk" href="/pt/search?groups%5B%5D=6a6a52bc6fa9c250b57c233a" data-p="search?groups%5B%5D=6a6a52bc6fa9c250b57c233a" aria-label="Ver acomodações em Natal"></a><div class="ph" style="background-image:url('/media/6b02446ba8df7a23c7a2da96')" role="img" aria-label="Forte dos Reis Magos, Natal"></div><figcaption class="cap">Forte dos Reis Magos · Natal</figcaption></figure>
+</div>
+</div>
+<div class="row-head">
+<h2><span class="pt">Onde a 4let está</span><span class="en">Where 4let is</span><span class="es">Dónde está 4let</span></h2>
+<a class="lnk" href="/pt/search" data-p="search"><span class="pt">Ver tudo</span><span class="en">View all</span><span class="es">Ver todo</span></a>
+</div>
+<div class="row">
+<a class="tile" href="/pt/search?groups%5B%5D=6a6a52bc6fa9c250b57c233a" data-p="search?groups%5B%5D=6a6a52bc6fa9c250b57c233a">
+<div class="frame"><div class="ph" style="background-image:url('/media/6b02446b1eab8c5e5993fdf5')"></div></div>
+<div class="meta"><div><b>Natal</b><span>Verano Ponta Negra</span><span class="fact"><span class="pt">Praia urbana · pôr do sol em Ponta Negra</span><span class="en">City beach · sunset at Ponta Negra</span><span class="es">Playa urbana · atardecer en Ponta Negra</span></span></div><span class="arr" aria-hidden="true">→</span></div></a>
+<a class="tile" href="/pt/search?groups%5B%5D=6a6a525dcdd0300a0c79db5a" data-p="search?groups%5B%5D=6a6a525dcdd0300a0c79db5a">
+<div class="frame"><div class="ph" style="background-image:url('/media/6b02446ba8df7a23c7a2da94')"></div></div>
+<div class="meta"><div><b>São Miguel do Gostoso</b><span>Chalés Sonho de Verão · Pousada Pedra Baleia</span><span class="fact"><span class="pt">Praia · vento constante para kite</span><span class="en">Beach · steady wind for kitesurfing</span><span class="es">Playa · viento constante para kite</span></span></div><span class="arr" aria-hidden="true">→</span></div></a>
+<a class="tile" href="/pt/search?groups%5B%5D=6afeddbaa04caa99cbe77cc1" data-p="search?groups%5B%5D=6afeddbaa04caa99cbe77cc1">
+<div class="frame"><span class="tag cap"><span class="pt">Novo</span><span class="en">New</span><span class="es">Nuevo</span></span><div class="ph" style="background-image:url('/media/6b02446b7bd7fe01b0bac802')"></div></div>
+<div class="meta"><div><b>Praia Grande</b><span>Residencial Santo Antônio</span><span class="fact"><span class="pt">Praia · litoral sul de São Paulo</span><span class="en">Beach · São Paulo south coast</span><span class="es">Playa · litoral sur de São Paulo</span></span></div><span class="arr" aria-hidden="true">→</span></div></a>
+<a class="tile" href="/pt/search?groups%5B%5D=6abd09350be9b8d9a48a84e0" data-p="search?groups%5B%5D=6abd09350be9b8d9a48a84e0">
+<div class="frame"><div class="ph" style="background-image:url('/media/6b02446b1eab8c5e5993fdf4')"></div></div>
+<div class="meta"><div><b>Cerro Corá</b><span>Colina Flamboyant</span><span class="fact"><span class="pt">Serra · noites frescas</span><span class="en">Hills · cool nights</span><span class="es">Sierra · noches frescas</span></span></div><span class="arr" aria-hidden="true">→</span></div></a>
+<a class="tile" href="/pt/search?groups%5B%5D=6a6a4f956fa9c250b57c04fb" data-p="search?groups%5B%5D=6a6a4f956fa9c250b57c04fb">
+<div class="frame"><div class="ph" style="background-image:url('/media/6b02446b7bd7fe01b0bac801')"></div></div>
+<div class="meta"><div><b>Belo Horizonte</b><span>BH Del Rey</span><span class="fact"><span class="pt">Cidade · Pampulha e Mercado Central</span><span class="en">City · Pampulha and Mercado Central</span><span class="es">Ciudad · Pampulha y Mercado Central</span></span></div><span class="arr" aria-hidden="true">→</span></div></a>
+</div>
+<ol class="how">
+<li><span class="n">1</span><h3><span class="pt">Escolha destino e datas</span><span class="en">Pick a destination and dates</span><span class="es">Elija destino y fechas</span></h3><p><span class="pt">Veja todas as acomodações da cidade, com preço e disponibilidade na hora.</span><span class="en">See every stay in town, with price and availability right away.</span><span class="es">Vea todos los alojamientos de la ciudad, con precio y disponibilidad al instante.</span></p></li>
+<li><span class="n">2</span><h3><span class="pt">Clique em "Reserve já"</span><span class="en">Click "Book now"</span><span class="es">Haga clic en "Reserve ya"</span></h3><p><span class="pt">A reserva é confirmada na hora, direto com a 4let, sem esperar aprovação.</span><span class="en">Your booking is confirmed instantly, directly with 4let, with no approval wait.</span><span class="es">La reserva se confirma al instante, directo con 4let, sin esperar aprobación.</span></p></li>
+<li><span class="n">3</span><h3><span class="pt">Chegue e aproveite</span><span class="en">Arrive and enjoy</span><span class="es">Llegue y disfrute</span></h3><p><span class="pt">Dúvida antes ou durante a estadia? A equipe atende pelo WhatsApp.</span><span class="en">Questions before or during your stay? The team answers on WhatsApp.</span><span class="es">¿Dudas antes o durante la estadía? El equipo atiende por WhatsApp.</span></p></li>
+</ol>
+</div></section>
+<section class="chan"><div class="wrap">
+<div><span class="cap"><span class="pt">Onde você encontra a 4let</span><span class="en">Where to find 4let</span><span class="es">Dónde encontrar 4let</span></span><h2><span class="pt">Os mesmos imóveis, em todos os canais</span><span class="en">The same homes, on every channel</span><span class="es">Los mismos inmuebles, en todos los canales</span></h2><p><span class="pt">Você pode reservar pelo Airbnb, pelo Booking.com ou pela Decolar. Reservando aqui, você fala direto com a nossa equipe.</span><span class="en">You can book on Airbnb, Booking.com or Decolar. Book here and you deal directly with our team.</span><span class="es">Puede reservar por Airbnb, Booking.com o Decolar. Reservando aquí, habla directamente con nuestro equipo.</span></p></div>
+<ul><li class="me"><b>Site 4let</b><small><span class="pt">Reserva direta</span><span class="en">Direct booking</span><span class="es">Reserva directa</span></small></li><li><b>Airbnb</b><small><span class="pt">Anúncios ativos</span><span class="en">Active listings</span><span class="es">Anuncios activos</span></small></li><li><b>Booking.com</b><small><span class="pt">Anúncios ativos</span><span class="en">Active listings</span><span class="es">Anuncios activos</span></small></li><li><b>Decolar</b><small><span class="pt">Anúncios ativos</span><span class="en">Active listings</span><span class="es">Anuncios activos</span></small></li></ul>
+</div></section>
+<section class="sec"><div class="wrap">
+<div class="row-head"><h2><span class="pt">Datas que lotam primeiro</span><span class="en">Dates that book up first</span><span class="es">Fechas que se llenan primero</span></h2><a class="lnk" href="/pt/search" data-p="search"><span class="pt">Ver todas as datas</span><span class="en">See all dates</span><span class="es">Ver todas las fechas</span></a></div>
+<div class="dates">
+<a href="/pt/search?groups%5B%5D=6a6a52bc6fa9c250b57c233a&amp;from=2026-12-29&amp;to=2027-01-02&amp;persons=2" data-p="search?groups%5B%5D=6a6a52bc6fa9c250b57c233a&amp;from=2026-12-29&amp;to=2027-01-02&amp;persons=2"><div class="dph" style="background-image:url('/media/6b02446ba8df7a23c7a2da95/md')"></div><div class="bd"><span class="when"><span class="pt">29 dez → 2 jan</span><span class="en">Dec 29 → Jan 2</span><span class="es">29 dic → 2 ene</span></span><h3><span class="pt">Réveillon em Natal</span><span class="en">New Year's Eve in Natal</span><span class="es">Año Nuevo en Natal</span></h3><p><span class="pt">Virada com a praia de Ponta Negra a poucos passos.</span><span class="en">Ring in the new year a short walk from Ponta Negra beach.</span><span class="es">La Nochevieja a pocos pasos de la playa de Ponta Negra.</span></p><span class="go"><span class="pt">Ver disponibilidade</span><span class="en">Check availability</span><span class="es">Ver disponibilidad</span></span></div></a>
+<a href="/pt/search?groups%5B%5D=6a6a525dcdd0300a0c79db5a&amp;from=2027-02-05&amp;to=2027-02-10&amp;persons=2" data-p="search?groups%5B%5D=6a6a525dcdd0300a0c79db5a&amp;from=2027-02-05&amp;to=2027-02-10&amp;persons=2"><div class="dph" style="background-image:url('/media/6b02446c7bd7fe01b0bac808/md')"></div><div class="bd"><span class="when"><span class="pt">5 → 10 fev 2027</span><span class="en">Feb 5 → 10, 2027</span><span class="es">5 → 10 feb 2027</span></span><h3><span class="pt">Carnaval em Gostoso</span><span class="en">Carnival in Gostoso</span><span class="es">Carnaval en Gostoso</span></h3><p><span class="pt">Cinco noites na vila, longe dos blocos lotados da capital.</span><span class="en">Five nights in the village, away from the crowded city parades.</span><span class="es">Cinco noches en el pueblo, lejos de las comparsas llenas de la capital.</span></p><span class="go"><span class="pt">Ver disponibilidade</span><span class="en">Check availability</span><span class="es">Ver disponibilidad</span></span></div></a>
+<a href="/pt/search?groups%5B%5D=6abd09350be9b8d9a48a84e0" data-p="search?groups%5B%5D=6abd09350be9b8d9a48a84e0"><div class="dph" style="background-image:url('/media/6b02446bd4a62108d475bf64/md')"></div><div class="bd"><span class="when"><span class="pt">Férias de julho</span><span class="en">July holidays</span><span class="es">Vacaciones de julio</span></span><h3><span class="pt">Inverno na serra</span><span class="en">Winter in the hills</span><span class="es">Invierno en la sierra</span></h3><p><span class="pt">Cerro Corá com noites frescas e céu limpo para ver estrelas.</span><span class="en">Cerro Corá, with cool nights and clear skies for stargazing.</span><span class="es">Cerro Corá, con noches frescas y cielo despejado para ver estrellas.</span></p><span class="go"><span class="pt">Ver acomodações</span><span class="en">See stays</span><span class="es">Ver alojamientos</span></span></div></a>
+</div>
+</div></section>
+<section class="sec"><div class="feature">
+<div class="img"><div class="ph" style="background-image:url('/media/6b02446bd4a62108d475bf64')" role="img" aria-label="Cerro Corá"></div></div>
+<div class="txt">
+<span class="cap muted">Cerro Corá · RN</span>
+<h2 class="h2"><span class="pt">Serra, clima ameno e céu estrelado</span><span class="en">Hills, mild weather and starry skies</span><span class="es">Sierra, clima templado y cielo estrellado</span></h2>
+<p><span class="pt">O lado serrano do Rio Grande do Norte: noites frescas, mirantes no fim da tarde e trilhas pela Serra de Santana.</span><span class="en">The highland side of Rio Grande do Norte: cool nights, sunset lookouts and trails in the Serra de Santana.</span><span class="es">El lado serrano de Rio Grande do Norte: noches frescas, miradores al atardecer y senderos en la Serra de Santana.</span></p>
+<div><a class="btn" href="/pt/search?groups%5B%5D=6abd09350be9b8d9a48a84e0" data-p="search?groups%5B%5D=6abd09350be9b8d9a48a84e0"><span class="pt">Ficar em Cerro Corá</span><span class="en">Stay in Cerro Corá</span><span class="es">Alojarse en Cerro Corá</span></a></div>
+</div>
+</div></section>
+<section class="sec"><div class="wrap">
+<div class="center">
+<span class="cap muted"><span class="pt">Diário 4let</span><span class="en">4let Journal</span><span class="es">Diario 4let</span></span>
+<h2 class="h2"><span class="pt">Viva a Experiência</span><span class="en">Live the Experience</span><span class="es">Viva la Experiencia</span></h2>
+<p><span class="pt">Mais que um lugar para dormir: um dia em cada destino, do jeito que a gente faria.</span><span class="en">More than a place to sleep: one day in each destination, the way we would spend it.</span><span class="es">Más que un lugar para dormir: un día en cada destino, como lo haríamos nosotros.</span></p>
+</div>
+<div class="journal">
+<article><span class="cap muted">Natal</span>
+<h3><span class="pt">Ponta Negra, dunas e lagoas</span><span class="en">Ponta Negra, dunes and lagoons</span><span class="es">Ponta Negra, dunas y lagunas</span></h3>
+<dl><dt><span class="pt">Fim de tarde</span><span class="en">Late afternoon</span><span class="es">Atardecer</span></dt><dd><span class="pt">Pôr do sol em Ponta Negra, com o Morro do Careca ao fundo.</span><span class="en">Sunset at Ponta Negra with Morro do Careca behind.</span><span class="es">Atardecer en Ponta Negra con el Morro do Careca al fondo.</span></dd>
+<dt><span class="pt">Dia seguinte</span><span class="en">Next day</span><span class="es">Día siguiente</span></dt><dd><span class="pt">Buggy pelas dunas de Genipabu e banho nas lagoas de água doce.</span><span class="en">Buggy ride over the Genipabu dunes and a swim in the freshwater lagoons.</span><span class="es">Buggy por las dunas de Genipabu y baño en las lagunas de agua dulce.</span></dd></dl>
+<a class="lnk" href="/pt/search?groups%5B%5D=6a6a52bc6fa9c250b57c233a" data-p="search?groups%5B%5D=6a6a52bc6fa9c250b57c233a"><span class="pt">Onde ficar</span><span class="en">Where to stay</span><span class="es">Dónde alojarse</span></a></article>
+<article><span class="cap muted">São Miguel do Gostoso</span>
+<h3><span class="pt">Vento, kitesurf e piscinas naturais</span><span class="en">Wind, kitesurfing and natural pools</span><span class="es">Viento, kitesurf y piscinas naturales</span></h3>
+<dl><dt><span class="pt">Manhã</span><span class="en">Morning</span><span class="es">Mañana</span></dt><dd><span class="pt">Vento constante para o kite.</span><span class="en">Steady wind for kitesurfing.</span><span class="es">Viento constante para el kite.</span></dd>
+<dt><span class="pt">Maré baixa</span><span class="en">Low tide</span><span class="es">Marea baja</span></dt><dd><span class="pt">Piscinas naturais e falésias de Tourinhos.</span><span class="en">Natural pools and the Tourinhos cliffs.</span><span class="es">Piscinas naturales y acantilados de Tourinhos.</span></dd>
+<dt><span class="pt">Noite</span><span class="en">Evening</span><span class="es">Noche</span></dt><dd><span class="pt">Jantar a pé pelo centrinho da vila.</span><span class="en">Dinner on foot in the village centre.</span><span class="es">Cena a pie por el centro del pueblo.</span></dd></dl>
+<a class="lnk" href="/pt/search?groups%5B%5D=6a6a525dcdd0300a0c79db5a" data-p="search?groups%5B%5D=6a6a525dcdd0300a0c79db5a"><span class="pt">Onde ficar</span><span class="en">Where to stay</span><span class="es">Dónde alojarse</span></a></article>
+<article><span class="cap muted">Belo Horizonte</span>
+<h3><span class="pt">Pampulha, Niemeyer e Mercado Central</span><span class="en">Pampulha, Niemeyer and Mercado Central</span><span class="es">Pampulha, Niemeyer y Mercado Central</span></h3>
+<dl><dt><span class="pt">Manhã</span><span class="en">Morning</span><span class="es">Mañana</span></dt><dd><span class="pt">Volta de bike na Lagoa da Pampulha e a Igrejinha de São Francisco.</span><span class="en">Bike ride around Lagoa da Pampulha and Niemeyer's São Francisco chapel.</span><span class="es">Paseo en bici por la Laguna de Pampulha y la iglesia de São Francisco, de Niemeyer.</span></dd>
+<dt><span class="pt">Almoço</span><span class="en">Lunch</span><span class="es">Almuerzo</span></dt><dd><span class="pt">Queijo e cachaça no Mercado Central.</span><span class="en">Cheese and cachaça at Mercado Central.</span><span class="es">Queso y cachaça en el Mercado Central.</span></dd></dl>
+<a class="lnk" href="/pt/search?groups%5B%5D=6a6a4f956fa9c250b57c04fb" data-p="search?groups%5B%5D=6a6a4f956fa9c250b57c04fb"><span class="pt">Onde ficar</span><span class="en">Where to stay</span><span class="es">Dónde alojarse</span></a></article>
+<article><span class="cap muted">Cerro Corá</span>
+<h3><span class="pt">Serra, clima ameno e céu estrelado</span><span class="en">Hills, mild weather and starry skies</span><span class="es">Sierra, clima templado y cielo estrellado</span></h3>
+<dl><dt><span class="pt">Manhã</span><span class="en">Morning</span><span class="es">Mañana</span></dt><dd><span class="pt">Trilhas pela Serra de Santana.</span><span class="en">Trails in the Serra de Santana.</span><span class="es">Senderos por la Serra de Santana.</span></dd>
+<dt><span class="pt">Fim de tarde</span><span class="en">Late afternoon</span><span class="es">Atardecer</span></dt><dd><span class="pt">Mirantes e noite fresca sob o céu estrelado.</span><span class="en">Lookouts and a cool night under the stars.</span><span class="es">Miradores y noche fresca bajo las estrellas.</span></dd></dl>
+<a class="lnk" href="/pt/search?groups%5B%5D=6abd09350be9b8d9a48a84e0" data-p="search?groups%5B%5D=6abd09350be9b8d9a48a84e0"><span class="pt">Onde ficar</span><span class="en">Where to stay</span><span class="es">Dónde alojarse</span></a></article>
+</div>
+</div></section>
+<section class="owner"><div class="wrap"><div class="center">
+<span class="cap muted"><span class="pt">Para proprietários</span><span class="en">For owners</span><span class="es">Para propietarios</span></span>
+<h2 class="h2"><span class="pt">Seu imóvel na 4let Homes</span><span class="en">Your property at 4let Homes</span><span class="es">Su inmueble en 4let Homes</span></h2>
+<p><span class="pt">Tem um apartamento, casa ou chalé em um dos nossos destinos? Fale com a gente e envie as informações do imóvel.</span><span class="en">Own an apartment, house or chalet in one of our destinations? Get in touch and send us the details of your property.</span><span class="es">¿Tiene un apartamento, casa o cabaña en uno de nuestros destinos? Contáctenos y envíe los datos de su inmueble.</span></p>
+<div class="ownstats"><div><b>2018</b><small><span class="pt">no mercado desde</span><span class="en">in business since</span><span class="es">en el mercado desde</span></small></div><div><b>5</b><small><span class="pt">destinos</span><span class="en">destinations</span><span class="es">destinos</span></small></div><div><b>4</b><small><span class="pt">canais de venda</span><span class="en">sales channels</span><span class="es">canales de venta</span></small></div></div>
+<a class="btn" href="/pt/proprietarios" data-p="proprietarios"><span class="pt">Quero cadastrar meu imóvel</span><span class="en">List my property</span><span class="es">Registrar mi inmueble</span></a>
+</div></div></section>
+<section class="final"><div class="wrap">
+<span class="cap muted"><span class="pt">Próxima viagem</span><span class="en">Next trip</span><span class="es">Próximo viaje</span></span><h2 class="h2"><span class="pt">Pronto para escolher a sua casa?</span><span class="en">Ready to pick your home?</span><span class="es">¿Listo para elegir su casa?</span></h2><p><span class="pt">Escolha o destino e as datas. A reserva é confirmada na hora, direto com a 4let.</span><span class="en">Pick a destination and dates. Your booking is confirmed instantly, directly with 4let.</span><span class="es">Elija destino y fechas. La reserva se confirma al instante, directo con 4let.</span></p>
+<a class="btn" href="#h4l-busca"><span class="pt">Buscar hospedagem</span><span class="en">Find a stay</span><span class="es">Buscar alojamiento</span></a>
+</div></section>
+<div class="wrap"><p class="fine"><span class="pt">Fotos via Wikimedia Commons: Natal, Alex Régis e Ney Douglas/MTur Destinos, e Praia Grande, Rogério Cassimiro/MTur Destinos (domínio público); Gostoso, Patricialaraia (CC BY-SA 4.0); Pampulha, Boaventuravinicius (CC BY 4.0); Cerro Corá, Cerrocora (CC BY-SA 4.0).</span><span class="en">Photos via Wikimedia Commons: Natal, Alex Régis and Ney Douglas/MTur Destinos, and Praia Grande, Rogério Cassimiro/MTur Destinos (public domain); Gostoso, Patricialaraia (CC BY-SA 4.0); Pampulha, Boaventuravinicius (CC BY 4.0); Cerro Corá, Cerrocora (CC BY-SA 4.0).</span><span class="es">Fotos vía Wikimedia Commons: Natal, Alex Régis y Ney Douglas/MTur Destinos, y Praia Grande, Rogério Cassimiro/MTur Destinos (dominio público); Gostoso, Patricialaraia (CC BY-SA 4.0); Pampulha, Boaventuravinicius (CC BY 4.0); Cerro Corá, Cerrocora (CC BY-SA 4.0).</span></p></div>
+</div>
+<script>
+(function(){var l=(document.documentElement.lang||'pt').slice(0,2);if(['pt','en','es'].indexOf(l)<0)l='pt';var r=document.getElementById('h4l');if(!r)return;
+r.querySelectorAll('[data-p]').forEach(function(a){a.setAttribute('href','/'+l+'/'+a.getAttribute('data-p'))});
+var f=r.querySelector('.h4l-f');if(f){f.setAttribute('action','/'+l+'/search');var a=f.querySelector('[name=from]'),b=f.querySelector('[name=to]');
+a.min=new Date().toISOString().slice(0,10);a.addEventListener('change',function(){b.min=a.value;if(b.value&&b.value<=a.value)b.value=''});}})();
+</script>
+<style>
+/* ajustes: a Stays usa html{font-size:10px} (Bootstrap 3) e a classe .row do Bootstrap */
+#h4l .cap,#h4l .btn,#h4l .lnk{font-size:11.2px}
+#h4l .h2{font-size:clamp(32px,3.6vw,50px)}
+#h4l .hero h1{font-size:clamp(37px,5vw,70px)}
+#h4l .dots div,#h4l .search label{font-size:10.6px}
+#h4l .search select,#h4l .search input{font-size:16.3px}
+#h4l .track{font-size:clamp(24px,2.6vw,35px)}
+#h4l .row-head h2{font-size:clamp(26px,2.6vw,35px)}
+#h4l .tile b{font-size:11.8px}
+#h4l .tile .meta>div>span{font-size:14.7px}
+#h4l .how .n{font-size:54px}
+#h4l .how h3{font-size:21.6px}
+#h4l .journal h3{font-size:22.4px}
+#h4l .journal dt{font-size:10.2px}
+#h4l .journal dd{font-size:15.4px}
+#h4l .fine{font-size:11.5px}
+#h4l .row{margin-left:0;margin-right:0}
+#h4l .row::before,#h4l .row::after{display:none}
+</style>
+<style>
+/* nova home de ponta a ponta, como no protótipo */
+body.__page_index{overflow-x:hidden}
+#h4l{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+</style>
+<style>
+/* edição de verão: fotos proporcionais, sem vazio ao lado */
+@media (min-width:861px){
+#h4l .edit{align-items:center}
+#h4l .edit .big{aspect-ratio:3/2}
+#h4l .edit .side{padding-top:0;gap:32px}
+#h4l .edit .small{width:100%;aspect-ratio:16/9;justify-self:stretch}
+}
+#h4l .edit .big .ph{background-position:center 72%}
+</style>
+<style>
+/* sem o botão "Encontrar hospedagem" na abertura */
+#h4l .hero .btn.ghost{display:none!important}
+#h4l .hero h1{margin-bottom:8px}
+</style>
+
+<style>
+/* referências Meliá/Seazone (22/11/2026): números, atalhos, ficha, canais, datas, proprietário, chamada final */
+#h4l .hero .proof{display:inline-flex;flex-wrap:wrap;align-items:center;font-size:11.2px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+#h4l .hero .proof>span+span::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:currentColor;margin:0 12px 2px;vertical-align:middle;opacity:.8}
+#h4l .chips{max-width:var(--max);margin:18px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+#h4l .chips .lbl{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+#h4l .chips a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:14px;color:var(--ink);transition:border-color .2s}
+#h4l .chips a:hover{border-color:var(--ink)}
+#h4l .chips a i{font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+#h4l .tile .fact{display:block;margin-top:6px;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+#h4l .tile .fact::before{content:"";display:inline-block;width:14px;height:1px;background:currentColor;vertical-align:middle;margin-right:8px}
+#h4l .chan{margin-top:110px;background:var(--ink);color:var(--paper)}
+#h4l .chan .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
+#h4l .chan h2{font-size:clamp(26px,2.6vw,36px);font-weight:300;line-height:1.15;color:var(--paper);margin:10px 0 0}
+#h4l .chan p{color:#d9cdb9;margin-top:12px;max-width:44ch}
+#h4l .chan .cap{color:#b5a898}
+#h4l .chan ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:1px solid rgba(252,250,246,.18)}
+#h4l .chan li{padding:22px 20px;border-right:1px solid rgba(252,250,246,.18);display:grid;gap:6px}
+#h4l .chan li b{font-size:19px;font-weight:400}
+#h4l .chan li small{font-size:12px;color:#b5a898;letter-spacing:.04em}
+#h4l .chan li.me{background:rgba(252,250,246,.07)}
+#h4l .dates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+#h4l .dates>a{display:grid;grid-template-rows:auto 1fr;overflow:hidden;color:var(--ink);border:1px solid var(--line);background:var(--paper);transition:border-color .25s}
+#h4l .dates>a:hover{border-color:var(--ink)}
+#h4l .dates .dph{width:100%;aspect-ratio:16/10;background:var(--surface) center/cover no-repeat}
+#h4l .dates .bd{display:grid;gap:8px;padding:20px 22px 22px;align-content:start}
+#h4l .dates .when{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+#h4l .dates h3{font-size:22px;font-weight:400;margin:0}
+#h4l .dates p{color:var(--muted);font-size:15px;margin:0}
+#h4l .dates .go{margin-top:6px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+#h4l .dates .go::after{content:" →"}
+#h4l .ownstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:12px auto 6px;width:100%;max-width:640px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#h4l .ownstats div{padding:18px 10px;display:grid;gap:4px;justify-items:center}
+#h4l .ownstats div+div{border-left:1px solid var(--line)}
+#h4l .ownstats b{font-size:30px;font-weight:300;line-height:1}
+#h4l .ownstats small{font-size:12px;letter-spacing:.06em;color:var(--muted)}
+#h4l .final{padding:110px 0 120px;text-align:center}
+#h4l .final .wrap{display:grid;justify-items:center;gap:18px}
+#h4l .final p{color:var(--muted);max-width:46ch;margin:0}
+@media (max-width:900px){#h4l .chan .wrap{grid-template-columns:1fr;gap:28px}#h4l .chan ul{grid-template-columns:1fr 1fr}#h4l .chan li{border-bottom:1px solid rgba(252,250,246,.18)}#h4l .dates{grid-template-columns:1fr}}
+</style>
+<style>
+/* fotos da edição de verão clicáveis */
+#h4l .edit figure{position:relative;cursor:pointer}
+#h4l .edit .figlk{position:absolute;inset:0;z-index:4}
+#h4l .edit figure .ph{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+#h4l .edit figure:hover .ph{transform:scale(1.04)}
+#h4l .edit figure figcaption{z-index:5;pointer-events:none}
+#h4l .edit figure figcaption::after{content:" →"}
+</style>

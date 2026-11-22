@@ -1,0 +1,108 @@
+<!--NOVAS SEÇÕES: cada marcador [[X]] é substituído no build -->
+[[CSS]]
+<style>
+/* ===== prévia: marcações das ideias novas ===== */
+:root{--nv:#2f5bd3;--nv-soft:rgba(47,91,211,.08)}
+.nv-on .nv{outline:2px dashed var(--nv);outline-offset:6px;position:relative}
+.nv-tag{display:none}
+.nv-on .nv-tag{display:inline-flex;position:absolute;z-index:40;top:-14px;left:12px;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--nv);color:#fff;font:500 11px/1.2 "Jost",system-ui,sans-serif;letter-spacing:.04em;white-space:nowrap;box-shadow:0 4px 14px rgba(47,91,211,.3);text-transform:none;text-shadow:none}
+#pv-bar .nv-tag{top:auto;bottom:-14px}
+#h4l .hero .proof .nv-tag{top:-34px}
+#h4l .hero .proof .nv-tag::before{display:none}
+.nv-tag b{font-weight:600}
+/* painel */
+#pv-panel{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:200;width:320px;max-width:calc(100vw - 32px);background:#fff;color:#2b231d;border:1px solid #e4dccf;border-radius:14px;box-shadow:0 20px 50px rgba(43,35,29,.2);font:400 13px/1.45 "Jost",system-ui,sans-serif}
+#pv-panel header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid #e4dccf}
+#pv-panel header b{font-size:14px;font-weight:600}
+#pv-panel ol{margin:0;padding:10px 16px 6px 34px;max-height:46vh;overflow:auto}
+#pv-panel li{margin:0 0 8px}
+#pv-panel li a{color:#2b231d;text-decoration:none;border-bottom:1px solid #e4dccf}
+#pv-panel li small{display:block;color:#7a6d61}
+#pv-panel .row2{display:flex;gap:8px;padding:10px 16px 14px}
+#pv-panel button{flex:1;padding:9px 10px;border-radius:999px;border:1px solid #2b231d;background:#2b231d;color:#fcfaf6;font:500 12px "Jost",system-ui,sans-serif;cursor:pointer}
+#pv-panel button.gh{background:transparent;color:#2b231d}
+#pv-panel.min ol,#pv-panel.min .row2{display:none}
+@media (max-width:600px){#pv-panel{left:max(16px,env(safe-area-inset-left,0px));width:auto}}
+
+/* ===== cabeçalho da prévia (réplica do site) ===== */
+#pv-bar{background:#2b231d;color:#efe7da;text-align:center;font:400 13px/1.4 "Jost",system-ui,sans-serif;padding:9px max(16px,env(safe-area-inset-right,0px)) 9px max(16px,env(safe-area-inset-left,0px));position:relative;z-index:30}
+#pv-bar a{color:#fff;text-decoration:underline;text-underline-offset:3px;margin-left:8px}
+#pv-bar .sep{opacity:.45;margin:0 8px}
+#pv-hd{position:absolute;left:0;right:0;z-index:25;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
+#pv-hd .in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;max-width:1360px;margin:0 auto;padding:18px max(20px,env(safe-area-inset-right,0px)) 18px max(20px,env(safe-area-inset-left,0px))}
+#pv-hd nav{display:flex;gap:26px;font:500 11.5px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+#pv-hd nav a,#pv-hd .ut a{color:inherit;text-decoration:none}
+#pv-hd .logo{display:block;height:44px;width:auto;filter:brightness(0) invert(1);transition:filter .3s}
+#pv-hd .ut{display:flex;justify-content:flex-end;gap:22px;font:500 11.5px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+#pv-hd::before{content:"";position:absolute;inset:0 0 auto;height:150px;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0));pointer-events:none;z-index:-1;transition:opacity .3s}
+#pv-hd.solid::before{opacity:0}
+#pv-hd.solid{position:fixed;top:0;background:#fcfaf6;color:#2b231d;box-shadow:0 1px 0 #e4dccf}
+#pv-hd.solid .logo{filter:none}
+#pv-hd .mini{display:none;border-top:1px solid #e4dccf}
+#pv-hd.solid.show-mini .mini{display:block}
+#pv-hd .mini form{display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr auto;max-width:1360px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-right,0px)) 0 max(20px,env(safe-area-inset-left,0px))}
+#pv-hd .mini label{display:flex;flex-direction:column;gap:2px;padding:9px 14px;border-left:1px solid #e4dccf;font:500 10px "Jost",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7a6d61;min-width:0}
+#pv-hd .mini label:first-child{border-left:0;padding-left:0}
+#pv-hd .mini select,#pv-hd .mini input{border:0;background:transparent;font:400 14px "Jost",sans-serif;color:#2b231d;padding:0;min-width:0;letter-spacing:0;text-transform:none}
+#pv-hd .mini button{align-self:center;margin-left:14px;padding:10px 22px;border:1px solid #2b231d;background:#2b231d;color:#fcfaf6;font:500 11px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+#pv-hd .mini .nv-tag{top:auto;bottom:-14px}
+@media (max-width:900px){#pv-hd nav{display:none}#pv-hd .in{grid-template-columns:auto 1fr}#pv-hd .ut{gap:14px}#pv-hd .mini form{grid-template-columns:1fr 1fr auto}#pv-hd .mini label:nth-child(3),#pv-hd .mini label:nth-child(4){display:none}}
+
+/* ===== B: prova no topo ===== */
+#h4l .hero .proof{display:inline-flex;flex-wrap:wrap;gap:6px 0;align-items:center;font:500 11.2px "Jost",sans-serif;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+#h4l .hero .proof span:not(.nv-tag)+span::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:currentColor;margin:0 12px 2px;vertical-align:middle;opacity:.8}
+
+/* ===== C: atalhos de destino ===== */
+#h4l .chips{max-width:1360px;margin:18px auto 0;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+#h4l .chips>span{font:500 11px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+#h4l .chips a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:14px;color:var(--ink);text-decoration:none;transition:border-color .2s,background .2s}
+#h4l .chips a:hover{border-color:var(--ink)}
+#h4l .chips a i{font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* ===== E: ficha rápida nos destinos ===== */
+#h4l .tile .fact{display:block;margin-top:6px;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+#h4l .tile .fact::before{content:"";display:inline-block;width:14px;height:1px;background:currentColor;vertical-align:middle;margin-right:8px}
+
+/* ===== F: faixa de canais ===== */
+#h4l .chan{margin-top:110px;background:var(--ink);color:var(--paper)}
+#h4l .chan .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
+#h4l .chan h2{font-size:clamp(26px,2.6vw,36px);font-weight:300;line-height:1.15;color:var(--paper);margin:10px 0 0}
+#h4l .chan p{color:#d9cdb9;margin-top:12px;max-width:44ch}
+#h4l .chan ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-left:1px solid rgba(252,250,246,.18)}
+#h4l .chan li{padding:22px 20px;border-right:1px solid rgba(252,250,246,.18);display:grid;gap:6px}
+#h4l .chan li b{font-size:19px;font-weight:400;letter-spacing:.01em}
+#h4l .chan li small{font-size:12px;color:#b5a898;letter-spacing:.04em}
+#h4l .chan li.me{background:rgba(252,250,246,.07)}
+#h4l .chan .cap{color:#b5a898}
+@media (max-width:900px){#h4l .chan .wrap{grid-template-columns:1fr;gap:28px}#h4l .chan ul{grid-template-columns:1fr 1fr}#h4l .chan li{border-bottom:1px solid rgba(252,250,246,.18)}}
+
+/* ===== G: datas que lotam ===== */
+#h4l .dates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+#h4l .dates a{display:grid;grid-template-rows:auto 1fr;color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--paper);transition:border-color .25s}
+#h4l .dates a:hover{border-color:var(--ink)}
+#h4l .dates a{overflow:hidden;position:relative}
+#h4l .dates .ph{position:relative;inset:auto;display:block;width:100%;aspect-ratio:16/10;background:var(--surface) center/cover no-repeat}
+#h4l .dates .bd{display:grid;gap:8px;padding:20px 22px 22px;align-content:start}
+#h4l .dates .when{font:500 11px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+#h4l .dates h3{font-size:22px;font-weight:400;margin:0}
+#h4l .dates p{color:var(--muted);font-size:15px}
+#h4l .dates .go{margin-top:6px;font:500 11px "Jost",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+#h4l .dates .go::after{content:" →"}
+@media (max-width:900px){#h4l .dates{grid-template-columns:1fr}}
+
+/* ===== H: números do proprietário ===== */
+#h4l .ownstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:30px auto 6px;max-width:640px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#h4l .ownstats div{padding:18px 10px;display:grid;gap:4px;justify-items:center}
+#h4l .ownstats div+div{border-left:1px solid var(--line)}
+#h4l .ownstats b{font-size:30px;font-weight:300;line-height:1}
+#h4l .ownstats small{font-size:12px;letter-spacing:.06em;color:var(--muted)}
+
+/* ===== I: CTA final ===== */
+#h4l .final{padding:110px 0 120px;text-align:center}
+#h4l .final .wrap{display:grid;justify-items:center;gap:18px}
+#h4l .final p{color:var(--muted);max-width:46ch}
+
+/* rodapé simples da prévia */
+#pv-ft{background:#f4efe7;color:#2b231d;font:400 14px/1.6 "Jost",sans-serif;padding:48px max(20px,env(safe-area-inset-right,0px)) 120px max(20px,env(safe-area-inset-left,0px));text-align:center}
+#pv-ft small{color:#7a6d61}
+</style>

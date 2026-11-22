@@ -1,0 +1,129 @@
+<!-- 4let Homes · Página para proprietários (PT/EN/ES) · Track For · 21/11/2026 -->
+<style>
+#p4l{--paper:#fcfaf6;--surface:#f4efe7;--ink:#2b231d;--muted:#7a6d61;--line:#e4dccf;background:var(--paper);color:var(--ink);font:300 16px/1.65 "Jost",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
+#p4l *{box-sizing:border-box}
+#p4l a{color:inherit;text-decoration:none}
+#p4l h1,#p4l h2,#p4l h3{font-family:inherit;font-weight:300;line-height:1.1;letter-spacing:-.015em;margin:0;color:inherit}
+#p4l p{margin:0}
+#p4l .en,#p4l .es{display:none}
+html[lang=en] #p4l .pt,html[lang=es] #p4l .pt{display:none}
+html[lang=en] #p4l .en,html[lang=es] #p4l .es{display:inline}
+#p4l .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+#p4l .cap{font-size:11.2px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+#p4l .muted{color:var(--muted)}
+#p4l .h2{font-size:clamp(32px,3.6vw,50px)}
+#p4l .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:500 11.2px "Jost",sans-serif;letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s}
+#p4l .btn:hover{background:transparent;color:var(--ink)}
+#p4l .btn.ghost{background:transparent;color:var(--ink)}
+#p4l .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+#p4l .btn.light{background:transparent;color:#fff;border-color:rgba(255,255,255,.85)}
+#p4l .btn.light:hover{background:#fff;color:var(--ink)}
+#p4l .hero{position:relative;min-height:clamp(480px,70vh,720px);display:grid;align-items:end;color:#fff;background:#33424a center/cover no-repeat}
+#p4l .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,10,.15) 0%,rgba(20,15,10,.1) 40%,rgba(20,15,10,.6) 100%)}
+#p4l .hero .in{position:relative;z-index:1;padding:0 20px 56px;width:100%}
+#p4l .hero h1{font-size:clamp(37px,5vw,70px);font-weight:400;max-width:16ch;margin:14px 0 18px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+#p4l .hero p{max-width:52ch;font-size:18px;margin-bottom:28px;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+#p4l .hero .cap{font-weight:600;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+#p4l .sec{padding-top:110px}
+#p4l .head{display:grid;gap:16px;max-width:60ch;margin-bottom:48px}
+#p4l .head p{color:var(--muted)}
+#p4l .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+#p4l .grid4 div{padding:32px 26px 36px 0;display:grid;gap:12px;align-content:start}
+#p4l .grid4 div+div{padding-left:26px;border-left:1px solid var(--line)}
+#p4l .grid4 h3{font-size:21.6px;font-weight:400}
+#p4l .grid4 p{color:var(--muted)}
+@media (max-width:1000px){#p4l .grid4{grid-template-columns:1fr 1fr}#p4l .grid4 div:nth-child(3){border-left:0;padding-left:0}#p4l .grid4 div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:600px){#p4l .grid4{grid-template-columns:1fr}#p4l .grid4 div,#p4l .grid4 div+div{padding-left:0;border-left:0}#p4l .grid4 div+div{border-top:1px solid var(--line)}}
+#p4l .split{display:grid;grid-template-columns:1.1fr 1fr;background:var(--surface)}
+#p4l .split .img{position:relative;min-height:520px;background:center/cover no-repeat}
+#p4l .split .txt{display:grid;align-content:center;gap:20px;padding:clamp(36px,6vw,96px)}
+#p4l .split ul{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+#p4l .split li{border-bottom:1px solid var(--line)}
+#p4l .split li a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;color:var(--ink);text-decoration:none;transition:padding .25s ease}
+#p4l .split li a:hover,#p4l .split li a:focus-visible{padding-left:10px}
+#p4l .split li a::after{content:"→";color:var(--muted);transition:color .25s}
+#p4l .split li a:hover::after{color:var(--ink)}
+#p4l .split li a>span{margin-left:auto}
+#p4l .split li b{font-weight:500;font-size:11.8px;letter-spacing:.16em;text-transform:uppercase}
+#p4l .split li span{color:var(--muted);text-align:right}
+#p4l .split li.new span{color:var(--ink)}
+#p4l .split li.new{border-bottom-color:var(--ink)}
+@media (max-width:860px){#p4l .split{grid-template-columns:1fr}#p4l .split .img{min-height:320px}}
+#p4l .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0;padding:0}
+#p4l .steps li{list-style:none;padding:36px 32px 40px 0;display:grid;gap:12px;align-content:start}
+#p4l .steps li+li{padding-left:32px;border-left:1px solid var(--line)}
+#p4l .steps .n{font-size:54px;line-height:1;color:var(--muted)}
+#p4l .steps h3{font-size:21.6px;font-weight:400}
+#p4l .steps p{color:var(--muted);max-width:34ch}
+@media (max-width:800px){#p4l .steps{grid-template-columns:1fr}#p4l .steps li,#p4l .steps li+li{padding:28px 0;border-left:0}#p4l .steps li+li{border-top:1px solid var(--line)}}
+#p4l .cta{margin-top:110px;background:var(--ink);color:var(--paper);padding:96px 0;text-align:center}
+#p4l .cta .in{display:grid;justify-items:center;gap:18px;max-width:60ch;margin:0 auto}
+#p4l .cta p{color:#d9cdb9}
+#p4l .cta .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px}
+#p4l .cta .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+#p4l .cta .btn:hover{background:transparent;color:var(--paper)}
+#p4l .cta .btn.ghost{background:transparent;color:var(--paper);border-color:rgba(252,250,246,.6)}
+#p4l .cta .btn.ghost:hover{background:var(--paper);color:var(--ink)}
+#p4l .cta small{color:#b5a898;font-size:13px}
+</style>
+<div id="p4l">
+<section class="hero" style="background-image:url('/media/6b02446b1eab8c5e5993fdf5')">
+<div class="wrap in">
+<span class="cap"><span class="pt">Para proprietários</span><span class="en">For owners</span><span class="es">Para propietarios</span></span>
+<h1><span class="pt">Seu imóvel na 4let Homes</span><span class="en">Your property at 4let Homes</span><span class="es">Su inmueble en 4let Homes</span></h1>
+<p><span class="pt">Cuidamos da gestão da sua hospedagem por temporada, do anúncio ao check-out, com o mesmo padrão de conforto, praticidade e segurança dos imóveis que já administramos.</span><span class="en">We manage your holiday rental from listing to check-out, with the same standard of comfort, convenience and safety as the properties we already run.</span><span class="es">Gestionamos su alquiler vacacional, del anuncio al check-out, con el mismo estándar de comodidad, practicidad y seguridad de los inmuebles que ya administramos.</span></p>
+<a class="btn light" href="#p4l-contato"><span class="pt">Quero cadastrar meu imóvel</span><span class="en">List my property</span><span class="es">Registrar mi inmueble</span></a>
+</div>
+</section>
+<section class="sec"><div class="wrap">
+<div class="head">
+<span class="cap muted"><span class="pt">O que fazemos</span><span class="en">What we do</span><span class="es">Qué hacemos</span></span>
+<h2 class="h2"><span class="pt">Uma jornada completa, do anúncio ao check-out</span><span class="en">The whole journey, from listing to check-out</span><span class="es">Todo el recorrido, del anuncio al check-out</span></h2>
+<p><span class="pt">A 4let atua desde 2018 na gestão e intermediação de hospedagens por temporada.</span><span class="en">4let has managed and brokered holiday rentals since 2018.</span><span class="es">4let gestiona e intermedia alquileres vacacionales desde 2018.</span></p>
+</div>
+<div class="grid4">
+<div><span class="cap muted">01</span><h3><span class="pt">Anúncio nos canais</span><span class="en">Listed on every channel</span><span class="es">Anuncio en los canales</span></h3><p><span class="pt">Reserva direta pelo site da 4let e anúncios no Airbnb, Booking.com e Decolar, com o mesmo atendimento em todos.</span><span class="en">Direct booking on the 4let website plus listings on Airbnb, Booking.com and Decolar, with the same service on all of them.</span><span class="es">Reserva directa en el sitio de 4let y anuncios en Airbnb, Booking.com y Decolar, con la misma atención en todos.</span></p></div>
+<div><span class="cap muted">02</span><h3><span class="pt">Reservas e hóspedes</span><span class="en">Bookings and guests</span><span class="es">Reservas y huéspedes</span></h3><p><span class="pt">A Central de Reservas acompanha cada estadia, da confirmação ao check-out, com apoio de concierge.</span><span class="en">Our booking team follows every stay, from confirmation to check-out, with concierge support.</span><span class="es">La Central de Reservas acompaña cada estadía, de la confirmación al check-out, con apoyo de conserjería.</span></p></div>
+<div><span class="cap muted">03</span><h3><span class="pt">Check-in em ordem</span><span class="en">Check-in done right</span><span class="es">Check-in en regla</span></h3><p><span class="pt">Orientações claras ao hóspede e a documentação exigida pela legislação hoteleira conduzida pela nossa equipe.</span><span class="en">Clear guest instructions, and the paperwork required by Brazilian hospitality law handled by our team.</span><span class="es">Instrucciones claras al huésped y la documentación exigida por la legislación hotelera gestionada por nuestro equipo.</span></p></div>
+<div><span class="cap muted">04</span><h3><span class="pt">Cuidado com o imóvel</span><span class="en">Care for your property</span><span class="es">Cuidado del inmueble</span></h3><p><span class="pt">Acompanhamos a manutenção das propriedades com transparência e agilidade.</span><span class="en">We keep track of property maintenance with transparency and speed.</span><span class="es">Acompañamos el mantenimiento de los inmuebles con transparencia y agilidad.</span></p></div>
+</div>
+</div></section>
+<section class="sec"><div class="split">
+<div class="img" style="background-image:url('/media/6b02446c7bd7fe01b0bac808')" role="img" aria-label="São Miguel do Gostoso, RN"></div>
+<div class="txt">
+<span class="cap muted"><span class="pt">Onde já estamos</span><span class="en">Where we already are</span><span class="es">Dónde ya estamos</span></span>
+<h2 class="h2"><span class="pt">Seu imóvel pode estar em qualquer cidade</span><span class="en">Your property can be in any city</span><span class="es">Su inmueble puede estar en cualquier ciudad</span></h2>
+<p class="muted"><span class="pt">Já administramos imóveis nestes destinos e estamos abrindo novas cidades. Se o seu imóvel fica em outro lugar, cadastre do mesmo jeito.</span><span class="en">We already manage properties in these destinations and are opening new cities. If your property is somewhere else, sign it up just the same.</span><span class="es">Ya administramos inmuebles en estos destinos y estamos abriendo nuevas ciudades. Si su inmueble está en otro lugar, regístrelo igualmente.</span></p>
+<ul>
+<li><a href="https://wa.me/5531996802468?text=Ol%C3%A1%21%20Tenho%20um%20im%C3%B3vel%20em%20Natal-RN%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener"><b>Natal</b><span>RN</span></a></li>
+<li><a href="https://wa.me/5531996802468?text=Ol%C3%A1%21%20Tenho%20um%20im%C3%B3vel%20em%20S%C3%A3o%20Miguel%20do%20Gostoso-RN%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener"><b>São Miguel do Gostoso</b><span>RN</span></a></li>
+<li><a href="https://wa.me/5531996802468?text=Ol%C3%A1%21%20Tenho%20um%20im%C3%B3vel%20em%20Cerro%20Cor%C3%A1-RN%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener"><b>Cerro Corá</b><span>RN</span></a></li>
+<li><a href="https://wa.me/5531996802468?text=Ol%C3%A1%21%20Tenho%20um%20im%C3%B3vel%20em%20Belo%20Horizonte-MG%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener"><b>Belo Horizonte</b><span>MG</span></a></li>
+<li><a href="https://wa.me/5531996802468?text=Ol%C3%A1%21%20Tenho%20um%20im%C3%B3vel%20em%20Praia%20Grande-SP%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener"><b>Praia Grande</b><span>SP</span></a></li>
+<li class="new"><a href="#p4l-contato"><b><span class="pt">Sua cidade</span><span class="en">Your city</span><span class="es">Su ciudad</span></b><span><span class="pt">Novo destino</span><span class="en">New destination</span><span class="es">Nuevo destino</span></span></a></li>
+</ul>
+<a class="btn ghost" href="#p4l-contato" style="justify-self:start"><span class="pt">Cadastrar imóvel em outra cidade</span><span class="en">Sign up a property in another city</span><span class="es">Registrar inmueble en otra ciudad</span></a>
+</div>
+</div></section>
+<section class="sec"><div class="wrap">
+<div class="head">
+<span class="cap muted"><span class="pt">Como funciona</span><span class="en">How it works</span><span class="es">Cómo funciona</span></span>
+<h2 class="h2"><span class="pt">Três passos para começar</span><span class="en">Three steps to get started</span><span class="es">Tres pasos para empezar</span></h2>
+</div>
+<ol class="steps">
+<li><span class="n">1</span><h3><span class="pt">Conte sobre o imóvel</span><span class="en">Tell us about it</span><span class="es">Cuéntenos del inmueble</span></h3><p><span class="pt">Envie endereço, tipo, número de quartos e algumas fotos pelo WhatsApp ou por e-mail.</span><span class="en">Send the address, type, number of bedrooms and a few photos by WhatsApp or email.</span><span class="es">Envíe dirección, tipo, número de habitaciones y algunas fotos por WhatsApp o e-mail.</span></p></li>
+<li><span class="n">2</span><h3><span class="pt">Conversamos</span><span class="en">We talk</span><span class="es">Conversamos</span></h3><p><span class="pt">Nossa equipe avalia as informações e entra em contato para explicar como funciona a parceria.</span><span class="en">Our team reviews the details and gets back to you to explain how the partnership works.</span><span class="es">Nuestro equipo evalúa la información y le contacta para explicarle cómo funciona la asociación.</span></p></li>
+<li><span class="n">3</span><h3><span class="pt">Seu imóvel no ar</span><span class="en">Your property goes live</span><span class="es">Su inmueble en línea</span></h3><p><span class="pt">Com tudo combinado, preparamos o anúncio e começamos a receber hóspedes.</span><span class="en">Once everything is agreed, we prepare the listing and start welcoming guests.</span><span class="es">Con todo acordado, preparamos el anuncio y empezamos a recibir huéspedes.</span></p></li>
+</ol>
+</div></section>
+<section class="cta" id="p4l-contato"><div class="wrap"><div class="in">
+<span class="cap" style="color:#b5a898"><span class="pt">Cadastro de imóvel</span><span class="en">Property sign-up</span><span class="es">Registro de inmueble</span></span>
+<h2 class="h2"><span class="pt">Vamos conversar sobre o seu imóvel</span><span class="en">Let's talk about your property</span><span class="es">Hablemos de su inmueble</span></h2>
+<p><span class="pt">Mande uma mensagem com as informações e fotos do imóvel. Respondemos pelo mesmo canal.</span><span class="en">Send us a message with your property's details and photos. We reply on the same channel.</span><span class="es">Envíenos un mensaje con los datos y fotos del inmueble. Respondemos por el mismo canal.</span></p>
+<div class="btns">
+<a class="btn" href="https://wa.me/5531996802468?text=Ol%C3%A1!%20Tenho%20um%20im%C3%B3vel%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener">WhatsApp</a>
+<a class="btn ghost" href="mailto:reservas.br@f4let.com?subject=Cadastro%20de%20im%C3%B3vel%20-%204let%20Homes">E-mail</a>
+</div>
+<small>reservas.br@f4let.com · (31) 99680-2468</small>
+</div></div></section>
+</div>

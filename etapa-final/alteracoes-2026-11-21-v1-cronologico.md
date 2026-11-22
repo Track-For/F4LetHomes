@@ -194,3 +194,31 @@ Já tinham description antes desta rodada: home (3 idiomas), Sobre nós, anúnci
 - **Correção no mesmo dia:** a classe `in` usada pela animação coincidia com `.hero .in` da home e sobrepôs o título e a linha "Hospedagem por temporada" por alguns minutos; corrigido com uma regra no fim do head_section.
 - **Desfazer:** apagar os blocos `<style>`, `<script>` e `<style>` finais do head_section (os três marcados "home: animação de entrada e parallax" e "corrige colisão").
 - Conferido no ar (computador, PT). Não testado no celular.
+
+---
+
+## 22/11/2026 (tarde) · Formulário do proprietário (Anexo I, item f)
+
+- **Onde:** hotsite Proprietários (`/i/content-managment/hotsite/6b0249551eab8c5e59953b36`), seção "Cadastro de imóvel" (`#p4l-contato`). Código em `proprietarios/form-cadastro.html`; bloco completo em `proprietarios/bloco-proprietarios-v3.html`. Backup do bloco anterior: `proprietarios/bloco-proprietarios-v3-antes-backup.html`.
+- **Campos:** nome, e-mail, telefone/WhatsApp, cidade/UF, endereço ou região, tipo de imóvel, quartos, capacidade de hóspedes, descrição, até 5 fotos (JPG/PNG/WEBP, até 5 MB cada) e aceite do aviso de privacidade (link para `/politica-de-privacidade`). PT/EN/ES.
+- **Validação:** campos obrigatórios destacados, e-mail conferido, mensagem de erro e de sucesso ("Cadastro enviado", ao voltar com `?enviado=1`).
+- **Envio:** FormSubmit (gratuito, sem conta) para `lucio.risi@vallues.co`, com confirmação automática ao proprietário (`_autoresponse`), modelo em tabela, proteção anti-spam (honeypot + reCAPTCHA do FormSubmit).
+- **Fotos:** o FormSubmit limita 10 MB por envio. O formulário reduz cada foto no navegador para JPEG de até 1600 px (~250–400 KB) antes de enviar.
+- **Testado no site:** validação com campos vazios; seleção de 3 fotos de 3000×2000 px reduzidas para ~253 KB cada e colocadas nos campos de envio. O envio real foi interceptado, nada foi mandado.
+- **Pendente:**
+  - Ajuste visual do campo "Tipo de imóvel" (espaçamento interno) está pronto no arquivo local (`bloco-proprietarios-v3-colar.html`), mas **não foi colado no painel**.
+  - **Ativação do FormSubmit:** o primeiro envio dispara um e-mail de confirmação para o Lucio. Até ele clicar, os cadastros ficam retidos (30 dias, sem as fotos). Depois da ativação, trocar o e-mail no `action` pelo código aleatório que o FormSubmit envia.
+  - **Aprovação do Lucio:** o Anexo I pede que o serviço de envio seja aprovado por ele, e que o aviso de privacidade seja fornecido por ele.
+  - Fazer um envio de teste real depois da aprovação.
+
+## O que falta do contrato (situação em 22/11/2026, 12h40)
+
+**Sem depender do Lucio (não iniciado nesta sessão):**
+- Teste de responsividade em 390, 768 e 1440 px (Anexo I, item g).
+- Checagem de links internos quebrados (item a).
+- GEO básico (dados estruturados da empresa no head_section).
+- "Proprietários" no menu principal; telefones clicáveis no rodapé e no Contato.
+- DNS na GoDaddy (SPF/DKIM do Mandrill): login do Luiz.
+- Documentação técnica final para a entrega.
+
+**Depende do Lucio:** aprovação do FormSubmit e ativação; aviso de privacidade; tarifas a partir de 15/12; credenciais de produção do Mercado Pago (Pix?); "88h" nos Termos; calendário Pedra Baleia; 3 propriedades e datas para o teste de busca; acesso ao Perfil da Empresa no Google; homologação final por escrito (depois: R$ 1.000, mensalidade e garantia de 30 dias).
