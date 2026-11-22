@@ -205,20 +205,144 @@ Já tinham description antes desta rodada: home (3 idiomas), Sobre nós, anúnci
 - **Envio:** FormSubmit (gratuito, sem conta) para `lucio.risi@vallues.co`, com confirmação automática ao proprietário (`_autoresponse`), modelo em tabela, proteção anti-spam (honeypot + reCAPTCHA do FormSubmit).
 - **Fotos:** o FormSubmit limita 10 MB por envio. O formulário reduz cada foto no navegador para JPEG de até 1600 px (~250–400 KB) antes de enviar.
 - **Testado no site:** validação com campos vazios; seleção de 3 fotos de 3000×2000 px reduzidas para ~253 KB cada e colocadas nos campos de envio. O envio real foi interceptado, nada foi mandado.
+- **Ajuste visual:** espaçamento do campo "Tipo de imóvel" corrigido e publicado (o CSS da Stays zerava o padding do select).
 - **Pendente:**
-  - Ajuste visual do campo "Tipo de imóvel" (espaçamento interno) está pronto no arquivo local (`bloco-proprietarios-v3-colar.html`), mas **não foi colado no painel**.
   - **Ativação do FormSubmit:** o primeiro envio dispara um e-mail de confirmação para o Lucio. Até ele clicar, os cadastros ficam retidos (30 dias, sem as fotos). Depois da ativação, trocar o e-mail no `action` pelo código aleatório que o FormSubmit envia.
   - **Aprovação do Lucio:** o Anexo I pede que o serviço de envio seja aprovado por ele, e que o aviso de privacidade seja fornecido por ele.
   - Fazer um envio de teste real depois da aprovação.
 
-## O que falta do contrato (situação em 22/11/2026, 12h40)
+## 22/11/2026 (tarde) · Outros itens sem depender do Lucio
 
-**Sem depender do Lucio (não iniciado nesta sessão):**
-- Teste de responsividade em 390, 768 e 1440 px (Anexo I, item g).
-- Checagem de links internos quebrados (item a).
-- GEO básico (dados estruturados da empresa no head_section).
-- "Proprietários" no menu principal; telefones clicáveis no rodapé e no Contato.
-- DNS na GoDaddy (SPF/DKIM do Mandrill): login do Luiz.
-- Documentação técnica final para a entrega.
+### Links internos (Anexo I, item a)
+- Varredura de 94 páginas em PT/EN/ES (home, busca, proprietários, privacidade, anúncios, empreendimentos e o que elas linkam) com script próprio.
+- **Nenhum link interno quebrado.** Os únicos 404 eram endereços inventados como ponto de partida do teste e um trecho de código lido como link por engano.
 
-**Depende do Lucio:** aprovação do FormSubmit e ativação; aviso de privacidade; tarifas a partir de 15/12; credenciais de produção do Mercado Pago (Pix?); "88h" nos Termos; calendário Pedra Baleia; 3 propriedades e datas para o teste de busca; acesso ao Perfil da Empresa no Google; homologação final por escrito (depois: R$ 1.000, mensalidade e garantia de 30 dias).
+### Responsividade (Anexo I, item g)
+- Teste em 390 e 768 px (1440 é a tela de trabalho) de: home, busca, empreendimento, anúncio, Contato, Sobre nós, Proprietários e Política de Privacidade. Como o site bloqueia ser aberto em quadro (`X-Frame-Options: DENY`), cada página foi carregada como conteúdo direto (`srcdoc`) num quadro da largura certa.
+- **Problema achado e corrigido:** nas páginas de texto (Privacidade, Termos, Cancelamento) o menu móvel fechado da Stays fica fora da tela à direita e criava rolagem lateral (421 px a mais em 390 px). Corrigido com `html.id4l,html.id4l body{overflow-x:clip}` no head_section (`identidade/overflow-fix.html`). Depois disso, nenhuma página rola para o lado nas duas larguras.
+- Formulário do proprietário conferido visualmente em 390 px: uma coluna, campos legíveis.
+- **Ainda vale** abrir o site num celular de verdade (iPhone e Android) para conferir toque, teclado e o fluxo de reserva.
+
+### GEO básico (cláusula 2.2)
+- Dados estruturados JSON-LD (Organization + WebSite) no head_section, em todas as páginas: nome, site, logo, descrição, ano de início (2018), e-mail, telefone, Instagram (@4lethomes), as 5 cidades atendidas e idiomas de atendimento. Código em `identidade/geo-telefones.html`.
+
+### Telefones clicáveis
+- No rodapé (e no Contato, quando o número aparece como texto): o (31) 99680-2468 abre o WhatsApp e o (11) 95347-1786 abre a ligação. Conferido no site.
+
+### Menu principal
+- Item "Proprietários" / "Owners" / "Propietarios" adicionado ao "Menu Asuperior padrão", apontando para o hotsite Proprietários. Conferido nas três línguas.
+
+### Backups desta etapa
+- head_section antes do JSON-LD/telefones: `identidade/head_section-v19-backup.html`; antes da correção de rolagem: `identidade/head_section-v20-backup.html`.
+
+## O que falta do contrato (situação em 22/11/2026, fim da tarde)
+
+**Depende do Luiz:**
+- DNS na GoDaddy (SPF/DKIM do Mandrill): fazer o login e aplicar os registros de `marco-intermediario/correcoes-2026-11-19.md`. Depois, testar login e recuperação de acesso (Anexo I, item e).
+- Conferir o site num celular de verdade.
+- Documentação técnica final para a entrega (este registro serve de base).
+
+**Depende do Lucio:**
+- Aprovar o FormSubmit e clicar na ativação; fornecer ou validar o aviso de privacidade do formulário.
+- Tarifas a partir de 15/12/2026 (12 anúncios ficam sem diária).
+- Credenciais de produção do Mercado Pago (e se quer Pix), para o teste de pagamento (item d).
+- Corrigir o "88h" nos Termos; calendário e nome do Pedra Baleia.
+- Indicar 3 propriedades e datas para o teste de busca (item b).
+- Acesso ao Perfil da Empresa no Google (cláusula 2.2), ou registro de que não é elegível.
+- Homologação final por escrito. Depois: cobrar R$ 1.000 e emitir a NF; começam a mensalidade de R$ 200 e a garantia de 30 dias.
+- Registrar por escrito o novo prazo (14/12?) e as suspensões por pendências de terceiros (cláusula 4.1).
+
+## 22/11/2026 (noite) · Mercado Pago de produção
+
+- **Risco conferido:** a página de checkout (`/customer/pt/booking`) ainda expõe o access token do Mercado Pago no campo `signature` do `paymentMethods` (hoje `TEST-`, 72 caracteres). O Luiz decidiu não acionar a Stays. Cuidados combinados: registrar com o Lucio que o risco é conhecido, ativar alertas de estorno/pagamento no Mercado Pago e renovar o Access Token em caso de movimento estranho.
+- **Conta certa:** as credenciais precisam ser da conta **VALLUESCO LTDA**, não da conta pessoal do Luiz (o dinheiro das reservas vai para a conta dona da aplicação).
+- **Bloqueio atual:** na conta Valluesco, o acesso do Luiz (colaborador) não abre a área de integrações/credenciais (erro "Estamos com um problema"). O Luiz vai pedir ao Lucio a permissão de Integrações/Credenciais.
+- **Próximos passos quando liberar:** Luiz copia a Public Key e o Access Token de produção e cola em Stays → App Center → Mercado Pago; depois tokenização = Não (aguardando ok), decisão sobre o acréscimo de 4,98%, verificar Pix e testar até a tela de pagamento (Anexo I, item d).
+
+## 22/11/2026 (noite, continuação) · Mercado Pago em produção
+
+- **Feito:** o Lucio liberou o acesso; o Luiz ativou as credenciais de produção da aplicação **VLC-F4LET** (nº 7596280370215606, conta VALLUESCO) e colou Public Key e Access Token na Stays (App Center → Mercado Pago → canal → Configurações de API). O checkout já usa `APP_USR-`.
+- **Como está no ar:** só cartão de crédito, até 3x, com acréscimo de 4,98%. O canal da Stays não oferece Pix. Redirecionamento ao ambiente do Mercado Pago = Sim (testei "Não", não mudou nada e voltei).
+- **Risco em aberto:** o access token de **produção** aparece no HTML público da página de reserva (campo `signature`). Não há ajuste no painel da Stays nem restrição no Mercado Pago que resolva. O Luiz não quer acionar a Stays.
+- **Saídas levantadas (decisão adiada pelo Luiz):**
+  - A) Ativar a API Externa da Stays (R$ 95/mês), cobrar por uma função na Vercel que guarda o token, com Checkout Pro (Pix + cartão) e webhook marcando a reserva paga. Em seguida, desativar o canal MP na Stays e renovar as credenciais.
+  - B) Desativar o canal MP e cobrar por link de pagamento manual.
+- **Teste de pagamento (item d):** chegou ao formulário de dados do hóspede. Falta preencher e clicar em Continuar para ver a tela de pagamento.
+
+## 22/11/2026 (noite) · DNS na GoDaddy (SPF + DKIM do Mandrill)
+
+- O Luiz fez o login na GoDaddy; eu apliquei os registros em Domínios → f4let.com → DNS. O backup do estado anterior está em `dns-godaddy-backup-2026-11-22.md`.
+- **SPF (TXT @, editado):** `v=spf1 include:spf.protection.outlook.com include:spf.em.secureserver.net include:spf.mandrillapp.com ~all` (antes: `v=spf1 include:spf.em.secureserver.net ?all`).
+- **CNAME criado:** `mte1._domainkey` → `dkim1.mandrillapp.com`.
+- **CNAME criado:** `mte2._domainkey` → `dkim2.mandrillapp.com`.
+- **Conferido:** os três aparecem no Google DNS (8.8.8.8) e no servidor da GoDaddy (ns23) logo após salvar. Nenhum outro registro foi alterado.
+- **Próximo:** testar o código de login e a recuperação de acesso do site (Anexo I, item e) com um Gmail e um Outlook. O código deve chegar na caixa de entrada com `spf=pass` e `dkim=pass`.
+
+## 22/11/2026 (noite) · Calendário da página do imóvel
+
+- **Problema:** na página do imóvel (/apartment), o calendário de datas abria para cima e ficava atrás das fotos da galeria.
+- **Causa:** o painel de reserva (`#panelBook`) é *sticky* e prendia o calendário numa camada abaixo da galeria.
+- **Correção:** `html.id4l #panelBook{z-index:30}` no fim do head_section. O cabeçalho (z 50) continua por cima. Conferido no site público (4let Verano Ponta Negra).
+- **Arquivos:** código em `identidade/calendario-fix.html`; backup anterior em `identidade/head_section-v21-backup.html`.
+
+## 22/11/2026 (noite) · Acesso próprio do Luiz à Stays
+
+- **Problema relatado pelo Lucio:** os usuários que ele criava ("Criar Acesso Básico") não apareciam na lista; com o Gmail do Luiz dava "O Login já pertence a outro usuário!".
+- **Causa:**
+  - O Gmail já existia como cadastro de **hóspede**, criado nos testes de reserva.
+  - A lista de Usuários abre filtrada por administradores (`?admins=1`), e o acesso básico nasce sem permissão. Os usuários existiam, só não apareciam nesse filtro.
+- **Feito pelo Luiz,** com o login master, porque o Claude Code bloqueia o assistente de conceder permissão de administrador:
+  - Liberou `fhellippe04092001@gmail.com` (e `contato@trackfor.com.br`, se as permissões foram salvas) como **Administrador do sistema**, sem cartão de crédito e sem Financeiro.
+- **Teste:** login com o Gmail em janela anônima às 17h55 entrou no painel.
+- **A fazer:**
+  - Confirmar o acesso ao Editor do site e ao App Center com o usuário próprio.
+  - Testar o login do `contato@trackfor.com.br`.
+  - Mandar a mensagem ao Lucio pedindo o ok por escrito.
+  - No fim do projeto, o Lucio reduz ou remove esses acessos.
+
+## O que falta do contrato (situação em 22/11/2026, noite)
+
+Substitui a lista "fim da tarde" acima.
+
+**Feito hoje à noite (sai da lista):**
+- Credenciais de produção do Mercado Pago: aplicadas, o checkout usa `APP_USR-`.
+- DNS da GoDaddy (SPF + DKIM do Mandrill): aplicado e conferido no DNS público.
+- Calendário sobreposto pelas fotos: corrigido.
+- Acesso próprio do Luiz à Stays: liberado.
+
+**Depende do Luiz:**
+- **Item e (login e recuperação de acesso):** no site, pedir o código de login de hóspede e a recuperação de senha com um Gmail e um Outlook. Conferir se chega na caixa de entrada com `SPF: PASS` e `DKIM: PASS`. Se não chegar com o DNS certo, o próximo suspeito é a verificação do domínio no Mandrill, que só a Stays faz.
+- **Item d (pagamento):** preencher os dados do hóspede no checkout e ir até a tela do Mercado Pago, sem pagar. O teste parou no formulário.
+- **Mercado Pago, decisão adiada:**
+  - O access token de produção fica exposto no HTML do checkout.
+  - Saída A: API Externa da Stays (R$ 95/mês) + função na Vercel + Checkout Pro com Pix.
+  - Saída B: desativar o canal e cobrar por link manual.
+  - Enquanto isso, ativar os alertas no Mercado Pago da Valluesco e decidir se mantém o acréscimo de 4,98% no cartão.
+- Conferir o site num celular de verdade.
+- Documentação técnica final para a entrega (este registro serve de base).
+- Mandar ao Lucio a mensagem sobre os acessos à Stays.
+
+**Depende do Lucio:**
+- Confirmar por escrito os acessos de administrador liberados ao Luiz.
+- Aprovar o FormSubmit e clicar na ativação; fornecer ou validar o aviso de privacidade do formulário.
+- Tarifas a partir de 15/12/2026 (12 anúncios ficam sem diária).
+- Decidir sobre o Pix (o canal da Stays só oferece cartão) e sobre o token exposto (saídas A ou B).
+- Corrigir o "88h" nos Termos; calendário e nome do Pedra Baleia.
+- Indicar 3 propriedades e datas para o teste de busca (item b).
+- Acesso ao Perfil da Empresa no Google (cláusula 2.2), ou registro de que não é elegível.
+- Homologação final por escrito. Depois: cobrar R$ 1.000 e emitir a NF; começam a mensalidade de R$ 200 e a garantia de 30 dias.
+- Registrar por escrito o novo prazo (14/12?) e as suspensões por pendências de terceiros (cláusula 4.1).
+
+## 22/11/2026 (noite) · Checkout preenche o endereço pelo CEP
+
+- **Pedido do Luiz:** ao digitar o CEP no checkout, preencher o resto do endereço sozinho.
+- **Como funciona:** quando o CEP tem 8 dígitos, um script no head_section consulta o ViaCEP (serviço gratuito, sem chave) e preenche Endereço, Bairro, Cidade, País (Brasil), Estado e UF. Depois o cursor vai para o Número. Se o país escolhido não for o Brasil, ou se o CEP não existir, o script não faz nada.
+- **Detalhe técnico:** a Stays recarrega a lista de estados depois de trocar o país e apagava o estado escolhido. Por isso o script reaplica o estado durante 4 s.
+- **Conferido no site público:** 59090-100 (Natal/RN), 30130-010 (Belo Horizonte/MG) e 01310-100 (São Paulo/SP).
+- **Arquivos:** código em `identidade/cep-autofill.html`; backup anterior em `identidade/head_section-v22-backup.html`. Desfazer = apagar a última linha do head_section.
+
+## 22/11/2026 (noite) · Botão "Aplicar" do código promocional
+
+- **Problema:** no checkout, o botão "Aplicar" ficava estreito (a Stays limita a largura a 60 px), com o texto vazando para fora da borda, e desalinhado do campo.
+- **Correção:** o campo e o botão ficam lado a lado e alinhados embaixo. O botão tem a mesma altura do campo (48 px), é preenchido em grafite com texto branco e não tem mais o limite de largura. O botão "×" (remover cupom aplicado) segue o mesmo estilo.
+- **Arquivos:** `identidade/cupom-fix.css` (última linha do head_section); backup anterior em `identidade/head_section-v23-backup.html`.
