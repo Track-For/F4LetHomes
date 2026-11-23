@@ -387,3 +387,17 @@ Substitui a lista "fim da tarde" acima.
 - **Testes:** 12 testes automatizados passando (`npm test`), com a Stays e o MP simulados; página conferida no navegador com reservas falsas (a pagar, já paga, em inglês).
 - **Ligação com a Stays:** script `pagamento/integracao-stays/head_section-pagamento.html` (página de confirmação → página de pagamento). **Não instalado**; só depois do teste real.
 - **Para ligar:** publicar na Vercel, criar o CNAME `pagamento` na GoDaddy e cadastrar `MP_PUBLIC_KEY`, `MP_ACCESS_TOKEN`, `MP_WEBHOOK_SECRET`, `STAYS_CLIENT_ID` e `STAYS_CLIENT_SECRET`. Passo a passo em `pagamento/README.md`.
+
+## 22/11/2026 (noite) · De volta ao Checkout Pro da Stays (transparente guardado)
+
+- **Decisão do Luiz:** por enquanto, usar o canal Mercado Pago da Stays com redirecionamento ao MP (Checkout Pro), porque ainda não há reservas pelo site. O checkout transparente fica guardado em `pagamento/` (commit 1ad36b2).
+- Canal reconectado na Stays às ~21h40, com o redirecionamento em "Sim". **As credenciais novas ainda não foram coladas:** a chave pública continua a `APP_USR-71584742…` e o token é o valor provisório. O Luiz vai falar com o Lucio antes de colar.
+- **Atenção:** enquanto o token for o provisório e o canal estiver conectado, o pagamento falha no fim do checkout.
+
+## 23/11/2026 · Lucio escolheu o checkout próprio
+
+- Depois da mensagem do Luiz com as 3 opções, o **Lucio escolheu a opção 2**: o checkout transparente próprio (`pagamento/`, cartão e Pix), no lugar da integração MP da Stays.
+- **Próximos passos:** o Lucio pede a API Externa ao suporte da Stays (R$ 95/mês), que envia o `client_id` e o `client_secret`; sem custo extra do Luiz (decisão de 23/11); deploy na Vercel; CNAME `pagamento`; variáveis `MP_*` e `STAYS_*`; webhook do MP; teste com credenciais de teste e depois com uma reserva real; instalar o script do head_section.
+- **Atenção:** o canal MP da Stays continua conectado com o token provisório. O certo é desconectá-lo (App Center, com código por e-mail) até o checkout próprio entrar no ar.
+- **Onde parou (23/11):** nenhum passo de implantação foi feito. O Luiz pediu para fazer tudo pelo Chrome, mas a extensão Claude in Chrome não estava conectada na sessão. Para retomar: conectar o Chrome (`/chrome`) e seguir a ordem: desconectar o canal MP na Stays → deploy na Vercel → domínio + CNAME → webhook do MP → variáveis MP_* → teste simulado. Checklist completo (Lucio x Luiz) na memória `checkout-proprio-4let`.
+- **23/11 (retomada pelo Chrome):** canal Mercado Pago **desconectado** na Stays (App Center → Mercado Pago → "Não conectado", código por e-mail digitado pelo Luiz; "Salvo com sucesso"). Até o checkout próprio entrar no ar, cobrar por link de pagamento. Próximo: deploy de `pagamento/` na Vercel.
