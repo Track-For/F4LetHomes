@@ -346,3 +346,44 @@ Substitui a lista "fim da tarde" acima.
 - **Problema:** no checkout, o botão "Aplicar" ficava estreito (a Stays limita a largura a 60 px), com o texto vazando para fora da borda, e desalinhado do campo.
 - **Correção:** o campo e o botão ficam lado a lado e alinhados embaixo. O botão tem a mesma altura do campo (48 px), é preenchido em grafite com texto branco e não tem mais o limite de largura. O botão "×" (remover cupom aplicado) segue o mesmo estilo.
 - **Arquivos:** `identidade/cupom-fix.css` (última linha do head_section); backup anterior em `identidade/head_section-v23-backup.html`.
+
+## 22/11/2026 (noite) · Testes do Luiz: todos passaram
+
+- **Item e (login e recuperação de acesso):** OK. O código chega por e-mail com o SPF e o DKIM novos.
+- **Item d (pagamento):** OK. O fluxo chega à tela do Mercado Pago (sem pagamento real).
+- **Celular de verdade:** OK.
+- Também conferidos no fluxo real: o endereço preenchido pelo CEP e o botão "Aplicar" do cupom.
+
+**O que ainda falta (situação em 22/11/2026, fim da noite):**
+- Luiz: decidir o token exposto do Mercado Pago (A ou B) e o acréscimo de 4,98%; ligar os alertas no MP; documentação técnica final.
+- Lucio: ativar o FormSubmit; tarifas a partir de 15/12; "88h" nos Termos e Pedra Baleia; foto do mini banner de Cerro Corá; 3 imóveis e datas para o item b; Perfil da Empresa no Google; confirmar os acessos de administrador; prazo por escrito; homologação final (depois: NF de R$ 1.000).
+
+## 22/11/2026 (fim da noite) · Token do Mercado Pago retirado da Stays
+
+- O Luiz tirou o access token de produção da Stays (guardou fora) e colocou um valor aleatório no lugar. O token deixa de aparecer no HTML do checkout.
+- **Em aberto:**
+  - O token antigo ficou público desde a ativação e continua válido até ser renovado no painel do Mercado Pago (app VLC-F4LET → Credenciais de produção).
+  - Com o valor aleatório, o canal MP segue ativo, mas o pagamento falha no fim do checkout. Decidir: desativar o canal e cobrar por link (saída B) ou desligar a reserva instantânea até a saída A.
+
+## 22/11/2026 (fim da noite) · Pagamento: decisão pelo checkout transparente e pesquisa da API da Stays
+
+- **Decisão do Luiz:** checkout transparente do Mercado Pago (Payment Brick com cartão e Pix), numa página própria (`pagamento.f4let.com/<reserva>`) na Vercel, fora do checkout da Stays.
+- **API Externa da Stays (https://stays.net/external-api/): é viável.**
+  - `GET /external/v1/booking/reservations/{id}`: devolve `price._f_total`, `stats._f_totalPaid` e `type` (`reserved` = pré-reserva, `booked` = confirmada).
+  - `POST .../reservations/{id}/payments`: lança o pagamento (`type: credit`, `status: completed`, `_f_val`, `paymentDate`, `_f_fee`).
+  - `PATCH .../reservations/{id}`: muda `type` para `booked`. `DELETE` cancela.
+  - Webhooks `reservation.created/modified/canceled`, assinados com RSA SHA256, com 3 tentativas. A resposta esperada é `{succeed:true}`.
+  - Autenticação: Basic `client_id:client_secret`. As credenciais e a URL do webhook são pedidas ao suporte da Stays.
+- **A confirmar:** sem o canal MP, se a reserva do site nasce como `reserved` e se a página final mostra o código (para redirecionar pelo head_section). Precisa de uma reserva de teste.
+- **Pendências:** renovar o token de produção do MP; credenciais de teste do MP; pedir a API Externa à Stays (pelo Lucio); regras de parcelas, acréscimo, desconto no Pix e prazo de cancelamento; orçamento fora do contrato.
+- **22/11/2026 ~21h:** o Luiz renovou as credenciais de produção da aplicação VLC-F4LET no Mercado Pago. O token que ficou público deixou de valer. O token novo não foi colado na Stays (o canal MP sai de lá) e vai só para a Vercel quando o transparente estiver pronto.
+- **22/11/2026 ~21h15:** canal Mercado Pago marcado como **Não conectado** na Stays (App Center → Pagamento e Segurança → Mercado Pago; a mudança pede um código por e-mail, que o Luiz validou). O app MP continua "Ativo", e o canal pode ser reconectado no mesmo lugar. No checkout público, todos os `paymentMethods` estão vazios e nenhum token aparece no HTML. O app **Link de pagamento** já está ativo na Stays, para cobrar manualmente.
+- **Falta ver:** o que o hóspede vê depois de "Continuar" sem canal de pagamento (se a reserva nasce como pré-reserva e qual é a tela final). Precisa de uma reserva de teste, a cancelar depois.
+
+## 22/11/2026 (noite) · Checkout transparente desenvolvido (pasta `pagamento/`)
+
+- **O que é:** página própria `pagamento.f4let.com/r/<código>` (Vercel) com o Payment Brick do Mercado Pago (cartão até 3x, débito e Pix), no visual do site, em PT/EN/ES. O valor vem da reserva na Stays. Com o pagamento aprovado, a função lança o pagamento na reserva e muda a reserva de `reserved` para `booked`.
+- **Segurança:** o Access Token e as credenciais da Stays ficam só nas variáveis da Vercel. O webhook confere a assinatura do MP e reconsulta o pagamento. A confirmação não duplica (testado com chamadas simultâneas). A página não mostra dados pessoais do hóspede.
+- **Testes:** 12 testes automatizados passando (`npm test`), com a Stays e o MP simulados; página conferida no navegador com reservas falsas (a pagar, já paga, em inglês).
+- **Ligação com a Stays:** script `pagamento/integracao-stays/head_section-pagamento.html` (página de confirmação → página de pagamento). **Não instalado**; só depois do teste real.
+- **Para ligar:** publicar na Vercel, criar o CNAME `pagamento` na GoDaddy e cadastrar `MP_PUBLIC_KEY`, `MP_ACCESS_TOKEN`, `MP_WEBHOOK_SECRET`, `STAYS_CLIENT_ID` e `STAYS_CLIENT_SECRET`. Passo a passo em `pagamento/README.md`.

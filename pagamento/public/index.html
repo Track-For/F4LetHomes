@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pagamento da reserva · 4let Homes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" id="brand" href="https://www.f4let.com">4let <span>homes.</span></a>
+    <span class="secure" data-i18n="secure">Pagamento seguro</span>
+  </header>
+
+  <main class="wrap">
+    <h1 data-i18n="title">Pagamento da reserva</h1>
+    <p class="lead" data-i18n="lead">Confira os dados e escolha como pagar. A reserva é confirmada assim que o pagamento for aprovado.</p>
+    <div id="test-banner" class="banner" hidden data-i18n="testMode">Modo de teste: nenhum valor real será cobrado.</div>
+
+    <div class="grid">
+      <section class="card summary" id="summary" aria-live="polite">
+        <div class="skeleton" id="summary-loading"></div>
+      </section>
+
+      <section class="card pay">
+        <div id="message" class="message" hidden></div>
+        <div id="paymentBrick_container"></div>
+        <div id="statusScreenBrick_container"></div>
+        <div id="done" class="done" hidden>
+          <h2 data-i18n="doneTitle">Reserva confirmada</h2>
+          <p data-i18n="doneText">Recebemos o seu pagamento. Você vai receber a confirmação por e-mail.</p>
+          <a class="btn" id="back-site" href="https://www.f4let.com" data-i18n="backSite">Voltar ao site</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <span data-i18n="footer">Pagamento processado pelo Mercado Pago. A 4let Homes não armazena os dados do seu cartão.</span>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
