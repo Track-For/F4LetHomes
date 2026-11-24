@@ -15,7 +15,7 @@ export default handler(['GET'], async (req, res) => {
   }
   send(res, 200, {
     code,
-    state, // payable | paid | unavailable
+    state, // payable | paid | unavailable | channel
     listing,
     checkIn: r.checkInDate,
     checkOut: r.checkOutDate,

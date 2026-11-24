@@ -95,6 +95,10 @@ Mercado Pago → Suas integrações → VLC-F4LET → **Webhooks** → Configura
   redireciona para `/customer/<idioma>/reservation/<código>/confirmation`. Visto no código da Stays, não testado.
 - Se o lançamento `type: "credit"` aparece na Stays como pagamento recebido do hóspede.
 - Se a Stays aceita mudar `type` de `reserved` para `booked` via `PATCH`, como diz a documentação.
+- Filtro de canal (`otherChannel` em `lib/stays.js`): reservas com `partner.name` de OTA ou com `partnerCode`
+  aparecem como `channel` e não aceitam pagamento. A documentação da Stays não diz qual campo traz o canal; o log
+  `origem` de cada reserva consultada mostra o que veio. Conferir que uma reserva do site e uma criada no painel
+  saem sem `partnerCode`.
 
 ## Teste local
 ```bash

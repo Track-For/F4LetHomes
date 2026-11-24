@@ -126,6 +126,19 @@ test('GET /api/reservation: resumo sem dados pessoais e estados', async () => {
   assert.equal(a.body.due, 933);
   assert.equal((await call(reservationApi, { query: { code: 'TESTE2' } })).body.state, 'paid');
   assert.equal((await call(reservationApi, { query: { code: 'NAOEXISTE' } })).status, 404);
+});
+
+test('reserva de outro canal (Airbnb, Booking, Expedia...) não aceita pagamento', async () => {
+  assert.equal((await call(reservationApi, { query: { code: 'TESTE3' } })).body.state, 'channel');
+  const r = await call(processPayment, { method: 'POST', body: { code: 'TESTE3', selectedPaymentMethod: 'credit_card', formData: { transaction_amount: 700, token: 'tok', installments: 1, payment_method_id: 'visa', payer: { email: 'h@exemplo.com' } } } });
+  assert.equal(r.status, 409);
+  assert.equal(mpCreated.length, 0);
+  const { otherChannel } = await import('../lib/stays.js');
+  assert.equal(otherChannel({ partner: { name: 'Airbnb' } }).blocked, true);
+  assert.equal(otherChannel({ partner: { name: 'API booking.com' } }).blocked, true);
+  assert.equal(otherChannel({ partnerCode: 'HM2QNZPDN1' }).blocked, true);
+  assert.equal(otherChannel({}).blocked, false);
+  assert.equal(otherChannel({ partner: { name: 'Site' } }).blocked, false);
   assert.equal((await call(reservationApi, { query: { code: '../x' } })).status, 400);
 });
 

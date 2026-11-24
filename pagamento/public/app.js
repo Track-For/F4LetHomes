@@ -20,6 +20,7 @@
       notFound: 'Não encontramos esta reserva. Confira o link ou fale com a gente.',
       alreadyPaid: 'Esta reserva já está paga. Obrigado!',
       unavailable: 'Esta reserva não está disponível para pagamento (pode ter sido cancelada). Fale com a gente.',
+      channel: 'Esta reserva foi feita por outro site (Airbnb, Booking, Expedia...). O pagamento é feito por lá. Dúvidas? Fale com a gente.',
       loadError: 'Não foi possível carregar o pagamento agora. Tente de novo em alguns minutos.',
       refused: 'O pagamento não foi aprovado. Confira os dados ou tente outro cartão ou o Pix.',
       waitingPix: 'Assim que o Pix for pago, esta página confirma a sua reserva sozinha.',
@@ -37,6 +38,7 @@
       notFound: 'We could not find this booking. Check the link or contact us.',
       alreadyPaid: 'This booking is already paid. Thank you!',
       unavailable: 'This booking cannot be paid (it may have been cancelled). Please contact us.',
+      channel: 'This booking was made on another website (Airbnb, Booking, Expedia...). Please pay there. Questions? Contact us.',
       loadError: 'We could not load the payment right now. Please try again in a few minutes.',
       refused: 'The payment was not approved. Check the details or try another card or Pix.',
       waitingPix: 'As soon as the Pix is paid, this page will confirm your booking automatically.',
@@ -54,6 +56,7 @@
       notFound: 'No encontramos esta reserva. Revisa el enlace o contáctanos.',
       alreadyPaid: 'Esta reserva ya está pagada. ¡Gracias!',
       unavailable: 'Esta reserva no está disponible para pago (puede haber sido cancelada). Contáctanos.',
+      channel: 'Esta reserva se hizo en otro sitio (Airbnb, Booking, Expedia...). El pago se hace allí. ¿Dudas? Contáctanos.',
       loadError: 'No fue posible cargar el pago ahora. Inténtalo de nuevo en unos minutos.',
       refused: 'El pago no fue aprobado. Revisa los datos o prueba otra tarjeta o Pix.',
       waitingPix: 'En cuanto se pague el Pix, esta página confirmará tu reserva automáticamente.',
@@ -204,6 +207,7 @@
         if (resv._status !== 200) throw new Error('reservation');
         renderSummary(resv);
         if (resv.state === 'paid') { msg(T.alreadyPaid, 'ok'); return; }
+        if (resv.state === 'channel') { msg(T.channel, 'error'); return; }
         if (resv.state !== 'payable') { msg(T.unavailable, 'error'); return; }
         bricks = new window.MercadoPago(cfg.publicKey, { locale: LOCALE }).bricks();
         return mountPayment();
