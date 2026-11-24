@@ -36,7 +36,7 @@ globalThis.fetch = async (url, opts = {}) => {
   if (opts.method === 'POST' && u.pathname === '/v1/payments') {
     const body = JSON.parse(opts.body);
     mpCreated.push({ body, headers: opts.headers });
-    const p = mpPayment({ transaction_amount: body.transaction_amount, external_reference: body.external_reference, payment_method_id: body.payment_method_id, installments: body.installments || 1, status: body.payment_method_id === 'pix' ? 'pending' : 'approved' });
+    const p = mpPayment({ transaction_amount: body.transaction_amount, metadata: body.metadata, external_reference: body.external_reference, payment_method_id: body.payment_method_id, installments: body.installments || 1, status: body.payment_method_id === 'pix' ? 'pending' : 'approved' });
     return new Response(JSON.stringify(p), { status: 201 });
   }
   const m = u.pathname.match(/^\/v1\/payments\/(\d+)$/);
@@ -81,6 +81,27 @@ test('Pix: expira em 30 min, no horário de Brasília', () => {
   assert.equal(body.payment_method_id, 'pix');
   assert.equal(body.date_of_expiration, '2026-11-22T20:30:00.000-03:00');
   assert.equal(body.token, undefined);
+  // 5% de desconto: paga 886,35 e quita 933
+  assert.equal(body.transaction_amount, 886.35);
+  assert.equal(body.metadata.settles, 933);
+  assert.equal(body.metadata.pix_discount, 46.65);
+});
+
+test('Pix com desconto: a Stays recebe o valor cheio, com o desconto somado à taxa', async () => {
+  const p = mpPayment({ payment_method_id: 'pix', transaction_amount: 886.35, metadata: { settles: 933 }, fee_details: [{ amount: 8.86 }] });
+  await confirmPayment(String(p.id));
+  const [pay] = db.payments.TESTE1;
+  assert.equal(pay._f_val, 933);
+  assert.equal(pay._f_fee, 55.51);
+  assert.match(pay.desc, /desconto/);
+  assert.equal(db.reservations.TESTE1.stats._f_totalPaid, 933);
+  assert.equal(db.reservations.TESTE1.type, 'booked');
+});
+
+test('metadata "settles" absurdo não vira crédito', async () => {
+  const p = mpPayment({ payment_method_id: 'pix', transaction_amount: 10, metadata: { settles: 933 } });
+  await confirmPayment(String(p.id));
+  assert.equal(db.payments.TESTE1[0]._f_val, 10);
 });
 
 // ---------- confirmação na Stays ----------

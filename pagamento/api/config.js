@@ -8,6 +8,7 @@ export default handler(['GET'], async (req, res) => {
   send(res, 200, {
     publicKey: cfg.mpPublicKey,
     maxInstallments: cfg.maxInstallments,
+    pixDiscountPercent: cfg.pixDiscountPercent,
     siteUrl: cfg.siteUrl,
     testMode: cfg.mockStays || cfg.mpPublicKey.startsWith('TEST-'),
   });

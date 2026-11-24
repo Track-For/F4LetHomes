@@ -15,6 +15,7 @@
       doneTitle: 'Reserva confirmada', doneText: 'Recebemos o seu pagamento. Você vai receber a confirmação por e-mail.',
       backSite: 'Voltar ao site', footer: 'Pagamento processado pelo Mercado Pago. A 4let Homes não armazena os dados do seu cartão.',
       reservation: 'Reserva', checkin: 'Check-in', checkout: 'Checkout', guests: 'Hóspedes', paid: 'Já pago', due: 'A pagar',
+      pix: function (pc) { return 'No Pix (' + pc + '% de desconto)'; },
       nights: function (n) { return n === 1 ? '1 noite' : n + ' noites'; },
       noCode: 'Link de pagamento incompleto. Use o link que recebeu ao reservar ou fale com a gente.',
       notFound: 'Não encontramos esta reserva. Confira o link ou fale com a gente.',
@@ -33,6 +34,7 @@
       doneTitle: 'Booking confirmed', doneText: 'We received your payment. You will get a confirmation by e-mail.',
       backSite: 'Back to the website', footer: 'Payment processed by Mercado Pago. 4let Homes does not store your card details.',
       reservation: 'Booking', checkin: 'Check-in', checkout: 'Check-out', guests: 'Guests', paid: 'Already paid', due: 'Amount due',
+      pix: function (pc) { return 'With Pix (' + pc + '% off)'; },
       nights: function (n) { return n === 1 ? '1 night' : n + ' nights'; },
       noCode: 'Incomplete payment link. Use the link you received when booking or contact us.',
       notFound: 'We could not find this booking. Check the link or contact us.',
@@ -51,6 +53,7 @@
       doneTitle: 'Reserva confirmada', doneText: 'Recibimos tu pago. Recibirás la confirmación por correo electrónico.',
       backSite: 'Volver al sitio', footer: 'Pago procesado por Mercado Pago. 4let Homes no almacena los datos de tu tarjeta.',
       reservation: 'Reserva', checkin: 'Check-in', checkout: 'Check-out', guests: 'Huéspedes', paid: 'Ya pagado', due: 'A pagar',
+      pix: function (pc) { return 'Con Pix (' + pc + '% de descuento)'; },
       nights: function (n) { return n === 1 ? '1 noche' : n + ' noches'; },
       noCode: 'Enlace de pago incompleto. Usa el enlace que recibiste al reservar o contáctanos.',
       notFound: 'No encontramos esta reserva. Revisa el enlace o contáctanos.',
@@ -104,6 +107,8 @@
       '<div class="row"><dt>' + T.guests + '</dt><dd>' + esc(r.guests) + '</dd></div>' +
       (r.paid > 0 ? '<div class="row"><dt>' + T.paid + '</dt><dd>' + esc(money(r.paid, r.currency)) + '</dd></div>' : '') +
       '</dl><div class="total"><span>' + T.due + '</span><strong>' + esc(money(Math.max(r.due, 0), r.currency)) + '</strong></div>';
+    var pc = cfg && cfg.pixDiscountPercent;
+    if (pc > 0 && r.due > 0) html += '<div class="pix-off"><span>' + esc(T.pix(pc)) + '</span><strong>' + esc(money(Math.round(r.due * (100 - pc)) / 100, r.currency)) + '</strong></div>';
     $('summary').innerHTML = html;
   }
 

@@ -7,6 +7,8 @@ import { payableReservation } from '../lib/stays.js';
 import { mp } from '../lib/mp.js';
 import { confirmPayment } from '../lib/confirm.js';
 
+const round2 = (n) => Math.round(n * 100) / 100;
+
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,255}\.[^\s@]{2,}$/;
 
@@ -35,7 +37,16 @@ export function buildPayment({ code, due, form, method, cfg, now = Date.now() })
   if (isPix) {
     // Formato exigido pelo MP: horário de Brasília com fuso explícito, ex.: 2026-11-23T10:30:00.000-03:00
     const brt = new Date(now + cfg.pixExpirationMinutes * 60 * 1000 - 3 * 3600 * 1000);
-    return { ...common, payment_method_id: 'pix', date_of_expiration: brt.toISOString().replace('Z', '-03:00') };
+    // Desconto do Pix: o hóspede paga menos, mas o lançamento na Stays quita o valor em aberto inteiro
+    // (o desconto entra junto da taxa do MP; ver lib/confirm.js). "settles" fica no metadata do pagamento.
+    const amount = round2(due * (1 - cfg.pixDiscountPercent / 100));
+    return {
+      ...common,
+      transaction_amount: amount,
+      metadata: { ...common.metadata, settles: due, pix_discount: round2(due - amount) },
+      payment_method_id: 'pix',
+      date_of_expiration: brt.toISOString().replace('Z', '-03:00'),
+    };
   }
   if (!form.token || !form.payment_method_id) throw new HttpError(400, 'invalid_card_data');
   const installments = Math.max(1, Math.trunc(Number(form.installments) || 1));

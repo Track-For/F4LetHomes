@@ -10,10 +10,23 @@ import { todayBR } from './http.js';
 const tag = (paymentId) => `MP ${paymentId}`;
 const isOurs = (p, paymentId) => String(p?.name || '').includes(tag(paymentId)) || String(p?.desc || '').includes(tag(paymentId));
 
-function describe(p) {
+const round2 = (n) => Math.round(n * 100) / 100;
+const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+// Valor que o pagamento quita na reserva. No Pix com desconto, é maior que o valor pago
+// (o servidor grava "settles" no metadata ao criar o pagamento; o navegador não consegue mudar isso).
+function settlement(p) {
+  const paid = Number(p.transaction_amount) || 0;
+  const settles = Number(p.metadata?.settles);
+  const discount = Number.isFinite(settles) && settles > paid && settles - paid <= settles * 0.5 ? round2(settles - paid) : 0;
+  return { value: round2(paid + discount), discount };
+}
+
+function describe(p, discount) {
   const method = p.payment_method_id === 'pix' ? 'Pix' : `Cartão ${p.payment_method_id || ''}`.trim();
   const parc = p.installments > 1 ? ` em ${p.installments}x` : '';
-  return `${method}${parc} · ${tag(p.id)}`;
+  const desc = discount > 0 ? ` (pago ${brl(Number(p.transaction_amount))}, desconto de ${brl(discount)} somado à taxa)` : '';
+  return `${method}${parc}${desc} · ${tag(p.id)}`;
 }
 
 export async function confirmPayment(paymentId, { payment } = {}) {
@@ -28,17 +41,18 @@ export async function confirmPayment(paymentId, { payment } = {}) {
 
   const existing = (await stays.listPayments(code)).filter((x) => isOurs(x, p.id));
   if (existing.length === 0) {
-    const fee = (p.fee_details || []).reduce((s, f) => s + (Number(f.amount) || 0), 0);
+    const { value, discount } = settlement(p);
+    const fee = (p.fee_details || []).reduce((s, f) => s + (Number(f.amount) || 0), 0) + discount;
     const day = todayBR();
     const body = {
       type: 'credit',
       status: 'completed',
-      _f_val: Number(p.transaction_amount),
+      _f_val: value,
       expirationDate: day,
       paymentDate: day,
       competenceDate: day,
       name: `Mercado Pago · ${tag(p.id)}`,
-      desc: describe(p),
+      desc: describe(p, discount),
       // sem "readonly": a limpeza de duplicados abaixo precisa poder apagar via API
     };
     if (fee > 0) body._f_fee = Math.round(fee * 100) / 100;

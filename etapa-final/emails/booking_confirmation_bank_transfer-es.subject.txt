@@ -1,0 +1,1 @@
+{{agency_name}} | Solo falta el pago de la reserva {{reserve_id}}

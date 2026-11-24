@@ -90,6 +90,13 @@ Mercado Pago → Suas integrações → VLC-F4LET → **Webhooks** → Configura
    baixo e conferir na Stays: pagamento lançado na reserva e reserva confirmada. Estornar no MP depois.
 3. Instalar o script do head_section (passo 5.3).
 
+## Regras de pagamento (Lucio, 24/11/2026)
+- Cartão em até 3x, com juros por conta do hóspede (padrão do Mercado Pago quando a conta não oferece parcelamento sem juros).
+- Pix com 5% de desconto (`PIX_DISCOUNT_PERCENT`). O hóspede paga 95%; na Stays o lançamento quita o valor cheio e o desconto
+  entra somado à taxa do MP (`_f_fee`), com a descrição "pago R$ X, desconto de R$ Y somado à taxa". Assim o saldo da reserva zera
+  e o valor líquido (valor − taxa) bate com o que entrou na conta.
+- Pré-reserva não paga expira em 24 h (configurado na Stays).
+
 ## A confirmar no primeiro teste real
 - Se a reserva feita no site sem canal de pagamento nasce como `reserved` (pré-reserva) e se a Stays
   redireciona para `/customer/<idioma>/reservation/<código>/confirmation`. Visto no código da Stays, não testado.
