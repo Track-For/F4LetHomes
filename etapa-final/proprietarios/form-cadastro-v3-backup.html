@@ -1,0 +1,131 @@
+<section class="cta" id="p4l-contato"><div class="wrap"><div class="in">
+<span class="cap" style="color:#b5a898"><span class="pt">Cadastro de imóvel</span><span class="en">Property sign-up</span><span class="es">Registro de inmueble</span></span>
+<h2 class="h2"><span class="pt">Cadastre o seu imóvel</span><span class="en">Sign up your property</span><span class="es">Registre su inmueble</span></h2>
+<p><span class="pt">Preencha os dados e envie até 5 fotos. A equipe da 4let analisa cada cadastro e responde pelo e-mail ou telefone informado.</span><span class="en">Fill in the details and send up to 5 photos. The 4let team reviews every request and replies by the email or phone you provide.</span><span class="es">Complete los datos y envíe hasta 5 fotos. El equipo de 4let analiza cada registro y responde por el e-mail o teléfono informado.</span></p>
+</div>
+<div class="f4f-ok" id="p4l-ok" hidden>
+<h3><span class="pt">Cadastro enviado</span><span class="en">Request sent</span><span class="es">Registro enviado</span></h3>
+<p><span class="pt">Recebemos as informações do seu imóvel. Você vai receber uma confirmação no e-mail informado, e a nossa equipe entra em contato depois de analisar o cadastro.</span><span class="en">We have received your property details. You will get a confirmation at the email you provided, and our team will contact you after reviewing the request.</span><span class="es">Recibimos la información de su inmueble. Recibirá una confirmación en el e-mail informado y nuestro equipo se pondrá en contacto después de analizar el registro.</span></p>
+</div>
+<form class="f4f" id="p4l-form" action="https://formsubmit.co/lucio.risi@vallues.co" method="POST" enctype="multipart/form-data" novalidate>
+<input type="hidden" name="_subject" value="Novo cadastro de imóvel - 4let Homes">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://www.f4let.com/pt/proprietarios?enviado=1">
+<input type="hidden" name="_autoresponse" value="">
+<input type="hidden" name="_url" value="https://www.f4let.com/pt/proprietarios">
+<input type="hidden" name="Idioma" value="pt">
+<input type="text" name="_honey" class="f4f-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<fieldset>
+<legend><span class="pt">Seus dados</span><span class="en">Your details</span><span class="es">Sus datos</span></legend>
+<div class="g2">
+<label class="fl"><span><span class="pt">Nome completo</span><span class="en">Full name</span><span class="es">Nombre completo</span> *</span><input type="text" id="f4f-nome" name="Nome" required autocomplete="name" maxlength="120"></label>
+<label class="fl"><span>E-mail *</span><input type="email" id="f4f-email" name="email" required autocomplete="email" maxlength="160"></label>
+<label class="fl"><span><span class="pt">Telefone / WhatsApp</span><span class="en">Phone / WhatsApp</span><span class="es">Teléfono / WhatsApp</span> *</span><input type="tel" id="f4f-tel" name="Telefone" required autocomplete="tel" maxlength="30" placeholder="(11) 99999-9999"></label>
+</div>
+</fieldset>
+<fieldset>
+<legend><span class="pt">O imóvel</span><span class="en">The property</span><span class="es">El inmueble</span></legend>
+<div class="g2">
+<label class="fl"><span><span class="pt">Cidade / UF</span><span class="en">City / State</span><span class="es">Ciudad / Estado</span> *</span><input type="text" id="f4f-cidade" name="Cidade/UF" required maxlength="80" placeholder="Natal / RN"></label>
+<label class="fl"><span><span class="pt">Endereço ou região</span><span class="en">Address or area</span><span class="es">Dirección o zona</span> *</span><input type="text" id="f4f-end" name="Endereço ou região" required maxlength="160"></label>
+<label class="fl"><span><span class="pt">Tipo de imóvel</span><span class="en">Property type</span><span class="es">Tipo de inmueble</span> *</span><select id="f4f-tipo" name="Tipo de imóvel" required><option value=""></option></select></label>
+<div class="g2 in2">
+<label class="fl"><span><span class="pt">Quartos</span><span class="en">Bedrooms</span><span class="es">Habitaciones</span> *</span><input type="number" id="f4f-quartos" name="Quartos" required min="0" max="50" inputmode="numeric"></label>
+<label class="fl"><span><span class="pt">Hóspedes</span><span class="en">Guests</span><span class="es">Huéspedes</span> *</span><input type="number" id="f4f-hosp" name="Capacidade de hóspedes" required min="1" max="100" inputmode="numeric"></label>
+</div>
+</div>
+<label class="fl"><span><span class="pt">Descrição</span><span class="en">Description</span><span class="es">Descripción</span> *</span><textarea id="f4f-desc" name="Descrição" required rows="4" maxlength="2000"></textarea><small class="hint"><span class="pt">Conte o que o imóvel tem: área, vista, comodidades, se já recebe hóspedes.</span><span class="en">Tell us what the property offers: size, view, amenities, whether it already hosts guests.</span><span class="es">Cuéntenos qué ofrece el inmueble: área, vista, comodidades, si ya recibe huéspedes.</span></small></label>
+</fieldset>
+<fieldset>
+<legend><span class="pt">Fotos</span><span class="en">Photos</span><span class="es">Fotos</span></legend>
+<label class="drop" for="f4f-fotos"><input type="file" id="f4f-fotos" accept="image/jpeg,image/png,image/webp" multiple><b><span class="pt">Escolher fotos</span><span class="en">Choose photos</span><span class="es">Elegir fotos</span></b><small><span class="pt">Até 5 fotos, JPG, PNG ou WEBP, com até 5 MB cada.</span><span class="en">Up to 5 photos, JPG, PNG or WEBP, up to 5 MB each.</span><span class="es">Hasta 5 fotos, JPG, PNG o WEBP, de hasta 5 MB cada una.</span></small></label>
+<ul class="thumbs" id="f4f-thumbs"></ul>
+<div class="hid"><input type="file" name="foto_1"><input type="file" name="foto_2"><input type="file" name="foto_3"><input type="file" name="foto_4"><input type="file" name="foto_5"></div>
+</fieldset>
+<label class="ck"><input type="checkbox" id="f4f-priv" name="Aceite do aviso de privacidade" value="Sim" required><span><span class="pt">Li e concordo com o <a href="/pt/politica-de-privacidade" target="_blank" rel="noopener">aviso de privacidade</a>. Autorizo a 4let Homes a usar estes dados para analisar o cadastro e entrar em contato.</span><span class="en">I have read and agree to the <a href="/en/politica-de-privacidade" target="_blank" rel="noopener">privacy notice</a>. I authorize 4let Homes to use this data to review the request and contact me.</span><span class="es">Leí y acepto el <a href="/es/politica-de-privacidade" target="_blank" rel="noopener">aviso de privacidad</a>. Autorizo a 4let Homes a usar estos datos para analizar el registro y contactarme.</span> *</span></label>
+<p class="err" id="f4f-err" role="alert" hidden></p>
+<div class="act"><button type="submit" class="btn" id="f4f-send"><span class="pt">Enviar cadastro</span><span class="en">Send request</span><span class="es">Enviar registro</span></button><small><span class="pt">* Campos obrigatórios.</span><span class="en">* Required fields.</span><span class="es">* Campos obligatorios.</span></small></div>
+</form>
+<div class="in alt">
+<p><span class="pt">Prefere conversar antes?</span><span class="en">Would you rather talk first?</span><span class="es">¿Prefiere conversar antes?</span></p>
+<div class="btns">
+<a class="btn" href="https://wa.me/5531996802468?text=Ol%C3%A1!%20Tenho%20um%20im%C3%B3vel%20e%20quero%20saber%20sobre%20a%20gest%C3%A3o%20da%204let%20Homes." target="_blank" rel="noopener">WhatsApp</a>
+<a class="btn ghost" href="mailto:reservas.br@f4let.com?subject=Cadastro%20de%20im%C3%B3vel%20-%204let%20Homes">E-mail</a>
+</div>
+<small>reservas.br@f4let.com · (31) 99680-2468</small>
+</div>
+</div></section>
+<style>
+/* formulário de cadastro de imóvel (Anexo I) */
+#p4l .f4f,#p4l .f4f-ok{max-width:820px;margin:44px auto 0;background:var(--paper);color:var(--ink);text-align:left;padding:40px 44px 36px}
+#p4l .f4f-ok{display:grid;gap:12px}
+#p4l .f4f-ok[hidden],#p4l .f4f[hidden]{display:none}
+#p4l .f4f-ok h3{font-size:26px;font-weight:300;margin:0}
+#p4l .f4f-ok p{color:var(--muted);font-size:16px;margin:0}
+#p4l .f4f fieldset{border:0;margin:0 0 28px;padding:0;min-width:0}
+#p4l .f4f legend{border:0;margin:0 0 14px;padding:0 0 10px;width:100%;font-size:11.2px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+#p4l .f4f .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;margin-bottom:16px}
+#p4l .f4f .g2.in2{margin:0;gap:20px}
+#p4l .f4f .fl{display:grid;gap:6px;margin:0;font-weight:400;max-width:none}
+#p4l .f4f .fl>span{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+#p4l .f4f input[type=text],#p4l .f4f input[type=email],#p4l .f4f input[type=tel],#p4l .f4f input[type=number],#p4l .f4f select,#p4l .f4f textarea{width:100%;min-width:0;height:auto;margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:0;background:#fff;color:var(--ink);font:400 16px/1.4 "Jost",ui-sans-serif,system-ui,sans-serif;box-shadow:none;-webkit-appearance:none;appearance:none}
+#p4l .f4f select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%232b231d' stroke-width='1.4'/%3E%3C/svg%3E") no-repeat right 14px center;padding-right:38px}
+#p4l .f4f textarea{resize:vertical;min-height:110px}
+#p4l .f4f select{padding:12px 38px 12px 14px!important;height:auto!important;min-height:48px;line-height:1.4!important;text-indent:0!important}
+#p4l .f4f input[type=text],#p4l .f4f input[type=email],#p4l .f4f input[type=tel],#p4l .f4f input[type=number]{min-height:48px}
+#p4l .f4f input:focus,#p4l .f4f select:focus,#p4l .f4f textarea:focus{outline:2px solid var(--ink);outline-offset:0;border-color:var(--ink)}
+#p4l .f4f .bad{border-color:#b3261e!important;background-color:#fff6f5!important}
+#p4l .f4f .hint{font-size:13px;color:var(--muted)}
+#p4l .f4f .drop{display:grid;justify-items:center;gap:6px;padding:26px 16px;border:1px dashed #cbbfae;background:var(--surface);text-align:center;cursor:pointer;margin:0;font-weight:400;transition:border-color .2s}
+#p4l .f4f .drop:hover,#p4l .f4f .drop.over{border-color:var(--ink)}
+#p4l .f4f .drop input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+#p4l .f4f .drop:focus-within{outline:2px solid var(--ink)}
+#p4l .f4f .drop b{font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+#p4l .f4f .drop small{font-size:13px;color:var(--muted)}
+#p4l .f4f .thumbs{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+#p4l .f4f .thumbs:empty{display:none}
+#p4l .f4f .thumbs li{position:relative;aspect-ratio:1;background:var(--surface) center/cover no-repeat;border:1px solid var(--line)}
+#p4l .f4f .thumbs button{position:absolute;top:4px;right:4px;width:26px;height:26px;padding:0;border:0;border-radius:50%;background:rgba(43,35,29,.8);color:#fff;font-size:16px;line-height:26px;cursor:pointer}
+#p4l .f4f .hid,#p4l .f4f .f4f-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+#p4l .f4f .ck{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;margin:0 0 20px;font-size:14.5px;font-weight:400;color:var(--muted);max-width:none}
+#p4l .f4f .ck input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--ink)}
+#p4l .f4f .ck a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+#p4l .f4f .err{margin:0 0 16px;padding:12px 14px;background:#fff6f5;border-left:3px solid #b3261e;color:#7a1c16;font-size:14.5px}
+#p4l .f4f .err[hidden]{display:none}
+#p4l .f4f .act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+#p4l .f4f .act .btn{background:var(--ink);color:var(--paper);border-color:var(--ink);min-width:220px}
+#p4l .f4f .act .btn:hover{background:transparent;color:var(--ink)}
+#p4l .f4f .act .btn[disabled]{opacity:.6;cursor:wait}
+#p4l .f4f .act small{font-size:13px;color:var(--muted)}
+#p4l .cta .in.alt{margin-top:48px;gap:14px}
+#p4l .cta .in.alt p{color:#d9cdb9;margin:0}
+@media (max-width:700px){#p4l .f4f,#p4l .f4f-ok{padding:28px 20px 24px;margin-top:32px}#p4l .f4f .g2{grid-template-columns:1fr}#p4l .f4f .g2.in2{grid-template-columns:1fr 1fr}#p4l .f4f .thumbs{grid-template-columns:repeat(3,minmax(0,1fr))}#p4l .f4f .act .btn{width:100%}}
+</style>
+<script>
+/* formulário de cadastro de imóvel: idioma, validação, fotos (reduzidas no navegador para caber no limite do serviço) */
+(function(){var f=document.getElementById("p4l-form");if(!f)return;
+var l=(document.documentElement.lang||"pt").slice(0,2);if(["pt","en","es"].indexOf(l)<0)l="pt";
+var T={pt:{tipos:["Apartamento","Casa","Chalé","Flat ou studio","Pousada ou quartos","Outro"],sel:"Selecione",req:"Preencha os campos destacados.",mail:"Confira o e-mail informado.",priv:"Para enviar, aceite o aviso de privacidade.",max:"Você pode enviar no máximo 5 fotos.",type:"Use fotos em JPG, PNG ou WEBP.",size:"Cada foto pode ter no máximo 5 MB.",tot:"As fotos ficaram grandes demais para o envio. Remova uma ou duas e tente de novo.",busy:"Enviando...",rm:"Remover foto",auto:"Recebemos o cadastro do seu imóvel na 4let Homes. Nossa equipe vai analisar as informações e entrar em contato pelo e-mail ou telefone informado.",subj:"Novo cadastro de imóvel - 4let Homes"},
+en:{tipos:["Apartment","House","Chalet","Flat or studio","Guesthouse or rooms","Other"],sel:"Select",req:"Please fill in the highlighted fields.",mail:"Please check the email address.",priv:"To send, please accept the privacy notice.",max:"You can send up to 5 photos.",type:"Please use JPG, PNG or WEBP photos.",size:"Each photo can be up to 5 MB.",tot:"The photos are too large to send. Remove one or two and try again.",busy:"Sending...",rm:"Remove photo",auto:"We have received your property request at 4let Homes. Our team will review the details and contact you by the email or phone you provided.",subj:"Novo cadastro de imóvel (EN) - 4let Homes"},
+es:{tipos:["Apartamento","Casa","Chalé","Flat o estudio","Posada o habitaciones","Otro"],sel:"Seleccione",req:"Complete los campos destacados.",mail:"Revise el e-mail informado.",priv:"Para enviar, acepte el aviso de privacidad.",max:"Puede enviar hasta 5 fotos.",type:"Use fotos en JPG, PNG o WEBP.",size:"Cada foto puede tener hasta 5 MB.",tot:"Las fotos quedaron demasiado grandes para el envío. Quite una o dos e intente de nuevo.",busy:"Enviando...",rm:"Quitar foto",auto:"Recibimos el registro de su inmueble en 4let Homes. Nuestro equipo analizará la información y se pondrá en contacto por el e-mail o teléfono informado.",subj:"Novo cadastro de imóvel (ES) - 4let Homes"}}[l];
+var base="https://www.f4let.com/"+l+"/proprietarios";
+f.querySelector("[name=_next]").value=base+"?enviado=1";f.querySelector("[name=_url]").value=base;f.querySelector("[name=Idioma]").value=l;f.querySelector("[name=_autoresponse]").value=T.auto;f.querySelector("[name=_subject]").value=T.subj;
+var tp=document.getElementById("f4f-tipo");tp.options[0].text=T.sel;T.tipos.forEach(function(t){var o=document.createElement("option");o.value=t;o.text=t;tp.appendChild(o)});
+if(/[?&]enviado=1/.test(location.search)){f.hidden=true;var ok=document.getElementById("p4l-ok");ok.hidden=false;setTimeout(function(){document.getElementById("p4l-contato").scrollIntoView({block:"start"})},300);return}
+var fin=document.getElementById("f4f-fotos"),ul=document.getElementById("f4f-thumbs"),slots=f.querySelectorAll(".hid input"),err=document.getElementById("f4f-err"),btn=document.getElementById("f4f-send"),fotos=[];
+function say(m){err.textContent=m;err.hidden=!m;if(m)err.scrollIntoView({block:"center",behavior:"smooth"})}
+function draw(){ul.innerHTML="";fotos.forEach(function(x,i){var li=document.createElement("li");li.style.backgroundImage="url("+x.u+")";var b=document.createElement("button");b.type="button";b.setAttribute("aria-label",T.rm);b.textContent="×";b.onclick=function(){URL.revokeObjectURL(x.u);fotos.splice(i,1);draw()};li.appendChild(b);ul.appendChild(li)})}
+function add(list){say("");Array.prototype.forEach.call(list,function(file){if(fotos.length>=5){say(T.max);return}if(!/^image\/(jpeg|png|webp)$/.test(file.type)){say(T.type);return}if(file.size>5*1024*1024){say(T.size);return}fotos.push({f:file,u:URL.createObjectURL(file)})});draw()}
+fin.addEventListener("change",function(){add(fin.files);fin.value=""});
+var dz=f.querySelector(".drop");["dragenter","dragover"].forEach(function(e){dz.addEventListener(e,function(v){v.preventDefault();dz.classList.add("over")})});["dragleave","drop"].forEach(function(e){dz.addEventListener(e,function(v){v.preventDefault();dz.classList.remove("over")})});dz.addEventListener("drop",function(v){if(v.dataTransfer&&v.dataTransfer.files)add(v.dataTransfer.files)});
+function shrink(file,q){return new Promise(function(res){var img=new Image(),u=URL.createObjectURL(file);img.onload=function(){var m=1600,w=img.naturalWidth,h=img.naturalHeight,s=Math.min(1,m/Math.max(w,h)),c=document.createElement("canvas");c.width=Math.round(w*s);c.height=Math.round(h*s);var x=c.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.drawImage(img,0,0,c.width,c.height);c.toBlob(function(b){URL.revokeObjectURL(u);res(b?new File([b],file.name.replace(/\.[^.]+$/,"")+".jpg",{type:"image/jpeg"}):file)},"image/jpeg",q)};img.onerror=function(){URL.revokeObjectURL(u);res(file)};img.src=u})}
+f.addEventListener("input",function(e){if(e.target.classList)e.target.classList.remove("bad")});
+f.addEventListener("submit",function(e){e.preventDefault();say("");var bad=[];Array.prototype.forEach.call(f.querySelectorAll("[required]"),function(el){var v=el.type==="checkbox"?el.checked:String(el.value).trim()!=="";if(el.type==="number"&&v&&!el.checkValidity())v=false;if(!v){el.classList.add("bad");bad.push(el)}});
+var em=document.getElementById("f4f-email");if(em.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim())){em.classList.add("bad");if(bad.indexOf(em)<0)bad.push(em)}
+if(bad.length){var pv=document.getElementById("f4f-priv");say(bad.length===1&&bad[0]===pv?T.priv:(bad.length===1&&bad[0]===em&&em.value?T.mail:T.req));bad[0].focus({preventScroll:true});return}
+btn.disabled=true;var old=btn.innerHTML;btn.textContent=T.busy;
+(async function(){var out=[],tot=0;for(var i=0;i<fotos.length;i++){var g=await shrink(fotos[i].f,.82);if(g.size>1.8*1024*1024)g=await shrink(fotos[i].f,.6);out.push(g);tot+=g.size}
+if(tot>9.5*1024*1024){btn.disabled=false;btn.innerHTML=old;say(T.tot);return}
+try{if(out.length){if(typeof DataTransfer==="undefined")throw 0;out.forEach(function(g,i){var dt=new DataTransfer();dt.items.add(g);slots[i].files=dt.files})}}catch(x){var raw=0;fotos.forEach(function(p){raw+=p.f.size});if(raw>9.5*1024*1024){btn.disabled=false;btn.innerHTML=old;say(T.tot);return}}
+HTMLFormElement.prototype.submit.call(f)})()})})();
+</script>
