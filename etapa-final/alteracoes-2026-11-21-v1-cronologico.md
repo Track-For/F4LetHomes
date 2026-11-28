@@ -412,3 +412,4 @@ Substitui a lista "fim da tarde" acima.
 - **Não é defeito:** o submenu "Extranet do proprietário" (`fletho.stays.net/i/`) responde 403 para robôs, mas abre a tela de login no navegador.
 - **Restante:** todas as páginas responderam 200, e nenhum link interno está quebrado.
 - **Extranet:** o Luiz decidiu manter o submenu "Extranet do proprietário" apontando para o painel da Stays (`https://fletho.stays.net/i/`). Cada dono precisa de um usuário do painel para entrar.
+- **Teste (b), busca comparada a 3 imóveis/datas:** o Luiz decidiu EXCLUIR esse teste da homologação (28/11/2026). Como é critério do Anexo I, registrar a exclusão por escrito com o Lucio (cláusula 12.3; WhatsApp ou e-mail servem).
